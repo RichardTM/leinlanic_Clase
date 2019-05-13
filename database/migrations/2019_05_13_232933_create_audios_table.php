@@ -17,6 +17,7 @@ class CreateAudiosTable extends Migration
             $table->bigIncrements('id');
             $table->string('español', 150);
             $table->string('miskito', 150);
+
             $table->timestamps();
         });
     }

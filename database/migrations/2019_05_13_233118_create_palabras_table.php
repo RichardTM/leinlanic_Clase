@@ -22,8 +22,7 @@ class CreatePalabrasTable extends Migration
             $table->string('aciertopalabra', 150);
             $table->unsignedInteger('id_audio');
 
-            $table->foreign('id_leccion')->references('id')->on('lecciones')->onDelete('cascade');
-            $table->foreign('id_audio')->references('id')->on('audios')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

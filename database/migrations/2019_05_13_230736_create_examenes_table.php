@@ -19,8 +19,7 @@ class CreateExamenesTable extends Migration
             $table->unsignedInteger('id_palabra');
             $table->string('aciertos', 150);
 
-            $table->foreign('id_nivellecion')->references('id')->on('lecciones')->onDelete('cascade');
-            $table->foreign('id_palabra')->references('id')->on('palabras')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
