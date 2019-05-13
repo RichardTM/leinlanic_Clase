@@ -21,6 +21,7 @@ class CreateNivelleccionTable extends Migration
             $table->foreign('id_nivel')->references('id')->on('niveles')->onDelete('cascade');
             $table->foreign('id_leccion')->references('id')->on('lecciones')->onDelete('cascade');
 
+            $table->timestamps();
         });
     }
 
