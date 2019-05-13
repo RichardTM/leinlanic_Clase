@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAxamenesTable extends Migration
+class CreateExamenesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,8 +21,6 @@ class CreateAxamenesTable extends Migration
 
             $table->foreign('id_nivellecion')->references('id')->on('lecciones')->onDelete('cascade');
             $table->foreign('id_palabra')->references('id')->on('palabras')->onDelete('cascade');
-
-
             $table->timestamps();
         });
     }

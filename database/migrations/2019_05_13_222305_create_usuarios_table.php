@@ -39,13 +39,6 @@ class CreateUsuariosTable extends Migration
             $table->foreign('id_departamento')->references('id')->on('departamentos')->onDelete('cascade');
             $table->foreign('id_nacionalidad')->references('id')->on('nacionalidad')->onDelete('cascade');
 
-
-
-
-
-
-
-
             $table->timestamps();
         });
     }

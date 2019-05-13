@@ -15,12 +15,8 @@ class CreateAudiosTable extends Migration
     {
         Schema::create('audios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_palabra');
             $table->string('español', 150);
             $table->string('miskito', 150);
-
-            $table->foreign('id_palabra')->references('id')->on('palabras')->onDelete('cascade');
-
 
             $table->timestamps();
         });
