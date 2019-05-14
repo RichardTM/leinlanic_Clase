@@ -40,7 +40,7 @@ class CreatePerfilesTable extends Migration
             $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('cascade');
             $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
             $table->foreign('nacionalidad_id')->references('id')->on('nacionalidades')->onDelete('cascade');
-
+            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
             // agregar fechas
             $table->timestamps();
         });
