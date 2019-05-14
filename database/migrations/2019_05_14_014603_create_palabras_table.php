@@ -17,11 +17,11 @@ class CreatePalabrasTable extends Migration
             $table->bigIncrements('id');
             $table->string('español', 150);
             $table->string('miskito', 150);
-            $table->unsignedInteger('id_leccion');
+            $table->unsignedInteger('leccion_id');
             $table->string('imagen', 150);
             $table->string('aciertopalabra', 150);
-            $table->unsignedInteger('id_audio');
 
+            $table->foreign('leccion_id')->references('id')->on('lecciones')->onDelete('cascade');
 
             $table->timestamps();
         });
