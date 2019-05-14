@@ -14,10 +14,10 @@ class CreatePalabrasTable extends Migration
     public function up()
     {
         Schema::create('palabras', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('español', 150);
             $table->string('miskito', 150);
-            $table->unsignedBigInteger('leccion_id');
+            $table->unsignedInteger('leccion_id');
             $table->string('imagen', 150);
             $table->string('aciertopalabra', 150);
 

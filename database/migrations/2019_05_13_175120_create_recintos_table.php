@@ -14,7 +14,7 @@ class CreateRecintosTable extends Migration
     public function up()
     {
         Schema::create('recintos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('recinto', 150);
 
             $table->timestamps();

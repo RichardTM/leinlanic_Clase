@@ -14,7 +14,7 @@ class CreateNivelesTable extends Migration
     public function up()
     {
         Schema::create('niveles', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nivel', 150);
 
             $table->timestamps();

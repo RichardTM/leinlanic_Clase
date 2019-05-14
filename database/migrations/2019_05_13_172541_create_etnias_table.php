@@ -14,7 +14,7 @@ class CreateEtniasTable extends Migration
     public function up()
     {
         Schema::create('etnias', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('etnia', 150);
 
             $table->timestamps();
