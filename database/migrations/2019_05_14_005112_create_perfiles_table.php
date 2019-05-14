@@ -19,16 +19,19 @@ class CreatePerfilesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombres', 150);
             $table->string('apellidos', 150);
-            $table->unsignedInteger('sexo_id');
-            $table->unsignedInteger('recinto_id');
-            $table->unsignedInteger('carrera_id');
-            $table->unsignedInteger('area_id');
-            $table->unsignedInteger('modalidad_id');
-            $table->unsignedInteger('etnia_id');
-            $table->unsignedInteger('municipio_id');
-            $table->unsignedInteger('departamento_id');
-            $table->unsignedInteger('nacionalidad_id');
+            $table->unsignedBigInteger('sexo_id');
+            $table->unsignedBigInteger('recinto_id');
+            $table->unsignedBigInteger('carrera_id');
+            $table->unsignedBigInteger('area_id');
+            $table->unsignedBigInteger('modalidad_id');
+            $table->unsignedBigInteger('etnia_id');
+            $table->unsignedBigInteger('municipio_id');
+            $table->unsignedBigInteger('departamento_id');
+            $table->unsignedBigInteger('nacionalidad_id');
             $table->string('carnet', 150);
+
+            // agregar fechas
+            $table->timestamps();
 
             // llaves foraneas
             $table->foreign('sexo_id')->references('id')->on('sexos')->onDelete('cascade');
@@ -41,8 +44,7 @@ class CreatePerfilesTable extends Migration
             $table->foreign('nacionalidad_id')->references('id')->on('nacionalidad')->onDelete('cascade');
 
 
-            // agregar fechas
-             $table->timestamps();
+
         });
     }
 

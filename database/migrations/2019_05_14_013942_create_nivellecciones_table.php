@@ -15,15 +15,16 @@ class CreateNivelleccionesTable extends Migration
     {
         Schema::create('nivellecciones', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('nivel_id');
-            $table->unsignedInteger('leccion_id');
+            $table->unsignedBigInteger('nivel_id');
+            $table->unsignedBigInteger('leccion_id');
+            $table->timestamps();
 
             $table->foreign('nivel_id')->references('id')->on('niveles')->onDelete('cascade');
             $table->foreign('leccion_id')->references('id')->on('lecciones')->onDelete('cascade');
 
 
 
-            $table->timestamps();
+
         });
     }
 
