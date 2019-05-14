@@ -39,7 +39,7 @@ class CreatePerfilesTable extends Migration
             $table->foreign('etnia_id')->references('id')->on('etnias')->onDelete('cascade');
             $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('cascade');
             $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
-            $table->foreign('nacionalidad_id')->references('id')->on('nacionalidad')->onDelete('cascade');
+            $table->foreign('nacionalidad_id')->references('id')->on('nacionalidades')->onDelete('cascade');
 
             // agregar fechas
             $table->timestamps();
@@ -54,5 +54,6 @@ class CreatePerfilesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('perfiles');
+
     }
 }
