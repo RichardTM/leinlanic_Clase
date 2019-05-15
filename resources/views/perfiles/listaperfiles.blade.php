@@ -55,7 +55,7 @@
     </tbody>
     <table>
             <tr>
-                <td><a href="/lecciones/crear" role="button">CREAR NUEVO</a></td>
+                <td><a href="/perfiles/crear" role="button">CREAR NUEVO</a></td>
             </tr>
         </table>
 </table>

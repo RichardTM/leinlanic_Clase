@@ -52,7 +52,7 @@ class ModalidadController extends Controller
     public function list()
     {
         $rs = $this->index();
-        return view('modalidades.listamodalidad', ['rs' => $rs]);
+        return view('modalidades/listamodalidades', ['rs' => $rs]);
 
     }
 }
