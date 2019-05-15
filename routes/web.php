@@ -12,29 +12,7 @@ use App\Empresa;
 |
 */
 
-Route::get('/', function () {
-    return view('Home');
-});
 
-//SEXOS
-Route::get('sexos/editar/{sexo}','SexoController@edit');
-Route::get('sexos/lista','SexoController@list');
-Route::get('sexos/crear','SexoController@create');
-Route::get('sexos','SexoController@index');
-Route::get('sexos/{sexo}','SexoController@show');
-Route::post('sexos','SexoController@store');
-Route::patch('sexos/{sexo}','SexoController@update');
-Route::delete('sexos/{sexo}','SexoController@destroy');
-
-//Modalidades
-Route::get('modalidades/editar/{modalidad}','ModalidadController@edit');
-Route::get('modalidades/lista','ModalidadController@list');
-Route::get('modalidades/crear','ModalidadController@create');
-Route::get('modalidades','ModalidadController@index');
-Route::get('modalidades/{modalidad}','ModalidadController@show');
-Route::post('modalidades','ModalidadController@store');
-Route::patch('modalidades/{modalidad}','ModalidadController@update');
-Route::delete('modalidades/{modalidad}','ModalidadController@destroy');
 
 //Municipios
 Route::get('municipios/editar/{municipio}','MunicipioController@edit');
