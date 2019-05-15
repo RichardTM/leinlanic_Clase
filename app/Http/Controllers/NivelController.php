@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Perfil;
+use App\Nivel;
 
-class EmpresaController extends Controller
+class NivelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-
+        $qs =Nivel::all();
+        return $qs;
     }
 
     /**
@@ -24,7 +25,8 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('niveles.crearniveles');
+
     }
 
     /**
@@ -35,51 +37,64 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nivel= new Nivel();
+        $nivel->nivel = $request['nivel'];
+        $nivel->save();
+        return redirect('niveles/lista');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Empresa $empresa)
+    public function show(Nivel $nivel)
     {
-        //
+        return $nivel;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empresa $empresa)
+    public function edit(Nivel $nivel)
     {
-        //
+        return view('niveles/editarniveles', ['nivel' => $nivel]);
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(Request $request, Nivel $nivel)
     {
-        //
+        $nivel->nivel = $request['nivel'];
+        $nivel->save();
+        return redirect('niveles/lista');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(Nivel $nivel)
     {
-        //
+        $nivel->delete();
+        return redirect('niveles/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('niveles/listaniveles', ['rs' => $rs]);
     }
 }

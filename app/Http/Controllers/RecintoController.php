@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Perfil;
+use App\Recinto;
 
-class EmpresaController extends Controller
+class RecintoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-
+        $sq = Recinto::all();
+        return $sq;
     }
 
     /**
@@ -24,7 +25,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('recintos.crearrecintos');
     }
 
     /**
@@ -35,51 +36,63 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $recinto= new Recinto();
+        $recinto->recinto = $request['recinto'];
+        $recinto->save();
+        return redirect('recintos/lista');
+        }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Empresa $empresa)
+    public function show(Recinto $recinto)
     {
-        //
+        return $recinto;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empresa $empresa)
+    public function edit(Recinto $recinto)
     {
-        //
+        return view('recintos/editarrecintos', ['recinto'=>$recinto]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(Request $request, Recinto $recinto)
     {
-        //
+        $recinto->recinto = $request['recinto'];
+        $recinto->save();
+        return redirect('recintos/lista');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(Recinto $recinto)
     {
-        //
+        $recinto->delete();
+        return redirect('recintos/lista');
+    }
+
+    public function list(){
+
+        $rs = $this->index();
+        return view('recintos/listarecintos', ['rs' => $rs]);
     }
 }
