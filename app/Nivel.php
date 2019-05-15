@@ -8,4 +8,9 @@ class Nivel extends Model
 {
     protected $table= 'niveles';
 
+    public function nivellecciones ()
+    {
+        return $this->belongsTo(Nivelleccion::class);
+    }
+
 }

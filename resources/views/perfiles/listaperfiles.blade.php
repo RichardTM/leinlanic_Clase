@@ -23,15 +23,15 @@
         <tr>
             <td>{{$item->nombres}}</td>
             <td>{{$item->apellidos}}</td>
-            <td>{{$item->sexo_id}}</td>
-            <td>{{$item->recinto_id}}</td>
-            <td>{{$item->carera_id}}</td>
-            <td>{{$item->area_id}}</td>
-            <td>{{$item->modalidad_id}}</td>
-            <td>{{$item->etnia_id}}</td>
-            <td>{{$item->municipio_id}}</td>
-            <td>{{$item->departamento_id}}</td>
-            <td>{{$item->nacionalidad_id}}</td>
+            <td>{{$item->sexo->sexo}}</td>
+            <td>{{$item->recinto->recinto}}</td>
+            <td>{{$item->carrera->carrera}}</td>
+            <td>{{$item->area->area}}</td>
+            <td>{{$item->modalidad->modalidad}}</td>
+            <td>{{$item->etnia->etnia}}</td>
+            <td>{{$item->municipio->municipio}}</td>
+            <td>{{$item->departamento->departamento}}</td>
+            <td>{{$item->nacionalidad->nacionalidad}}</td>
             <td>{{$item->carnet}}</td>
 
             <td>

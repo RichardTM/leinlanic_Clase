@@ -4,6 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Perfil;
+use App\Sexo;
+use App\Recinto;
+use App\Carrera;
+use App\Area;
+use App\Modalidad;
+use App\Etnia;
+use App\Municipio;
+use App\Departamento;
+use App\Nacionalidad;
+
+
 
 class PerfilController extends Controller
 {
@@ -14,8 +25,20 @@ class PerfilController extends Controller
      */
     public function index()
     {
-        $qs =Perfil::all();
-        return $qs;
+        // $qs =Perfil::all();
+        // return $qs;
+
+        return Perfil::with([
+            'sexo',
+            'recinto',
+            'carrera',
+            'area',
+            'modalidad',
+            'etnia',
+            'municipio',
+            'departamento',
+            'nacionalidad'
+        ])->get();
     }
 
     /**
@@ -25,7 +48,35 @@ class PerfilController extends Controller
      */
     public function create()
     {
-        return view('perfiles.crearperfiles');
+        // RELACION PARA SEXOS
+        $sexos = Sexo::all();
+
+        // RELACION PARA RECINTOS
+        $recintos = Recinto::all();
+
+        //RELACION PARA CARRERA
+        $carreras = Carrera::all();
+
+        //RELACION PARA AREA
+        $areas = Area::all();
+
+        //RELACION PARA MODALIDAD
+        $modalidades = Modalidad::all();
+
+        //RELACION PARA ETNIA
+        $etnias = Etnia::all();
+
+        //RELACION PARA MUNICIPIO
+        $municipios = Municipio::all();
+
+        //RELACION PARA DEPARTAMENTO
+        $departamentos = Departamento::all();
+
+        //RELACION PARA NACIONALIDAD
+        $nacionalidades = Nacionalidad::all();
+
+
+        return view('perfiles.crearperfiles', compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades'));
     }
 
     /**
@@ -36,7 +87,7 @@ class PerfilController extends Controller
      */
     public function store(Request $request)
     {
-        $perfil= new Perfil();
+        $perfil = new Perfil();
         $perfil->nombres = $request['nombres'];
         $perfil->apellidos = $request['apellidos'];
         $perfil->sexo_id  = $request['sexo_id'];
@@ -74,7 +125,34 @@ class PerfilController extends Controller
      */
     public function edit(Perfil $perfil)
     {
-        return view('perfiles/editarperfiles', ['perfil' => $perfil]);
+        // RELACION PARA SEXOS
+        $sexos = Sexo::all();
+
+         // RELACION PARA RECINTOS
+         $recintos = Recinto::all();
+
+         //RELACION PARA CARRERA
+         $carreras = Carrera::all();
+
+         //RELACION PARA AREA
+         $areas = Area::all();
+
+         //RELACION PARA MODALIDAD
+         $modalidades = Modalidad::all();
+
+         //RELACION PARA ETNIA
+         $etnias = Etnia::all();
+
+         //RELACION PARA MUNICIPIO
+         $municipios = Municipio::all();
+
+         //RELACION PARA DEPARTAMENTO
+         $departamentos = Departamento::all();
+
+         //RELACION PARA NACIONALIDAD
+         $nacionalidades = Nacionalidad::all();
+
+        return view('perfiles/editarperfiles', ['perfil' => $perfil], compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades'));
     }
 
     /**
@@ -114,7 +192,6 @@ class PerfilController extends Controller
     {
         $perfil->delete();
         return redirect('perfiles/lista');
-
     }
 
 
