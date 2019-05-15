@@ -58,3 +58,5 @@ Route::get('etnias/{etnia}','EtniaController@show');
 Route::post('etnias','EtniaController@store');
 Route::patch('etnias/{etnia}', 'EtniaController@update');
 Route::delete('etnias/{etnia}', 'EtniaController@destroy');
+
+
