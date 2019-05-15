@@ -13,12 +13,45 @@ use App\Empresa;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
 
+//SEXOS
+Route::get('sexos/editar/{sexo}','SexoController@edit');
+Route::get('sexos/lista','SexoController@list');
+Route::get('sexos/crear','SexoController@create');
+Route::get('sexos','SexoController@index');
+Route::get('sexos/{sexo}','SexoController@show');
+Route::post('sexos','SexoController@store');
+Route::patch('sexos/{sexo}','SexoController@update');
+Route::delete('sexos/{sexo}','SexoController@destroy');
 
-Route::get('areas', 'AreaController@index');
-Route::get('areas/{id}', 'AreaController@show');
+//Modalidades
+Route::get('modalidades/editar/{modalidad}','ModalidadController@edit');
+Route::get('modalidades/lista','ModalidadController@list');
+Route::get('modalidades/crear','ModalidadController@create');
+Route::get('modalidades','ModalidadController@index');
+Route::get('modalidades/{modalidad}','ModalidadController@show');
+Route::post('modalidades','ModalidadController@store');
+Route::patch('modalidades/{modalidad}','ModalidadController@update');
+Route::delete('modalidades/{modalidad}','ModalidadController@destroy');
 
+//Municipios
+Route::get('municipios/editar/{municipio}','MunicipioController@edit');
+Route::get('municipios/lista','MunicipioController@list');
+Route::get('municipios/crear','MunicipioController@create');
+Route::get('municipios','MunicipioController@index');
+Route::get('municipios/{municipio}','MunicipioController@show');
+Route::post('municipios','MunicipioController@store');
+Route::patch('municipios/{municipio}','MunicipioController@update');
+Route::delete('municipios/{municipio}','MunicipioController@destroy');
 
-
+//Nacionalidades
+Route::get('nacionalidades/editar/{nacionalidad}','NacionalidadController@edit');
+Route::get('nacionalidades/lista','NacionalidadController@list');
+Route::get('nacionalidades/crear','NacionalidadController@create');
+Route::get('nacionalidades','NacionalidadController@index');
+Route::get('nacionalidades/{nacionalidad}','NacionalidadController@show');
+Route::post('nacionalidades','NacionalidadController@store');
+Route::patch('nacionalidades/{nacionalidad}','NacionalidadController@update');
+Route::delete('nacionalidades/{nacionalidad}','NacionalidadController@destroy');
