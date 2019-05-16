@@ -170,3 +170,16 @@ Route::get('perfiles/{perfil}', 'PerfilController@show');
 Route::post('perfiles', 'PerfilController@store');
 Route::patch('perfiles/{perfil}', 'PerfilController@update');
 Route::delete('perfiles/{perfil}', 'PerfilController@destroy');
+
+
+// RUTAS NIVELLECCIONES
+
+Route::get('nivellecciones/editar/{nivelleccion}', 'NivelleccionController@edit');
+Route::get('nivellecciones/lista', 'NivelleccionController@list');
+Route::get('nivellecciones/crear','NivelleccionController@create');
+
+Route::get('nivellecciones', 'NivelleccionController@index');
+Route::get('nivellecciones/{nivellecion}', 'NivelleccionController@show');
+Route::post('nivellecciones', 'NivelleccionController@store');
+Route::patch('nivellecciones/{nivelleccion}', 'NivelleccionController@update');
+Route::delete('nivellecciones/{nivelleccion}', 'NivelleccionController@destroy');

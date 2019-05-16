@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Etnia extends Model
 {
     protected $table = 'etnias';
+
+    public function perfiles ()
+    {
+        return $this->hasMany(Perfil::class);
+    }
 }

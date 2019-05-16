@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Area;
+use App\Perfil;
 
 class AreaController extends Controller
 {
@@ -12,10 +13,12 @@ class AreaController extends Controller
     {
         $qs =area::all();
         return $qs;
+
     }
 
     public function create()
     {
+
         return view('areas.creararea');
     }
 

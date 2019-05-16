@@ -3,19 +3,29 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Sexo;
+use App\Perfil;
 
 class SexoController extends Controller
 {
     public function index()
     {
-        $qs = Sexo::all();
-         return $qs;
+         $qs = Sexo::all();
+          return $qs;
+
+        // return Sexo::with([
+        //     'perfiles'
+        // ])->get();
 
     }
 
     public function create()
     {
-        return view ('sexos.crearsexo');
+
+        // $perfiles=Perfil::all();
+        // return view('sexos.crearsexo', compact('perfiles'));
+
+        return view('sexos.crearpsexo');
+
     }
 
     public function store(Request $request)
