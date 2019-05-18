@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Nivelleccion;
 use App\Nivel;
+use App\Leccion;
 
 class NivelleccionController extends Controller
 {
@@ -33,12 +34,12 @@ class NivelleccionController extends Controller
         $niveles = Nivel::all();
 
         // RELACION PARA LECCION
-        $lecciones = Nivel::all();
+        $lecciones = Leccion::all();
 
 
 
 
-        return view('nivellecciones.crearnivelleciones', compact('niveles', 'lecciones'));
+        return view('nivellecciones.crearnivellecciones', compact('niveles', 'lecciones'));
     }
 
     /**
@@ -51,7 +52,7 @@ class NivelleccionController extends Controller
     {
         $nivelleccion = new Nivelleccion();
         $nivelleccion->nivel_id = $request['nivel_id'];
-        $nivelleccion->apellidos = $request['leccion_id'];
+        $nivelleccion->leccion_id = $request['leccion_id'];
 
         $nivelleccion->save();
 
@@ -82,7 +83,7 @@ class NivelleccionController extends Controller
         $niveles = Nivel::all();
 
         // RELACION PARA LECCION
-        $lecciones = Nivel::all();
+        $lecciones = Leccion::all();
 
         return view('nivellecciones/editarnivellecciones', ['nivelleccion' => $nivelleccion], compact('niveles', 'lecciones'));
     }
@@ -94,11 +95,11 @@ class NivelleccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Nivelleccion $nivelleccion)
     {
-        $nivelleccion = new Nivelleccion();
+
         $nivelleccion->nivel_id = $request['nivel_id'];
-        $nivelleccion->apellidos = $request['leccion_id'];
+        $nivelleccion->leccion_id = $request['leccion_id'];
 
         $nivelleccion->save();
 

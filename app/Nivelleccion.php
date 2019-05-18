@@ -20,4 +20,7 @@ class Nivelleccion extends Model
     {
         return $this->belongsTo(Leccion::class);
     }
+
+
+
 }

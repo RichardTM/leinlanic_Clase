@@ -12,4 +12,14 @@ class Leccion extends Model
     {
         return $this->hasMany(Nivelleccion::class);
     }
+
+    public function palabras ()
+    {
+        return $this->hasMany(Palabra::class);
+    }
+
+    public function examenes ()
+    {
+        return $this->hasMany(Examen::class);
+    }
 }
