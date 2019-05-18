@@ -10,7 +10,7 @@ class Nivel extends Model
 
     public function nivellecciones ()
     {
-        return $this->belongsTo(Nivelleccion::class);
+        return $this->hasMany(Nivelleccion::class);
     }
 
 }

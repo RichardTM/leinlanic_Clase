@@ -183,3 +183,29 @@ Route::get('nivellecciones/{nivellecion}', 'NivelleccionController@show');
 Route::post('nivellecciones', 'NivelleccionController@store');
 Route::patch('nivellecciones/{nivelleccion}', 'NivelleccionController@update');
 Route::delete('nivellecciones/{nivelleccion}', 'NivelleccionController@destroy');
+
+
+// RUTAS PALABRAS
+
+Route::get('palabras/editar/{palabra}', 'PalabraController@edit');
+Route::get('palabras/lista', 'PalabraController@list');
+Route::get('palabras/crear','PalabraController@create');
+
+Route::get('palabras', 'PalabraController@index');
+Route::get('palabras/{palabra}', 'PalabraController@show');
+Route::post('palabras', 'PalabraController@store');
+Route::patch('palabras/{palabra}', 'PalabraController@update');
+Route::delete('palabras/{palabra}', 'PalabraController@destroy');
+
+
+// RUTAS EXAMENES
+
+Route::get('examenes/editar/{examen}', 'ExamenController@edit');
+Route::get('examenes/lista', 'ExamenController@list');
+Route::get('examenes/crear','ExamenController@create');
+
+Route::get('examenes', 'ExamenController@index');
+Route::get('examenes/{examen}', 'ExamenController@show');
+Route::post('examenes', 'ExamenController@store');
+Route::patch('examenes/{examen}', 'ExamenController@update');
+Route::delete('examenes/{examen}', 'ExamenController@destroy');
