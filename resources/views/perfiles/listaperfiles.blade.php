@@ -1,61 +1,61 @@
-<table>
-
-    <tbody>
-        <thead>
+@extends('layouts.estilos')
+@section('content')
+<div class="container-fluid">
+    <h1 class="text-center">USUARIOS REGISTRADOS</h1>
+    </h1>
+    <table class="table table-sm table-hover table-bordered">
+        <tbody>
+            <thead class="thead-dark">
+                <tr class="text-center">
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Sexo</th>
+                    <th>Recinto</th>
+                    <th>Carrera</th>
+                    <th>Area</th>
+                    <th>Modalidad</th>
+                    <th>Etnia</th>
+                    <th>Municipio</th>
+                    <th>Departamento</th>
+                    <th>Nacionalidad</th>
+                    <th>Carnet</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+        <tbody class="table-light">
+            @foreach ($rs as $item)
             <tr>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Sexo</th>
-                <th>Recinto</th>
-                <th>Carrera</th>
-                <th>Area</th>
-                <th>Modalidad</th>
-                <th>Etnia</th>
-                <th>Municipio</th>
-                <th>Departamento</th>
-                <th>Nacionalidad</th>
-                <th>Carnet</th>
-                <th>Opciones</th>
+                <td>{{$item->nombres}}</td>
+                <td>{{$item->apellidos}}</td>
+                <td>{{$item->sexo->sexo}}</td>
+                <td>{{$item->recinto->recinto}}</td>
+                <td>{{$item->carrera->carrera}}</td>
+                <td>{{$item->area->area}}</td>
+                <td>{{$item->modalidad->modalidad}}</td>
+                <td>{{$item->etnia->etnia}}</td>
+                <td>{{$item->municipio->municipio}}</td>
+                <td>{{$item->departamento->departamento}}</td>
+                <td>{{$item->nacionalidad->nacionalidad}}</td>
+                <td>{{$item->carnet}}</td>
+
+                <td>
+                    <div class="btn-group" role="group">
+                        <a href="/perfiles/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                        <a href="/perfiles/crear" class="btn btn-success btn-sm"><i class="fas fa-user-plus"></i></a>
+                        <form action="{{url('perfiles', $item->id)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
+                            @csrf()
+                            @method('DELETE')
+                            <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                        </form>
+
+                    </div>
+                </td>
             </tr>
-        </thead>
-    <tbody>
-        @foreach ($rs as $item)
-        <tr>
-            <td>{{$item->nombres}}</td>
-            <td>{{$item->apellidos}}</td>
-            <td>{{$item->sexo->sexo}}</td>
-            <td>{{$item->recinto->recinto}}</td>
-            <td>{{$item->carrera->carrera}}</td>
-            <td>{{$item->area->area}}</td>
-            <td>{{$item->modalidad->modalidad}}</td>
-            <td>{{$item->etnia->etnia}}</td>
-            <td>{{$item->municipio->municipio}}</td>
-            <td>{{$item->departamento->departamento}}</td>
-            <td>{{$item->nacionalidad->nacionalidad}}</td>
-            <td>{{$item->carnet}}</td>
+            @endforeach
 
-            <td>
-                <a href="/perfiles/editar/{{$item->id}}"><button type="button" class="button button1">EDITAR </a></button>
+        </tbody>
 
-                <form action="{{url('perfiles', $item->id)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
+    </table>
 
-
-                    @csrf()
-                    @method('DELETE')
-
-                    <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();">
-                        <button type=".button" class="button button2">ELIMINAR</button></a>
-
-                </form>
-
-            </td>
-        </tr>
-        @endforeach
-
-    </tbody>
-    <table>
-            <tr>
-                <td><a href="/perfiles/crear" role="button">CREAR NUEVO</a></td>
-            </tr>
-        </table>
-</table>
+</div>
+@endsection

@@ -1,13 +1,13 @@
-<table>
+@extends('layouts.estilos')
+@section('content')
+
+<table class="table">
 
     <tbody>
         <thead>
             <tr>
                 <th>Nivel</th>
                 <th>Leccion</th>
-                <th>Fecha Creada</th>
-                <th>Fecha  Actualizada</th>
-
                 <th>Opciones</th>
             </tr>
         </thead>
@@ -16,8 +16,6 @@
         <tr>
             <td>{{$item->nivel->nivel}}</td>
             <td>{{$item->leccion->titulo}}</td>
-            <td>{{$item->created_at}}</td>
-            <td>{{$item->updated_at}}</td>
 
 
             <td>
@@ -45,3 +43,5 @@
             </tr>
         </table>
 </table>
+
+@endsection

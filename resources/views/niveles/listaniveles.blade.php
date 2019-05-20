@@ -1,4 +1,7 @@
-<table>
+@extends('layouts.estilos')
+@section('content')
+
+<table class="table table-border">
 
     <tbody>
         <thead>
@@ -38,3 +41,4 @@
         </tr>
     </table>
 </table>
+@endsection
