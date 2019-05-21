@@ -16,7 +16,7 @@ class CreateLeccionesTable extends Migration
         Schema::create('lecciones', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo', 150);
-            $table->string('teoria', 150);
+            $table->string('teoria', 600);
             $table->string('acierto', 150);
 
 

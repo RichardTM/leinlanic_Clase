@@ -1,33 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.estilos')
+@section('content')
+<div class="container-fluid">
 
-<head>
-    <title>Welcome</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
+    <h1 class="display-1 text-center">BIENVENIDOS A <strong>LEINLA NIC</strong> URACCAN</h1>
 
-<style>
-    body {
-        background-image: url(http://k42.kn3.net/D8A69F383.jpg);
-    }
-</style>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card-deck col-md-8">
+                <div class="card" style="filter:drop-shadow(9px 9px 3px #999999)">
+                    <div class="card-header text-center">
+                        <h1>Mision</h1>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text text-justify">Formar hombres y mujeres con conocimientos, saberes, capacidades, valores, principios, actitudes humanistas, sentido de emprendimiento e innovación, en equilibrio y armonía con la Madre Tierra para el fortalecimiento de las Autonomías de los Pueblos.</p>
+                    </div>
+                </div>
+                <div class="card" style="filter:drop-shadow(9px 9px 3px #999999)">
+                    <div class="card-header text-center">
+                        <h1>Vision</h1>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text text-justify">Ser líder en el modelo de Universidad Comunitaria Intercultural reconocida a nivel regional, nacional e internacional por su calidad y pertinencia, que acompaña procesos de gestión e incidencia, para la construcción de ciudadanías interculturales de género, que conlleven al Buen Vivir y la autonomía de los pueblos indígenas, afrodescendientes, mestizos y otras comunidades étnicas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="../img/usuario.png" class="figure-img img-fluid rounded" style="width: 300px; height: 300px; display: block; margin-left: 90px;" alt="...">
+                </figure>
+                <a class="btn btn-success btn-lg btn-block" href='#' role="button">Iniciar</a>
+                <a class="btn btn-success btn-lg btn-block" href='/admin' role="button">Admin</a>
 
-<body>
-    <div class="row">
-        <div class="container">
-            <div class="jumbotron text-center" style="background-color:#c5fef5; margin-top: 80px;">
-                <img src="../img/logo.png" alt="logo">
-                <h1 class="display-4"> Bienvenidos a LEINLANIC</h1>
-                <p> ...Donde aprenderas la lengua nativa del pueblo misquito de Nicaragua... </p>
-                <a class="btn btn-success btn-lg" href='registrar' role="button">Comencemos !</a>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>
+@endsection

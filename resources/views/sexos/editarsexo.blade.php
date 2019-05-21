@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
-<!--Formulario editar -->
-<form action="{{url('sexos', $sexo->id)}}" method="POST" role="form">
-        @csrf()
-        @method('PATCH')
-        <legend>Agregar sexo</legend>
-        <div class="form-group">
-            <label for="">Nombre del sexo</label>
-            <input value="{{$sexo->sexo}}" name="sexo" type="text" class="form-control" id="sexo" placeholder="sexo">
+@extends('layouts.estilos')
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center display-5">EDITAR SEXO</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{{url('sexos', $sexo->id)}}" method="POST" role="form">
+                        @csrf()
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="">Nombre del sexo</label>
+                            <input value="{{$sexo->sexo}}" name="sexo" type="text" class="form-control" id="sexo" placeholder="sexo">
+                        </div>
+                        <a href="/sexos/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Guardad</button>
-    </form>
-
-</body>
-</html>
+    </div>
+</div>
+@endsection

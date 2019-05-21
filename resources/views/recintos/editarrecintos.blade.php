@@ -1,11 +1,26 @@
-<form action="{{url('recintos', $recinto->id)}}" method="POST" role="form">
-        @csrf()
-        @method('PATCH')
-        <legend>Editar el Recinto</legend>
-        <div class="form-group">
-            <label for="">Recinto</label>
-            <input value="{{$recinto->recinto}}" name="recinto" type="text" class="form-control" id="recinto" placeholder="Ingrese el Recinto">
+@extends('layouts.estilos')
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center display-5">EDITAR RECINTO</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{{url('recintos', $recinto->id)}}" method="POST" role="form">
+                        @csrf()
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="">Recinto</label>
+                            <input value="{{$recinto->recinto}}" name="recinto" type="text" class="form-control" id="recinto" placeholder="Ingrese el Recinto">
+                        </div>
+                        <a href="/recintos/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
+    </div>
+</div>
+@endsection

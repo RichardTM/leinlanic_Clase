@@ -4,7 +4,6 @@
     <h1 class="text-center">USUARIOS REGISTRADOS</h1>
     </h1>
     <table class="table table-sm table-hover table-bordered">
-        <tbody>
             <thead class="thead-dark">
                 <tr class="text-center">
                     <th>Nombres</th>
@@ -38,7 +37,7 @@
                 <td>{{$item->nacionalidad->nacionalidad}}</td>
                 <td>{{$item->carnet}}</td>
 
-                <td>
+                <td class="text-center">
                     <div class="btn-group" role="group">
                         <a href="/perfiles/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
                         <a href="/perfiles/crear" class="btn btn-success btn-sm"><i class="fas fa-user-plus"></i></a>
@@ -56,6 +55,8 @@
         </tbody>
 
     </table>
+    <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+    <a href="/perfiles/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
 
 </div>
 @endsection

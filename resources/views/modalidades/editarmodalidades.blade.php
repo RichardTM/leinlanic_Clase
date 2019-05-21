@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.estilos')
+@section('content')
 
-<!--Formulario editar -->
-<form action="{{url('modalidades', $modalidad->id)}}" method="POST" role="form">
-        @csrf()
-        @method('PATCH')
-        <legend>Agregar modalidad</legend>
-        <div class="form-group">
-            <label for="">Nombre de la modalidad</label>
-            <input value="{{$modalidad->modalidad}}" name="modalidad" type="text" class="form-control" id="modalidad" placeholder="agregue modalidad">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center display-5">EDITAR MODALIDAD</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{{url('modalidades', $modalidad->id)}}" method="POST" role="form">
+                        @csrf()
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="">Nombre de la modalidad</label>
+                            <input value="{{$modalidad->modalidad}}" name="modalidad" type="text" class="form-control" id="modalidad" placeholder="agregue modalidad">
+                        </div>
+                        <a href="/modalidades/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+                        <button type="submit" class="btn btn-success">Guardad</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Guardad</button>
-    </form>
-</body>
-</html>
+    </div>
+</div>
+@endsection

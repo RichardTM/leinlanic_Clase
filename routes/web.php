@@ -14,10 +14,27 @@ use App\Empresa;
 
 Route::get('/', function () {
 
-        return view('home');
+        return view('welcome');
 
     });
-Route::get('registrar', function () {return view('registro');});
+    //Autentificacion rutas
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'Auth\LoginController@login');
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+    //Registracion rutas
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'Auth\RegisterController@register');
+    //Reseteo de contraseña rutas
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('admin', function () {return view('admin');});
+
 
 
     // A R E A
@@ -210,3 +227,4 @@ Route::get('examenes/{examen}', 'ExamenController@show');
 Route::post('examenes', 'ExamenController@store');
 Route::patch('examenes/{examen}', 'ExamenController@update');
 Route::delete('examenes/{examen}', 'ExamenController@destroy');
+

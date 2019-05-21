@@ -40,13 +40,13 @@ class NacionalidadController extends Controller
     {
         $nacionalidad->nacionalidad = $request['nacionalidad'];
         $nacionalidad->save();
-        return redirect('nacioanlidades/lista');
+        return redirect('nacionalidades/lista');
     }
 
     public function destroy(Nacionalidad $nacionalidad)
     {
         $nacionalidad->delete();
-        return redirect('nacioanlidades/lista');
+        return redirect('nacionalidades/lista');
     }
 
     public function list()

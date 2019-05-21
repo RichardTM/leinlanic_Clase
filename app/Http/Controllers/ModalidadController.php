@@ -33,7 +33,7 @@ class ModalidadController extends Controller
 
     public function edit(Modalidad $modalidad)
     {
-        return view('modalidades.editarmodalidad', ['modalidad' => $modalidad]);
+        return view('modalidades.editarmodalidades', ['modalidad' => $modalidad]);
     }
 
     public function update(Request $request, Modalidad $modalidad)

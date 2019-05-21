@@ -24,7 +24,7 @@ class SexoController extends Controller
         // $perfiles=Perfil::all();
         // return view('sexos.crearsexo', compact('perfiles'));
 
-        return view('sexos.crearpsexo');
+        return view('sexos.crearsexo');
 
     }
 

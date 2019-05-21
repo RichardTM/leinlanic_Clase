@@ -111,8 +111,8 @@
                     <label for="">Carnet</label>
                     <input type="text" class="form-control" id="carnet" name="carnet" placeholder="Escriba el Carnet">
                 </div>
-
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+                <button type="submit" class="btn btn-success">Guardar</button>
             </form>
         </div>
 

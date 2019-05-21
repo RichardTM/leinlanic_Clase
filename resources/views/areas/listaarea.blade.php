@@ -1,28 +1,39 @@
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>AREA</th>
-            <th>OPCIONES</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($rs as $item)
-            <tr>
-                <td>{{$item->area}}</td>
-                <td>
-                    <a href="/areas/editar/{{$item->id}}">Editar</a>
-                    <form action="{{url('areas', $item->id)}}" method="POST" id="delete_form_{{$item->id}}">
-                        @csrf()
-                        @method('DELETE')
-                        <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();">Eliminar</a>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-    </tbody>
-</table>
-<table>
-        <tr>
-            <td><a href="/areas/crear" role="button">CREAR NUEVO</a></td>
-        </tr>
-</table>
+@extends('layouts.estilos')
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+        <table class="table table-hover table-sm table-bordered">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th>AREA</th>
+                    <th>OPCIONES</th>
+                </tr>
+            </thead>
+            <tbody class="table-light">
+                @foreach ($rs as $item)
+                <tr>
+                    <td>{{$item->area}}</td>
+
+                    <td class="text-center">
+                        <div class="btn-group" role="group">
+                            <a href="/areas/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                            <a href="/areas/crear" class="btn btn-success btn-sm"><i class="fas fa-user-plus"></i></a>
+                            <form action="{{url('areas', $item->id)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
+                                @csrf()
+                                @method('DELETE')
+                                <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                            </form>
+                        </div>
+                    </td>
+
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+        <a href="/areas/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
+        </div>
+    </div>
+</div>
+@endsection

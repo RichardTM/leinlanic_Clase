@@ -1,11 +1,26 @@
-<form action="{{url('niveles', $nivel->id)}}" method="POST" role="form">
-        @csrf()
-        @method('PATCH')
-        <legend>Editar el Nivel</legend>
-        <div class="form-group">
-            <label for="">Nivel</label>
-            <input value="{{$nivel->nivel}}" name="nivel" type="text" class="form-control" id="nivel" placeholder="Ingrese el Nivel">
+@extends('layouts.estilos')
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center display-5">EDITAR NIVELES</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{{url('niveles', $nivel->id)}}" method="POST" role="form">
+                        @csrf()
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="">Nivel</label>
+                            <input value="{{$nivel->nivel}}" name="nivel" type="text" class="form-control" id="nivel" placeholder="Ingrese el Nivel">
+                        </div>
+                        <a href="/niveles/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
+    </div>
+</div>
+@endsection
