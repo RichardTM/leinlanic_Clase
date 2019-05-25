@@ -15,12 +15,12 @@ class CreateOpcionesTable extends Migration
     {
         Schema::create('opciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('traduccionpalabra_id');
+            $table->unsignedInteger('traduccion_id');
             $table->string('descripcion', 150);
 
 
             // llaves foraneas
-            $table->foreign('traduccionpalabra_id')->references('id')->on('traduccionpalabras')->onDelete('cascade');
+            $table->foreign('traduccion_id')->references('id')->on('traducciones')->onDelete('cascade');
             $table->timestamps();
         });
     }
