@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Respuesta;
 use Illuminate\Http\Request;
 
-class NivelController extends Controller
+class RespuestaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,10 +41,10 @@ class NivelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Respuesta $respuesta)
     {
         //
     }
@@ -51,10 +52,10 @@ class NivelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Respuesta $respuesta)
     {
         //
     }
@@ -63,10 +64,10 @@ class NivelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Respuesta $respuesta)
     {
         //
     }
@@ -74,10 +75,10 @@ class NivelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Respuesta $respuesta)
     {
         //
     }

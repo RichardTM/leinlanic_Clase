@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Leccion;
 
 class LeccionController extends Controller
 {
@@ -14,8 +13,7 @@ class LeccionController extends Controller
      */
     public function index()
     {
-        $qs =Leccion::all();
-        return $qs;
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class LeccionController extends Controller
      */
     public function create()
     {
-        return view('lecciones.crearlecciones');
+        //
     }
 
     /**
@@ -36,12 +34,7 @@ class LeccionController extends Controller
      */
     public function store(Request $request)
     {
-        $leccion= new Leccion();
-        $leccion->titulo = $request['titulo'];
-        $leccion->teoria = $request['teoria'];
-        $leccion->acierto = $request['acierto'];
-        $leccion->save();
-        return redirect('lecciones/lista');
+        //
     }
 
     /**
@@ -50,9 +43,9 @@ class LeccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Leccion $leccion)
+    public function show($id)
     {
-        return $leccion;
+        //
     }
 
     /**
@@ -61,10 +54,9 @@ class LeccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( Leccion $leccion)
+    public function edit($id)
     {
-        return view('lecciones/editarlecciones', ['leccion' => $leccion]);
-
+        //
     }
 
     /**
@@ -74,14 +66,9 @@ class LeccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Leccion $leccion)
+    public function update(Request $request, $id)
     {
-        $leccion->titulo = $request['titulo'];
-        $leccion->teoria = $request['teoria'];
-        $leccion->acierto = $request['acierto'];
-        $leccion->save();
-        return redirect('lecciones/lista');
-
+        //
     }
 
     /**
@@ -90,16 +77,8 @@ class LeccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Leccion $leccion)
+    public function destroy($id)
     {
-        $leccion->delete();
-        return redirect('lecciones/lista');
+        //
     }
-
-    public function list()
-    {
-        $rs = $this->index();
-        return view('lecciones/listalecciones', ['rs' => $rs]);
-    }
-
 }

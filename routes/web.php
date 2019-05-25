@@ -228,3 +228,28 @@ Route::post('examenes', 'ExamenController@store');
 Route::patch('examenes/{examen}', 'ExamenController@update');
 Route::delete('examenes/{examen}', 'ExamenController@destroy');
 
+
+// RUTAS LENGUAS
+
+Route::get('lenguas/editar/{lengua}', 'LenguaController@edit');
+Route::get('lenguas/lista', 'LenguaController@list');
+Route::get('lenguas/crear','LenguaController@create');
+
+Route::get('lenguas', 'LenguaController@index');
+Route::get('lenguas/{lengua}', 'LenguaController@show');
+Route::post('lenguas', 'LenguaController@store');
+Route::patch('lenguas/{lengua}', 'LenguaController@update');
+Route::delete('lenguas/{lengua}', 'LenguaController@destroy');
+
+
+// RUTAS DESARROLLADORES
+
+Route::get('desarrolladores/editar/{desarrollador}', 'DesarrolladorController@edit');
+Route::get('desarrolladores/lista', 'DesarrolladorController@list');
+Route::get('desarrolladores/crear','DesarrolladorController@create');
+
+Route::get('desarrolladores', 'DesarrolladorController@index');
+Route::get('desarrolladores/{desarrollador}', 'DesarrolladorController@show');
+Route::post('desarrolladores', 'DesarrolladorController@store');
+Route::patch('desarrolladores/{desarrollador}', 'DesarrolladorController@update');
+Route::delete('desarrolladores/{desarrollador}', 'DesarrolladorController@destroy');

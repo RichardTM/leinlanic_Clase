@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePalabrasTable extends Migration
+class CreateItemleccionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreatePalabrasTable extends Migration
      */
     public function up()
     {
-        Schema::create('palabras', function (Blueprint $table) {
+        Schema::create('itemlecciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('español', 150);
-            $table->string('miskito', 150);
             $table->unsignedInteger('leccion_id');
-            $table->string('imagen', 150);
-            $table->string('aciertopalabra', 150);
-
-            $table->timestamps();
+            $table->string('itemleccion', 100);
 
 
+            // llaves foraneas
             $table->foreign('leccion_id')->references('id')->on('lecciones')->onDelete('cascade');
-
+            $table->timestamps();
         });
     }
 
@@ -36,6 +32,6 @@ class CreatePalabrasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('palabras');
+        Schema::dropIfExists('itemlecciones');
     }
 }
