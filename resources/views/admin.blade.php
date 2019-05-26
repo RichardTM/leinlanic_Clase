@@ -4,6 +4,7 @@
     <h1 class="display-1 text-center bg-light">ADMINISTRAR</h1>
     <div class="row">
         <div class="col-md-6">
+            <h1 class="display-5 text-center">USUARIO</h1>
             <ul class="list-group">
                 <li class="list-group-item"><a href="/areas/lista" role="button">AREAS</a></li>
                 <li class="list-group-item"><a href="/carreras/lista" role="button">CARRERAS</a></li>
@@ -19,9 +20,12 @@
         </div>
 
         <div class="col-md-6">
+        <h1 class="display-5 text-center">CURSOS</h1>
             <ul>
                 <li class="list-group-item"><a href="/niveles/lista" role="button">NIVELES</a></li>
                 <li class="list-group-item"><a href="/lecciones/lista" role="button">LECCIONES</a></li>
+                <li class="list-group-item"><a href="/desarrolladores/lista" role="button">DESARROLLADORES</a></li>
+                <li class="list-group-item"><a href="/lenguas/lista" role="button">LENGUAS</a></li>
             </ul>
         </div>
     </div>
