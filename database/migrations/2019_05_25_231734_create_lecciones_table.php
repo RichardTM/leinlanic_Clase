@@ -21,7 +21,7 @@ class CreateLeccionesTable extends Migration
 
 
             // llaves foraneas
-            $table->foreign('nivel_id')->references('id')->on('nivel')->onDelete('cascade');
+            $table->foreign('nivel_id')->references('id')->on('niveles')->onDelete('cascade');
             $table->timestamps();
         });
     }
