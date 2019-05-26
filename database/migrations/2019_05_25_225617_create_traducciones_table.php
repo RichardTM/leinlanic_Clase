@@ -14,7 +14,7 @@ class CreateTraduccionesTable extends Migration
     public function up()
     {
         Schema::create('traducciones', function (Blueprint $table) {
-            $table->icrements('id');
+            $table->increments('id');
             $table->unsignedInteger('palabranueva_id');
             $table->unsignedInteger('traduccionpalabra_id');
 
