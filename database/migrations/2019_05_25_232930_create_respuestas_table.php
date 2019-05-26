@@ -20,7 +20,7 @@ class CreateRespuestasTable extends Migration
 
 
             // llaves foraneas
-            $table->foreign('pregunta_id')->references('id')->on('pregunta')->onDelete('cascade');
+            $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');
             $table->foreign('metodoopcion_id')->references('id')->on('metodoopciones')->onDelete('cascade');
 
             $table->timestamps();
