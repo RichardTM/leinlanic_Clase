@@ -28,7 +28,7 @@
                 <figure class="figure">
                     <img src="../img/usuario.png" class="figure-img img-fluid rounded" style="width: 300px; height: 300px; display: block; margin-left: 90px;" alt="...">
                 </figure>
-                <a class="btn btn-success btn-lg btn-block" href='#' role="button">Iniciar</a>
+                <a class="btn btn-success btn-lg btn-block" href='/interfazusuario' role="button">Iniciar Cursos</a>
                 <a class="btn btn-success btn-lg btn-block" href='/admin' role="button">Admin</a>
 
             </div>

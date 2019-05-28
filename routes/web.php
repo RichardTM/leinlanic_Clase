@@ -32,7 +32,7 @@ Route::get('/', function () {
 
 
     Route::get('/home', 'HomeController@index')->name('home');
-
+    Route::get('interfazusuario', function () {return view('interfazusuario');});
     Route::get('admin', function () {return view('admin');});
 
 
@@ -253,3 +253,14 @@ Route::get('desarrolladores/{desarrollador}', 'DesarrolladorController@show');
 Route::post('desarrolladores', 'DesarrolladorController@store');
 Route::patch('desarrolladores/{desarrollador}', 'DesarrolladorController@update');
 Route::delete('desarrolladores/{desarrollador}', 'DesarrolladorController@destroy');
+
+//RUTAS CURSO
+Route::get('cursos/editar/{curso}','CursoController@edit');
+Route::get('cursos/lista','CursoController@list');
+Route::get('cursos/crear','CursoController@create');
+Route::get('cursos','CursoController@index');
+Route::get('cursos/{curso}','CursoController@show');
+Route::post('cursos','CursoController@store');
+Route::patch('cursos/{curso}','CursoController@update');
+Route::delete('cursos/{curso}','CursoController@destroy');
+
