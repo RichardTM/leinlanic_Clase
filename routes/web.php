@@ -17,6 +17,7 @@ Route::get('/', function () {
         return view('welcome');
 
     });
+
     //Autentificacion rutas
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
@@ -33,6 +34,9 @@ Route::get('/', function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('interfazusuario', function () {return view('interfazusuario');});
+    Route::get('vocabulario', function () {return view('vocabulario');});
+    Route::get('saludo', function () {return view('saludo');});
+    Route::get('familia', function () {return view('familia');});
     Route::get('admin', function () {return view('admin');});
 
 
@@ -54,7 +58,7 @@ Route::get('/', function () {
     Route::get('modalidades/lista','ModalidadController@list');
     Route::get('modalidades/crear','ModalidadController@create');
     Route::get('modalidades','ModalidadController@index');
-    Route::get('modalidades/{modalidad}','ModalidadController@show');
+     Route::get('modalidades/{modalidad}','ModalidadController@show');
     Route::post('modalidades','ModalidadController@store');
     Route::patch('modalidades/{modalidad}','ModalidadController@update');
     Route::delete('modalidades/{modalidad}','ModalidadController@destroy');

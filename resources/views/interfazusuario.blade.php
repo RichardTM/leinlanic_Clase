@@ -12,7 +12,9 @@
 @section('content')
 <div class="container">
     <h1 class="display-1 text-center bg-light">Mis cursos </h1>
-   <p>
+    <a class="btn btn-success" href='cursos/lista' role="button">Nuevo Cursos</a>
+    <a class="btn btn-success" href='perfiles/lista' role="button"> Perfil </a>
+    <a class="btn btn-success" href='home' role="button"> Progueso </a>
 <br>
 <br>
     <div class="row">
@@ -30,14 +32,6 @@
         </div>
       </div>
 </div>
-
-        <div class="col-md-2">
-           <ul>
-                <a href="/niveles/lista" role="button">NIVELES</a>
-                <a href="/lecciones/lista" role="button">LECCIONES</a>
-            </ul>
-            </div>
-            </div>
 
 @endsection
 

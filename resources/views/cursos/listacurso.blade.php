@@ -39,12 +39,16 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+            <!--<a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>-->
+            <a href="/interfazusuario" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
             <a href="/cursos/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
         </div>
     </div>
 </div>
-
+<br>
+<a href="/vocabulario" class="btn btn-success">VOCABULARIO</i></a>
+<a href="/interfazusuario" class="btn btn-success">SALUDO</i></a>
+<a href="/interfazusuario" class="btn btn-success">FAMILIA</i></a>
 
 @endsection
 

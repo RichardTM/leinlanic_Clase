@@ -55,7 +55,8 @@
         </tbody>
 
     </table>
-    <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
+    <!--<a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>-->
+    <a href="/interfazusuario" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
     <a href="/perfiles/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
 
 </div>
