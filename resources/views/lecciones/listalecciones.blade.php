@@ -8,17 +8,17 @@
                 <thead class="thead-dark">
                     <tr class="text-center">
                         <th>Titulo</th>
-                        <th>Teoria</th>
-                        <th>Aciertos</th>
+                        <th>Descripción</th>
+                        <th>Nivel</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody class="table-light">
                     @foreach ($rs as $item)
                     <tr>
-                        <td>{{$item->titulo}}</td>
-                        <td>{{$item->teoria}}</td>
-                        <td>{{$item->acierto}}</td>
+                        <td>{{$item->leccion}}</td>
+                        <td>{{$item->descripcion}}</td>
+                        <td>{{$item->nivel_id}}</td>
 
                         <td class="text-center">
                             <div class="btn-group" role="group">

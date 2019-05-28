@@ -189,20 +189,6 @@ Route::post('perfiles', 'PerfilController@store');
 Route::patch('perfiles/{perfil}', 'PerfilController@update');
 Route::delete('perfiles/{perfil}', 'PerfilController@destroy');
 
-
-// // RUTAS NIVELLECCIONES
-
-// Route::get('nivellecciones/editar/{nivelleccion}', 'NivelleccionController@edit');
-// Route::get('nivellecciones/lista', 'NivelleccionController@list');
-// Route::get('nivellecciones/crear','NivelleccionController@create');
-
-// Route::get('nivellecciones', 'NivelleccionController@index');
-// Route::get('nivellecciones/{nivellecion}', 'NivelleccionController@show');
-// Route::post('nivellecciones', 'NivelleccionController@store');
-// Route::patch('nivellecciones/{nivelleccion}', 'NivelleccionController@update');
-// Route::delete('nivellecciones/{nivelleccion}', 'NivelleccionController@destroy');
-
-
 // RUTAS PALABRAS
 
 Route::get('palabras/editar/{palabra}', 'PalabraController@edit');
@@ -253,3 +239,126 @@ Route::get('desarrolladores/{desarrollador}', 'DesarrolladorController@show');
 Route::post('desarrolladores', 'DesarrolladorController@store');
 Route::patch('desarrolladores/{desarrollador}', 'DesarrolladorController@update');
 Route::delete('desarrolladores/{desarrollador}', 'DesarrolladorController@destroy');
+
+// C U R S O S
+
+Route::get('cursos/editar/{curso}','CursoController@edit');
+Route::get('cursos/lista','CursoController@list');
+Route::get('cursos/crear','CursoController@create');
+
+Route::get('cursos','CursoController@index');
+Route::get('cursos/{curso}','CursoController@show');
+Route::post('cursos','CursoController@store');
+Route::patch('cursos/{curso}','CursoController@update');
+Route::delete('cursos/{curso}','CursoController@destroy');
+
+//ITEM LECCION
+Route::get('itmlec/editar/{itlc}','ItemleccionController@edit');
+Route::get('itmlec/lista','ItemleccionController@list');
+Route::get('itmlec/crear','ItemleccionController@create');
+
+Route::get('itmlec','ItemleccionController@index');
+Route::get('itmlec/{itlc}','ItemleccionController@show');
+Route::post('itmlec','ItemleccionController@store');
+Route::patch('itmlec/{itlc}','ItemleccionController@update');
+Route::delete('itmlec/{itlc}','ItemleccionController@destroy');
+
+//PREGUNTAS
+Route::get('preguntas/editar/{pregunta}','PreguntaController@edit');
+Route::get('preguntas/lista','PreguntaController@list');
+Route::get('preguntas/crear','PreguntaController@create');
+
+Route::get('preguntas','PreguntaController@index');
+Route::get('preguntas/{pregunta}','PreguntaController@show');
+Route::post('preguntas','PreguntaController@store');
+Route::patch('preguntas/{pregunta}','PreguntaController@update');
+Route::delete('preguntas/{pregunta}','PreguntaController@destroy');
+
+//PREGUNTA METODO --pendiente lista editar y probar
+// Route::get('mtpreg/editar/{pm}','PreguntametodoController@edit');
+Route::get('mtpreg/lista','PreguntametodoController@list');
+Route::get('mtpreg/crear','PreguntametodoController@create');
+
+// Route::get('mtpreg','PreguntametodoController@index');
+// Route::get('mtpreg/{pm}','PreguntametodoController@show');
+Route::post('mtpreg','PreguntametodoController@store');
+// Route::patch('mtpreg/{pm}','PreguntametodoController@update');
+// Route::delete('mtpreg/{pm}','PreguntametodoController@destroy');
+
+
+//METODOS
+Route::get('metodos/editar/{metodo}', 'MetodoController@edit');
+Route::get('metodos/lista', 'MetodoController@list');
+Route::get('metodos/crear','MetodoController@create');
+
+Route::get('metodos', 'MetodoController@index');
+Route::get('metodos/{metodo}', 'MetodoController@show');
+Route::post('metodos', 'MetodoController@store');
+Route::patch('metodos/{metodo}', 'MetodoController@update');
+Route::delete('metodos/{metodo}', 'MetodoController@destroy');
+
+//OPCIONES **pendiente lista y probar
+Route::get('opciones/editar/{opcion}','OpcionController@edit');
+Route::get('opciones/lista', 'OpcionController@list');
+Route::get('opciones/crear','OpcionController@create');
+
+Route::get('opciones', 'OpcionController@index');
+Route::get('opciones/{opcion}', 'OpcionController@show');
+Route::post('opciones', 'OpcionController@store');
+Route::patch('opciones/{opcion}', 'OpcionController@update');
+Route::delete('opciones/{opcion}', 'OpcionController@destroy');
+
+//TIPO PALABRA
+Route::get('tipopalabras/editar/{tipopalabra}','TipopalabraController@edit');
+Route::get('tipopalabras/lista', 'TipopalabraController@list');
+Route::get('tipopalabras/crear','TipopalabraController@create');
+
+Route::get('tipopalabras', 'TipopalabraController@index');
+Route::get('tipopalabras/{tipopalabra}', 'TipopalabraController@show');
+Route::post('tipopalabras', 'TipopalabraController@store');
+Route::patch('tipopalabras/{tipopalabra}', 'TipopalabraController@update');
+Route::delete('tipopalabras/{tipopalabra}', 'TipopalabraController@destroy');
+
+//PALABRA NUEVAS
+Route::get('palabranuevas/editar/{palabranueva}','PalabranuevaController@edit');
+Route::get('palabranuevas/lista','PalabranuevaController@list');
+Route::get('palabranuevas/crear','PalabranuevaController@create');
+
+Route::get('palabranuevas','PalabranuevaController@index');
+Route::get('palabranuevas/{palabranueva}','PalabranuevaController@show');
+Route::post('palabranuevas', 'PalabranuevaController@store');
+Route::patch('palabranuevas/{palabranueva}','PalabranuevaController@update');
+Route::delete('palabranuevas/{palabranueva}','PalabranuevaController@destroy');
+
+//TRADUCCION PALABRA
+Route::get('traduccionesp/editar/{traduccionpalabra}','TraduccionpalabraController@edit');
+Route::get('traduccionesp/lista','TraduccionpalabraController@list');
+Route::get('traduccionesp/crear','TraduccionpalabraController@create');
+
+Route::get('traduccionesp','TraduccionpalabraController@index');
+Route::get('traduccionesp/{traduccionpalabra}','TraduccionpalabraController@show');
+Route::post('traduccionesp', 'TraduccionpalabraController@store');
+Route::patch('traduccionesp/{traduccionpalabra}','TraduccionpalabraController@update');
+Route::delete('traduccionesp/{traduccionpalabra}','TraduccionpalabraController@destroy');
+
+//TRADUCCIONES
+Route::get('traducciones/editar/{traduccion}','TraduccionController@edit');
+Route::get('traducciones/lista','TraduccionController@list');
+Route::get('traducciones/crear','TraduccionController@create');
+
+Route::get('traducciones','TraduccionController@index');
+Route::get('traducciones/{traduccion}','TraduccionController@show');
+Route::post('traducciones', 'TraduccionController@store');
+Route::patch('traducciones/{traduccion}','TraduccionController@update');
+Route::delete('traducciones/{traduccion}','TraduccionController@destroy');
+
+//METODO OPCION
+Route::get('metodoopciones/editar/{metodoopcion}','MetodoopcionController@edit');
+Route::get('metodoopciones/lista','MetodoopcionController@list');
+Route::get('metodoopciones/crear','MetodoopcionController@create');
+
+Route::get('metodoopciones','MetodoopcionController@index');
+Route::get('metodoopciones/{metodoopcion}','MetodoopcionController@show');
+Route::post('metodoopciones', 'MetodoopcionController@store');
+Route::patch('metodoopciones/{metodoopcion}','MetodoopcionController@update');
+Route::delete('metodoopciones/{metodoopcion}','MetodoopcionController@destroy');

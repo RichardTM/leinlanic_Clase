@@ -11,21 +11,11 @@ class SexoController extends Controller
     {
          $qs = Sexo::all();
           return $qs;
-
-        // return Sexo::with([
-        //     'perfiles'
-        // ])->get();
-
     }
 
     public function create()
     {
-
-        // $perfiles=Perfil::all();
-        // return view('sexos.crearsexo', compact('perfiles'));
-
         return view('sexos.crearsexo');
-
     }
 
     public function store(Request $request)

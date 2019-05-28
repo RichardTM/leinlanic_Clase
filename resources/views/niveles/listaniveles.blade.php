@@ -2,12 +2,14 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <table class="table table-sm table-hover table-bordered">
                     <thead class="thead-dark">
                         <tr class="text-center">
                             <th>Nivel</th>
+                            <th>Descripcion</th>
+                            <th>Curso</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -15,6 +17,8 @@
                     @foreach ($rs as $item)
                     <tr>
                         <td>{{$item->nivel}}</td>
+                        <td>{{$item->descripcion}}</td>
+                        <td>{{$item->curso->curso}}</td>
                         <td class="text-center">
                         <div class="btn-group" role="group">
                             <a href="/niveles/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>

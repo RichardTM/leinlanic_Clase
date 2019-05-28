@@ -4,82 +4,66 @@ namespace App\Http\Controllers;
 
 use App\Traduccionpalabra;
 use Illuminate\Http\Request;
+use App\Palabranueva;
+use App\Lengua;
 
 class TraduccionpalabraController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return Traduccionpalabra::with([
+            'palabranueva',
+            'lengua',
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $palabranuevas = Palabranueva::all();
+        $lenguas = Lengua::all();
+        return view('traduccionp.creartraduccionp', compact('palabranuevas','lenguas'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $traduccionpalabra = new Traduccionpalabra();
+        $traduccionpalabra->palabranueva_id = $request['palabranueva_id'];
+        $traduccionpalabra->lengua_id = $request['lengua_id'];
+        $traduccionpalabra->traduccion = $request['traduccion'];
+        $traduccionpalabra->save();
+        return redirect('traduccionesp/lista');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Traduccionpalabra  $traduccionpalabra
-     * @return \Illuminate\Http\Response
-     */
     public function show(Traduccionpalabra $traduccionpalabra)
     {
-        //
+        return $traduccionpalabra;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Traduccionpalabra  $traduccionpalabra
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Traduccionpalabra $traduccionpalabra)
     {
-        //
+        $palabranuevas = Palabranueva::all();
+        $lenguas = Lengua::all();
+        return view('traduccionp.editartraduccionp', ['traduccionpalabra' => $traduccionpalabra], compact('palabranuevas','lenguas'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Traduccionpalabra  $traduccionpalabra
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Traduccionpalabra $traduccionpalabra)
     {
-        //
+        $traduccionpalabra->palabranueva_id = $request['palabranueva_id'];
+        $traduccionpalabra->lengua_id = $request['lengua_id'];
+        $traduccionpalabra->traduccion = $request['traduccion'];
+        $traduccionpalabra->save();
+        return redirect('traduccionesp/lista');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Traduccionpalabra  $traduccionpalabra
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Traduccionpalabra $traduccionpalabra)
     {
-        //
+        $traduccionpalabra->delete();
+        return redirect('traduccionesp/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('traduccionp.listatraduccionp', ['rs' => $rs]);
     }
 }

@@ -6,5 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    protected $table='cursos';
+    protected $table = 'cursos';
+
+    public function desarrollador()
+    {
+        return $this->belongsTo(Desarrollador::class);
+    }
+    public function perfil()
+    {
+        return $this->belongsTo(Perfil::class);
+    }
+    public function lengua()
+    {
+        return $this->belongsTo(Lengua::class);
+    }
 }

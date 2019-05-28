@@ -3,82 +3,70 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Itemleccion;
+use App\Leccion;
 
 class ItemleccionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //EN ESTE CONTOLADOR LA RUTA SE LLAMA ### itmlec ### y la variable id -> ### itlc ###
     public function index()
     {
-        //
+        // $qs =Leccion::all();
+        // return $qs;
+        return Itemleccion::with([
+            'leccion',
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $lecciones = Leccion::all();
+        return view('itemleccion.crearitemleccion', compact('lecciones'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $itlc= new Itemleccion();
+        $itlc->itemleccion = $request['itemleccion'];
+        $itlc->leccion_id = $request['leccion_id'];
+        $itlc->save();
+        return redirect('itmlec/lista');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Itemleccion $itlc)
     {
-        //
+        return $itlc;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit( Itemleccion $itlc)
     {
-        //
+        $lecciones = Leccion::all();
+
+        return view('itemleccion.editaritemleccion', ['itemleccion' => $itlc], compact('lecciones'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Itemleccion $itlc)
     {
-        //
+        $itlc->itemleccion = $request['itemleccion'];
+        $itlc->leccion_id = $request['leccion_id'];
+        $itlc->save();
+        return redirect('itmlec/lista');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Itemleccion $itlc)
     {
-        //
+        $itlc->delete();
+        return redirect('itmlec/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('itemleccion.listaitemleccion', ['rs' => $rs]);
     }
 }

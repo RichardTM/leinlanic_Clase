@@ -3,82 +3,67 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Opcion;
+use App\Traduccion;
 
 class OpcionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return Opcion::with([
+            'traduccion',
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $traducciones = Traduccion::all();
+        return view('opciones.crearopciones', compact('traducciones'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $opcion = new Opcion();
+        $opcion->descripcion = $request['descripcion'];
+        $opcion->traducion_id = $request['traducion_id'];
+        $opcion->save();
+        return redirect('opciones/lista');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Opcion $opcion)
     {
-        //
+        return $opcion;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Opcion $opcion)
     {
-        //
+        $traducciones = Traduccion::all();
+
+        return view('opciones/editaropciones', ['opcion' => $opcion], compact('traducciones'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Opcion $opcion)
     {
-        //
+        $opcion->descripcion = $request['descripcion'];
+        $opcion->traducion_id = $request['traducion_id'];
+        $opcion->save();
+        return redirect('opciones/lista');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Pregunta $opcion)
     {
-        //
+        $opcion->delete();
+        return redirect('opciones/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('opciones.listaopciones', ['rs' => $rs]);
     }
 }

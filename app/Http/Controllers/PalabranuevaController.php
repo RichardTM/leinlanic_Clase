@@ -4,82 +4,69 @@ namespace App\Http\Controllers;
 
 use App\Palabranueva;
 use Illuminate\Http\Request;
+use App\Tipopalabra;
+use App\Lengua;
 
 class PalabranuevaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return Palabranueva::with([
+            'lengua',
+            'tipopalabra',
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $lenguas = Lengua::all();
+        $tipopalabras = Tipopalabra::all();
+        return view('palabranuevas.crearpalabranueva', compact('lenguas', 'tipopalabras'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $palabranueva = new Palabranueva();
+        $palabranueva->lengua_id = $request['lengua_id'];
+        $palabranueva->tipopalabra_id = $request['tipopalabra_id'];
+        $palabranueva->palabra = $request['palabra'];
+        $palabranueva->imagen = $request['imagen'];
+        $palabranueva->save();
+        return redirect('palabranuevas/lista');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Palabranueva  $palabranueva
-     * @return \Illuminate\Http\Response
-     */
     public function show(Palabranueva $palabranueva)
     {
-        //
+        return $palabranueva;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Palabranueva  $palabranueva
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Palabranueva $palabranueva)
     {
-        //
+        $lenguas = Lengua::all();
+        $tipopalabras = Tipopalabra::all();
+        return view('palabranuevas/editarpalabranueva', ['palabranueva' => $palabranueva], compact('lenguas', 'tipopalabras'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Palabranueva  $palabranueva
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Palabranueva $palabranueva)
     {
-        //
+        $palabranueva->lengua_id = $request['lengua_id'];
+        $palabranueva->tipopalabra_id = $request['tipopalabra_id'];
+        $palabranueva->palabra = $request['palabra'];
+        $palabranueva->imagen = $request['imagen'];
+        $palabranueva->save();
+        return redirect('palabranuevas/lista');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Palabranueva  $palabranueva
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Palabranueva $palabranueva)
     {
-        //
+        $palabranueva->delete();
+        return redirect('palabranuevas/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('palabranuevas.listapalabranueva', ['rs' => $rs]);
     }
 }

@@ -3,82 +3,65 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Metodoopcion;
+use App\Metodo;
+use App\Opcion;
 
 class MetodoopcionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return Metodoopcion::with([
+            'metodo',
+            'opcion',
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $metodos = Metodo::all();
+        $opciones = Opcion::all();
+        return view('metodoopciones.crearmo', compact('metodos','opciones'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $metodoopcion = new Metodoopcion();
+        $metodoopcion->metodo_id = $request['metodo_id'];
+        $metodoopcion->opcion_id = $request['opcion_id'];
+        $metodoopcion->save();
+        return redirect('metodoopciones/lista');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Metodoopcion $metodoopcion)
     {
-        //
+        return $metodoopcion;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Metodoopcion $metodoopcion)
     {
-        //
+        $metodos = Metodo::all();
+        $opciones = Opcion::all();
+        return view('metodoopciones.editarmo', ['metodoopcion' => $metodoopcion], compact('metodos','opciones'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Metodoopcion $metodoopcion)
     {
-        //
+        $metodoopcion->metodo_id = $request['metodo_id'];
+        $metodoopcion->opcion_id = $request['opcion_id'];
+        $metodoopcion->save();
+        return redirect('metodoopciones/lista');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Metodoopcion $metodoopcion)
     {
-        //
+        $metodoopcion->delete();
+        return redirect('metodoopciones/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('metodoopciones.listamo', ['rs' => $rs]);
     }
 }

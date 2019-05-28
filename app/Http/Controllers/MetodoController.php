@@ -7,79 +7,51 @@ use Illuminate\Http\Request;
 
 class MetodoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+         $qs = Metodo::all();
+          return $qs;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('metodos.crearmetodo');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $metodo = new  Metodo();
+        $metodo->metodo = $request['metodo'];
+        $metodo->save();
+        return redirect('metodos/lista');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Metodo  $metodo
-     * @return \Illuminate\Http\Response
-     */
     public function show(Metodo $metodo)
     {
-        //
+        return $metodo;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Metodo  $metodo
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Metodo $metodo)
     {
-        //
+        return view('metodos.editarmetodo', ['metodo' => $metodo]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Metodo  $metodo
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Metodo $metodo)
     {
-        //
+        $metodo->metodo = $request['metodo'];
+        $metodo->save();
+        return redirect('metodos/lista');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Metodo  $metodo
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Metodo $metodo)
     {
-        //
+        $metodo->delete();
+        return redirect('metodos/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('metodos.listametodo', ['rs' => $rs]);
+
     }
 }

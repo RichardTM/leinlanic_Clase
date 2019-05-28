@@ -4,82 +4,78 @@ namespace App\Http\Controllers;
 
 use App\Preguntametodo;
 use Illuminate\Http\Request;
+use App\Pregunta;
+use App\Metodoopcion;
+use App\Respuesta;
 
 class PreguntametodoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //EN ESTE CONTOLADOR LA RUTA SE LLAMA ### mtpreg ### y la variable id -> pm
     public function index()
     {
-        //
+        return Preguntametodo::with([
+            'pregunta',
+            'metodoopcion',
+            'respuesta',
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $preguntas = Pregunta::all();
+        $metodoopciones = Metodoopcion::all();
+        $respuestas = Respuesta::all();
+        return view('preguntametodos.crearpm', compact('preguntas','metodoopciones','respuestas'));
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $pm = new Pregunta();
+        $pm->pregunta_id = $request['pregunta_id'];
+        $pm->metodoopcion_id = $request['metodoopcion_id'];
+        $pm->respuesta_id = $request['respuesta_id'];
+        $pm->save();
+        return $pm;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Preguntametodo  $preguntametodo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Preguntametodo $preguntametodo)
+
+    public function show(Preguntametodo $pm)
     {
-        //
+        return $pm;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Preguntametodo  $preguntametodo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Preguntametodo $preguntametodo)
+
+    public function edit(Preguntametodo $pm)
     {
-        //
+        $preguntas = Pregunta::all();
+        $metodoopciones = Metodoopcion::all();
+        $respuestas = Respuesta::all();
+        return view('preguntametodos.editarpm',compact('preguntas','meotodoopciones','respuestas'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Preguntametodo  $preguntametodo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Preguntametodo $preguntametodo)
+
+    public function update(Request $request, Preguntametodo $pm)
     {
-        //
+        $pm->pregunta_id = $request['pregunta_id'];
+        $pm->metodoopcion_id = $request['metodoopcion_id'];
+        $pm->respuesta_id = $request['pregunta_id'];
+        $pm->save();
+
+        return redirect('mtpreg/lista');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Preguntametodo  $preguntametodo
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Preguntametodo $preguntametodo)
+
+    public function destroy(Preguntametodo $pm)
     {
-        //
+        $pm->delete();
+        return redirect('mtpreg/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('preguntametodos.listapm', ['rs' => $rs]);
     }
 }

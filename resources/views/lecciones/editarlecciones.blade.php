@@ -17,13 +17,19 @@
                             <input value="{{$leccion->titulo}}" name="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese el Titulo">
                         </div>
                         <div class="form-group">
-                            <label for="">Teoria</label>
+                            <label for="">Descripcion</label>
                             <input value="{{$leccion->teoria}}" name="teoria" type="text" class="form-control" id="teoria" placeholder="Ingrese la Teoria">
                         </div>
                         <div class="form-group">
-                            <label for="">Acierto</label>
-                            <input value="{{$leccion->acierto}}" name="acierto" type="text" class="form-control" id="acierto" placeholder="Ingrese el acierto">
-                        </div>
+                        <label for="">Nivel</label>
+                        <select name="nivel_id" class="form-control" required="required">
+                            <option value="">seleccione el Nivel</option>
+                            @foreach($niveles as $item)
+                            <option value="{{$item->id}}">{{$item->nivel}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                         <a href="/lecciones/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </form>
