@@ -14,7 +14,7 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        //
+        //hola mundo
     }
 
     /**
