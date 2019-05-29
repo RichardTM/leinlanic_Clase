@@ -73,6 +73,6 @@ class CursoController extends Controller
     public function list()
     {
         $rs = $this->index();
-        return view('preguntametodos.listapm', ['rs' => $rs]);
+        return view('cursos.listacursos', ['rs' => $rs]);
     }
 }

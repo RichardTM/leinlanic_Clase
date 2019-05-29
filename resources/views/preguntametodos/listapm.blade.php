@@ -16,8 +16,8 @@
                 <tbody class="table-light">
                     @foreach ($rs as $item)
                     <tr>
-                        <td>{{$item->pregunta->prgunta}}</td>
-                        <td>{{$item->metodoopcion->metodo->metodo}}</td>
+                        <td>{{$item->pregunta}}</td>
+                        <td>{{$item->metodoopcion}}</td>
                         <td>{{$item->respuesa_id}}</td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
