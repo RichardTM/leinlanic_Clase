@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemleccionesTable extends Migration
+class CreateLeccionPreguntasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateItemleccionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('itemlecciones', function (Blueprint $table) {
+        Schema::create('leccion_preguntas', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('leccion_id');
-            $table->string('itemleccion', 100);
+            $table->unsignedInteger('pregunta_id');
 
 
             // llaves foraneas
             $table->foreign('leccion_id')->references('id')->on('lecciones')->onDelete('cascade');
+            $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ class CreateItemleccionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('itemlecciones');
+        Schema::dropIfExists('leccion_preguntas');
     }
 }

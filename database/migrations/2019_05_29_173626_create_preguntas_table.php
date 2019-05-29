@@ -15,12 +15,17 @@ class CreatePreguntasTable extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('itemleccion_id');
-            $table->string('pregunta', 100);
+            $table->string('leccion_pregunta_id', 50);
+            $table->string('pregunta',150);
+            $table->string('imagen',255);
+            $table->unsignedInteger('tipo_pregunta_id');
+            $table->string('respuesta_id', 50);
+
 
 
             // llaves foraneas
-            $table->foreign('itemleccion_id')->references('id')->on('itemlecciones')->onDelete('cascade');
+            $table->foreign('tipo_pregunta_id')->references('id')->on('tipo_preguntas')->onDelete('cascade');
+
 
             $table->timestamps();
         });

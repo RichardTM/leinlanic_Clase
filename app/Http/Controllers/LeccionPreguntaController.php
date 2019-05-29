@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Preguntametodo;
+use App\LeccionPregunta;
 use Illuminate\Http\Request;
 
-class PreguntametodoController extends Controller
+class LeccionPreguntaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PreguntametodoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Preguntametodo  $preguntametodo
+     * @param  \App\LeccionPregunta  $leccionPregunta
      * @return \Illuminate\Http\Response
      */
-    public function show(Preguntametodo $preguntametodo)
+    public function show(LeccionPregunta $leccionPregunta)
     {
         //
     }
@@ -52,10 +52,10 @@ class PreguntametodoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Preguntametodo  $preguntametodo
+     * @param  \App\LeccionPregunta  $leccionPregunta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Preguntametodo $preguntametodo)
+    public function edit(LeccionPregunta $leccionPregunta)
     {
         //
     }
@@ -64,10 +64,10 @@ class PreguntametodoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Preguntametodo  $preguntametodo
+     * @param  \App\LeccionPregunta  $leccionPregunta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Preguntametodo $preguntametodo)
+    public function update(Request $request, LeccionPregunta $leccionPregunta)
     {
         //
     }
@@ -75,10 +75,10 @@ class PreguntametodoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Preguntametodo  $preguntametodo
+     * @param  \App\LeccionPregunta  $leccionPregunta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Preguntametodo $preguntametodo)
+    public function destroy(LeccionPregunta $leccionPregunta)
     {
         //
     }

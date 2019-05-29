@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\TipoPregunta;
 use Illuminate\Http\Request;
 
-class MetodoopcionController extends Controller
+class TipoPreguntaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,10 +41,10 @@ class MetodoopcionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\TipoPregunta  $tipoPregunta
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(TipoPregunta $tipoPregunta)
     {
         //
     }
@@ -51,10 +52,10 @@ class MetodoopcionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\TipoPregunta  $tipoPregunta
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(TipoPregunta $tipoPregunta)
     {
         //
     }
@@ -63,10 +64,10 @@ class MetodoopcionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\TipoPregunta  $tipoPregunta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, TipoPregunta $tipoPregunta)
     {
         //
     }
@@ -74,10 +75,10 @@ class MetodoopcionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\TipoPregunta  $tipoPregunta
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(TipoPregunta $tipoPregunta)
     {
         //
     }

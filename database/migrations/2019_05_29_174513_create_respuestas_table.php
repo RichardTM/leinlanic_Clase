@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMetodoopcionesTable extends Migration
+class CreateRespuestasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateMetodoopcionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('metodoopciones', function (Blueprint $table) {
+        Schema::create('respuestas', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('metodo_id');
-            $table->unsignedInteger('opcion_id');
-
+            $table->unsignedInteger('pregunta_id');
+            $table->boolean('is_correct');
 
             // llaves foraneas
-            $table->foreign('metodo_id')->references('id')->on('metodos')->onDelete('cascade');
-            $table->foreign('opcion_id')->references('id')->on('opciones')->onDelete('cascade');
+            $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');
+
 
             $table->timestamps();
         });
@@ -34,6 +33,6 @@ class CreateMetodoopcionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('metodoopciones');
+        Schema::dropIfExists('respuestas');
     }
 }

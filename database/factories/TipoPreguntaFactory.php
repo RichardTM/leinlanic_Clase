@@ -2,10 +2,10 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Preguntametodo;
+use App\TipoPregunta;
 use Faker\Generator as Faker;
 
-$factory->define(Preguntametodo::class, function (Faker $faker) {
+$factory->define(TipoPregunta::class, function (Faker $faker) {
     return [
         //
     ];
