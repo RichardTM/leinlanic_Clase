@@ -2,10 +2,10 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Metodo;
+use App\LeccionPalabra;
 use Faker\Generator as Faker;
 
-$factory->define(Metodo::class, function (Faker $faker) {
+$factory->define(LeccionPalabra::class, function (Faker $faker) {
     return [
         //
     ];
