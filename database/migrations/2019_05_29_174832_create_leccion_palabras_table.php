@@ -16,6 +16,7 @@ class CreateLeccionPalabrasTable extends Migration
         Schema::create('leccion_palabras', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('traduccion_id');
+
             $table->unsignedInteger('leccion_id');
 
             // llaves foraneas
