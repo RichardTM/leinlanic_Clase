@@ -34,7 +34,8 @@ Route::get('/', function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('interfazusuario', function () {return view('interfazusuario');});
-    Route::get('vocabulario', function () {return view('vocabulario');});
+    Route::get('cursomisquito', function () {return view('cursomisquito');});
+    //Route::get('desarrollocurso', function () {return view('desarrollocurso');});
     Route::get('saludo', function () {return view('saludo');});
     Route::get('familia', function () {return view('familia');});
     Route::get('admin', function () {return view('admin');});

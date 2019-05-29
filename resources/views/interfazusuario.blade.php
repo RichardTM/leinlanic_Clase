@@ -19,16 +19,16 @@
 <br>
     <div class="row">
         <div class="col-md-4">
-            <li class="list-group-item"><a href="cursos/lista" role="button">misquito</a></li>
+            <li class="list-group-item"><a href="cursomisquito" role="button">misquito</a></li>
         </div>
         <div class="col-md-4">
-            <li class="list-group-item"><a href="cursos/lista" role="button">rama</a></li>
+            <li class="list-group-item"><a href="#" role="button">rama</a></li>
         </div>
         <div class="col-md-4">
-            <li class="list-group-item"><a href="cursos/lista" role="button">zumo</a></li>
+            <li class="list-group-item"><a href="#" role="button">zumo</a></li>
         </div>
         <div class="col-md-4">
-            <li class="list-group-item"><a href="cursos/lista" role="button">inlges crioll</a></li>
+            <li class="list-group-item"><a href="#" role="button">inlges crioll</a></li>
         </div>
       </div>
 </div>

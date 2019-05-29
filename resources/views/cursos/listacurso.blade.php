@@ -46,9 +46,7 @@
     </div>
 </div>
 <br>
-<a href="/vocabulario" class="btn btn-success">VOCABULARIO</i></a>
-<a href="/interfazusuario" class="btn btn-success">SALUDO</i></a>
-<a href="/interfazusuario" class="btn btn-success">FAMILIA</i></a>
+
 
 @endsection
 
