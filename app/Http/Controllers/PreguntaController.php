@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Pregunta;
 use Illuminate\Http\Request;
 
 class PreguntaController extends Controller
@@ -14,7 +13,7 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        //hola mundo
+        //
     }
 
     /**
@@ -41,10 +40,10 @@ class PreguntaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pregunta  $pregunta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pregunta $pregunta)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class PreguntaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pregunta  $pregunta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pregunta $pregunta)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class PreguntaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pregunta  $pregunta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pregunta $pregunta)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class PreguntaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pregunta  $pregunta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pregunta $pregunta)
+    public function destroy($id)
     {
         //
     }

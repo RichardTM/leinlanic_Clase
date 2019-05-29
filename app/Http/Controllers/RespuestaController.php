@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Respuesta;
 use Illuminate\Http\Request;
 
 class RespuestaController extends Controller
@@ -14,7 +13,7 @@ class RespuestaController extends Controller
      */
     public function index()
     {
-        //hola mundo
+        //
     }
 
     /**
@@ -41,10 +40,10 @@ class RespuestaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Respuesta  $respuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Respuesta $respuesta)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class RespuestaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Respuesta  $respuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Respuesta $respuesta)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class RespuestaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Respuesta  $respuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Respuesta $respuesta)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class RespuestaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Respuesta  $respuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Respuesta $respuesta)
+    public function destroy($id)
     {
         //
     }
