@@ -12,10 +12,7 @@ class Curso extends Model
     {
         return $this->belongsTo(Desarrollador::class);
     }
-    public function perfil()
-    {
-        return $this->belongsTo(Perfil::class);
-    }
+
     public function lengua()
     {
         return $this->belongsTo(Lengua::class);

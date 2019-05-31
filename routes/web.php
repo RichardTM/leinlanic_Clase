@@ -187,7 +187,7 @@ Route::get('perfiles', 'PerfilController@index');
 Route::get('perfiles/{perfil}', 'PerfilController@show');
 Route::post('perfiles', 'PerfilController@store');
 Route::patch('perfiles/{perfil}', 'PerfilController@update');
-Route::delete('perfiles/{perfil}', 'PerfilController@destroy');
+Route::delete('perfiles/{<}', 'PerfilController@destroy');
 
 // RUTAS PALABRAS
 
@@ -252,61 +252,9 @@ Route::post('cursos','CursoController@store');
 Route::patch('cursos/{curso}','CursoController@update');
 Route::delete('cursos/{curso}','CursoController@destroy');
 
-//ITEM LECCION
-Route::get('itmlec/editar/{itlc}','ItemleccionController@edit');
-Route::get('itmlec/lista','ItemleccionController@list');
-Route::get('itmlec/crear','ItemleccionController@create');
-
-Route::get('itmlec','ItemleccionController@index');
-Route::get('itmlec/{itlc}','ItemleccionController@show');
-Route::post('itmlec','ItemleccionController@store');
-Route::patch('itmlec/{itlc}','ItemleccionController@update');
-Route::delete('itmlec/{itlc}','ItemleccionController@destroy');
-
-//PREGUNTAS
-Route::get('preguntas/editar/{pregunta}','PreguntaController@edit');
-Route::get('preguntas/lista','PreguntaController@list');
-Route::get('preguntas/crear','PreguntaController@create');
-
-Route::get('preguntas','PreguntaController@index');
-Route::get('preguntas/{pregunta}','PreguntaController@show');
-Route::post('preguntas','PreguntaController@store');
-Route::patch('preguntas/{pregunta}','PreguntaController@update');
-Route::delete('preguntas/{pregunta}','PreguntaController@destroy');
-
-//PREGUNTA METODO --pendiente lista editar y probar
-// Route::get('mtpreg/editar/{pm}','PreguntametodoController@edit');
-Route::get('mtpreg/lista','PreguntametodoController@list');
-Route::get('mtpreg/crear','PreguntametodoController@create');
-
-// Route::get('mtpreg','PreguntametodoController@index');
-// Route::get('mtpreg/{pm}','PreguntametodoController@show');
-Route::post('mtpreg','PreguntametodoController@store');
-// Route::patch('mtpreg/{pm}','PreguntametodoController@update');
-// Route::delete('mtpreg/{pm}','PreguntametodoController@destroy');
 
 
-//METODOS
-Route::get('metodos/editar/{metodo}', 'MetodoController@edit');
-Route::get('metodos/lista', 'MetodoController@list');
-Route::get('metodos/crear','MetodoController@create');
 
-Route::get('metodos', 'MetodoController@index');
-Route::get('metodos/{metodo}', 'MetodoController@show');
-Route::post('metodos', 'MetodoController@store');
-Route::patch('metodos/{metodo}', 'MetodoController@update');
-Route::delete('metodos/{metodo}', 'MetodoController@destroy');
-
-//OPCIONES **pendiente lista y probar
-Route::get('opciones/editar/{opcion}','OpcionController@edit');
-Route::get('opciones/lista', 'OpcionController@list');
-Route::get('opciones/crear','OpcionController@create');
-
-Route::get('opciones', 'OpcionController@index');
-Route::get('opciones/{opcion}', 'OpcionController@show');
-Route::post('opciones', 'OpcionController@store');
-Route::patch('opciones/{opcion}', 'OpcionController@update');
-Route::delete('opciones/{opcion}', 'OpcionController@destroy');
 
 //TIPO PALABRA
 Route::get('tipopalabras/editar/{tipopalabra}','TipopalabraController@edit');
@@ -352,13 +300,50 @@ Route::post('traducciones', 'TraduccionController@store');
 Route::patch('traducciones/{traduccion}','TraduccionController@update');
 Route::delete('traducciones/{traduccion}','TraduccionController@destroy');
 
-//METODO OPCION
-Route::get('metodoopciones/editar/{metodoopcion}','MetodoopcionController@edit');
-Route::get('metodoopciones/lista','MetodoopcionController@list');
-Route::get('metodoopciones/crear','MetodoopcionController@create');
 
-Route::get('metodoopciones','MetodoopcionController@index');
-Route::get('metodoopciones/{metodoopcion}','MetodoopcionController@show');
-Route::post('metodoopciones', 'MetodoopcionController@store');
-Route::patch('metodoopciones/{metodoopcion}','MetodoopcionController@update');
-Route::delete('metodoopciones/{metodoopcion}','MetodoopcionController@destroy');
+//TIPO PREGUNTAS
+Route::get('tipopreguntas/editar/{tipoPregunta}','TipoPreguntaController@edit');
+Route::get('tipopreguntas/lista','TipoPreguntaController@list');
+Route::get('tipopreguntas/crear','TipoPreguntaController@create');
+
+Route::get('tipopreguntas','TipoPreguntaController@index');
+Route::get('tipopreguntas/{tipoPregunta}','TipoPreguntaController@show');
+Route::post('tipopreguntas', 'TipoPreguntaController@store');
+Route::patch('tipopreguntas/{tipoPregunta}','TipoPreguntaController@update');
+Route::delete('tipopreguntas/{tipoPregunta}','TipoPreguntaController@destroy');
+
+
+// PREGUNTAS
+Route::get('preguntas/editar/{pregunta}','PreguntaController@edit');
+Route::get('preguntas/lista','PreguntaController@list');
+Route::get('preguntas/crear','PreguntaController@create');
+
+Route::get('preguntas','PreguntaController@index');
+Route::get('preguntas/{pregunta}','PreguntaController@show');
+Route::post('preguntas', 'PreguntaController@store');
+Route::patch('preguntas/{pregunta}','PreguntaController@update');
+Route::delete('preguntas/{pregunta}','PreguntaController@destroy');
+
+
+// LECCION PREGUNTAS
+Route::get('lpreguntas/editar/{leccionPregunta}','LeccionPreguntaController@edit');
+Route::get('lpreguntas/lista','LeccionPreguntaController@list');
+Route::get('lpreguntas/crear','LeccionPreguntaController@create');
+
+Route::get('lpreguntas','LeccionPreguntaController@index');
+Route::get('lpreguntas/{leccionPregunta}','LeccionPreguntaController@show');
+Route::post('lpreguntas', 'LeccionPreguntaController@store');
+Route::patch('lpreguntas/{lpregunta}','LeccionPreguntaController@update');
+Route::delete('lpreguntas/{lpregunta}','LeccionPreguntaController@destroy');
+
+
+// RESPUESTAS
+Route::get('respuestas/editar/{respuesta}','RespuestaController@edit');
+Route::get('respuestas/lista','RespuestaController@list');
+Route::get('respuestas/crear','RespuestaController@create');
+
+Route::get('respuestas','RespuestaController@index');
+Route::get('respuestas/{respuesta}','RespuestaController@show');
+Route::post('respuestas', 'RespuestaController@store');
+Route::patch('respuestas/{respuesta}','RespuestaController@update');
+Route::delete('respuestas/{respuesta}','RespuestaController@destroy');

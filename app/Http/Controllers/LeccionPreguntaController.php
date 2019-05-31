@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\LeccionPregunta;
+use App\Pregunta;
+use App\Leccion;
 
 class LeccionPreguntaController extends Controller
 {
@@ -13,7 +16,11 @@ class LeccionPreguntaController extends Controller
      */
     public function index()
     {
-        //
+        return LeccionPregunta::with([
+            'pregunta',
+            'leccion'
+
+        ])->get();
     }
 
     /**
@@ -23,7 +30,12 @@ class LeccionPreguntaController extends Controller
      */
     public function create()
     {
-        //
+        $preguntas = Pregunta::all();
+        $lecciones = Leccion::all();
+
+
+        return view('lpreguntas.crearlpregunta', compact('preguntas', 'lecciones'));
+
     }
 
     /**
@@ -34,7 +46,13 @@ class LeccionPreguntaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lpregunta=new LeccionPregunta();
+        $lpregunta->leccion_id = $request['leccion_id'];
+        $lpregunta->pregunta_id = $request['pregunta_id'];
+        $lpregunta->save();
+
+
+        return redirect('lpreguntas/lista');
     }
 
     /**
@@ -43,9 +61,9 @@ class LeccionPreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(LeccionPregunta $leccionPregunta)
     {
-        //
+        return $leccionPregunta;
     }
 
     /**
@@ -54,9 +72,13 @@ class LeccionPreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(LeccionPregunta $leccionPregunta)
     {
-        //
+        $preguntas = Pregunta::all();
+        $lecciones = Leccion::all();
+
+        return view('lpreguntas/editarlpregunta', ['leccionPregunta' => $leccionPregunta], compact('preguntas', 'lecciones'));
+
     }
 
     /**
@@ -66,9 +88,14 @@ class LeccionPreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,LeccionPregunta $lpregunta)
     {
-        //
+        $lpregunta->leccion_id = $request['leccion_id'];
+        $lpregunta->pregunta_id = $request['pregunta_id'];
+        $lpregunta->save();
+
+
+        return redirect('lpreguntas/lista');
     }
 
     /**
@@ -77,8 +104,16 @@ class LeccionPreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(LeccionPregunta $lpregunta)
     {
-        //
+        $lpregunta->delete();
+        return redirect('lpreguntas/lista');
+
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('lpreguntas/listalpregunta', ['rs' => $rs]);
     }
 }

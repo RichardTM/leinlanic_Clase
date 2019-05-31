@@ -8,7 +8,6 @@
                 <thead class="thead-dark">
                     <tr class="text-center">
                         <th>Curso</th>
-                        <th>Perfiil</th>
                         <th>Lengua</th>
                         <th>Desarrollador</th>
                         <th>Opciones</th>
@@ -18,7 +17,6 @@
                     @foreach ($rs as $item)
                     <tr>
                         <td>{{$item->curso}}</td>
-                        <td>{{$item->perfil->nombres}}</td>
                         <td>{{$item->lengua->lengua}}</td>
                         <td>{{$item->desarrollador->nombres}}</td>
 

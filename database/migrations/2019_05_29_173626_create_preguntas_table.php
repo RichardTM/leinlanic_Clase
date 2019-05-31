@@ -15,11 +15,10 @@ class CreatePreguntasTable extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('leccion_pregunta_id', 50);
+
             $table->string('pregunta',150);
-            $table->string('imagen',255);
+            $table->boolean('imagen');
             $table->unsignedInteger('tipo_pregunta_id');
-            $table->string('respuesta_id', 50);
 
 
 

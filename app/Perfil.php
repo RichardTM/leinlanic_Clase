@@ -71,8 +71,5 @@ class Perfil extends Model
      {
          return $this->belongsTo(Nacionalidad::class);
      }
-     public function curso()
-     {
-         return $this->hasMany(Curso::class);
-     }
+
 }

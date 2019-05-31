@@ -8,7 +8,8 @@
                 <thead class="thead-dark">
                     <tr class="text-center">
                         <th>Pregunta</th>
-                        <th>Itemleccion</th>
+                        <th>Imagen</th>
+                        <th>Tipo Pregunta</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -16,7 +17,8 @@
                     @foreach ($rs as $item)
                     <tr>
                         <td>{{$item->pregunta}}</td>
-                        <td>{{$item->itemleccion->itemleccion}}</td>
+                        <td>{{$item->imagen}}</td>
+                        <td>{{$item->tipo_pregunta->tipo_pregunta}}</td>
 
                         <td class="text-center">
                             <div class="btn-group" role="group">

@@ -10,20 +10,33 @@
                 <div class="card-body">
                     <form action="{{url('/preguntas')}}" method="POST" role="form">
                         @csrf()
+
+
                         <div class="form-group">
                             <label for="">Pregunta</label>
                             <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Escriba la Pregunta">
                         </div>
 
+
                         <div class="form-group">
-                            <label for="">Itemleccion</label>
-                            <select name="itemleccion_id" class="form-control" required="required">
+                            <label for="">Imagen</label>
+                            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Escriba la Imagen">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Tipo Pregunta</label>
+                            <select name="tipo_pregunta_id" class="form-control" required="required">
                                 <option value="">seleccione</option>
-                                @foreach($itemlecciones as $item)
-                                <option value="{{$item->id}}">{{$item->itemleccion}}</option>
+                                @foreach($tipopreguntas as $item)
+                                <option value="{{$item->id}}">{{$item->tipo_pregunta}}</option>
                                 @endforeach
                             </select>
                         </div>
+
+
+
+
+
                         <a href="/preguntas/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </form>

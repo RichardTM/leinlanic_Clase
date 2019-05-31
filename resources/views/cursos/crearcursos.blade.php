@@ -16,15 +16,7 @@
                             <input type="text" class="form-control" id="curso" name="curso" placeholder="Escriba el Nombre del Curso">
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Perfil</label>
-                            <select name="perfil_id" class="form-control" required="required">
-                                <option value="">seleccione</option>
-                                @foreach($perfiles as $item)
-                                <option value="{{$item->id}}">{{$item->nombres}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+
 
                         <div class="form-group">
                             <label for="">Lengua</label>

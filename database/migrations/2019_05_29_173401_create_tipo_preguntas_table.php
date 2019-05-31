@@ -15,7 +15,7 @@ class CreateTipoPreguntasTable extends Migration
     {
         Schema::create('tipo_preguntas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo', 100);
+            $table->string('tipo_pregunta', 100);
             $table->timestamps();
         });
     }
