@@ -27,16 +27,15 @@
                 <li class="list-group-item"><a href="/lecciones/lista" role="button">LECCIONES</a></li>
                 <li class="list-group-item"><a href="/desarrolladores/lista" role="button">DESARROLLADORES</a></li>
                 <li class="list-group-item"><a href="/lenguas/lista" role="button">LENGUAS</a></li>
-                <li class="list-group-item"><a href="/itmlec/lista" role="button">ITEMLECCION</a></li>
+                <li class="list-group-item"><a href="/lpreguntas/lista" role="button">LECCION PREGUNTAS</a></li>
                 <li class="list-group-item"><a href="/preguntas/lista" role="button">PREGUNTA</a></li>
-                <li class="list-group-item"><a href="/mtpreg/lista" role="button">METODO PREGUNTA</a></li>
-                <li class="list-group-item"><a href="/metodos/lista" role="button">METODO</a></li>
-                <li class="list-group-item"><a href="/opciones/lista" role="button">OPCIONES</a></li>
                 <li class="list-group-item"><a href="/tipopalabras/lista" role="button">TIPO PALABRAS</a></li>
+                <li class="list-group-item"><a href="/tipopreguntas/lista" role="button">TIPO PREGUNTAS</a></li>
                 <li class="list-group-item"><a href="/palabranuevas/lista" role="button">PALABRA NUEVA</a></li>
                 <li class="list-group-item"><a href="/traduccionesp/lista" role="button">TRADUCCION PALABRAS</a></a></li>
                 <li class="list-group-item"><a href="/traducciones/lista" role="button">TRADUCCION</a></a></li>
-                <li class="list-group-item"><a href="/metodoopciones/lista" role="button">METODO OPCIONES</a></a></li>
+                <li class="list-group-item"><a href="/respuestas/lista" role="button">RESPUESTA</a></a></li>
+
             </ul>
         </div>
     </div>

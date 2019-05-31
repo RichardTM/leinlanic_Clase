@@ -12,20 +12,32 @@
                         @csrf()
                         @method('PATCH')
                         <legend>Editar la Pregunta</legend>
+
+
                         <div class="form-group">
-                            <label for="">Pregunta</label>
+                            <label for=""> Pregunta</label>
                             <input value="{{$pregunta->pregunta}}" name="pregunta" type="text" class="form-control" id="pregunta" placeholder="Ingrese la Pregunta">
                         </div>
 
                         <div class="form-group">
-                        <label for="">Itemleccion</label>
-                        <select name="itemleccion_id" class="form-control" required="required">
-                            <option value="">seleccione el Item</option>
-                            @foreach($itemlecciones as $item)
-                            <option value="{{$item->id}}">{{$item->itemleccion}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                            <label for=""> Imagen</label>
+                            <input value="{{$pregunta->imagen}}" name="imagen" type="text" class="form-control" id="imagen" placeholder="Ingrese la Imagen (URL)">
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label for="">Tpo de Pregunta</label>
+                            <select name="tipo_pregunta_id" class="form-control" required="required">
+                                <option value="">seleccione el Tipo de Pregunta</option>
+                                @foreach($tipopreguntas as $item)
+                                <option value="{{$item->id}}">{{$item->tipo_pregunta}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
 
                         <a href="/preguntas/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>

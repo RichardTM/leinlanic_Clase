@@ -16,15 +16,7 @@
                             <input value="{{$curso->curso}}" name="curso" type="text" class="form-control" id="curso" placeholder="Ingresar Nuevo Registro">
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Perfil</label>
-                            <select name="perfil_id" class="form-control" required="required">
-                                <option value="">seleccione el Perfil</option>
-                                @foreach($perfiles as $item)
-                                <option value="{{$item->id}}">{{$item->nombres}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+
 
                         <div class="form-group">
                             <label for="">Lengua</label>

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pregunta;
+use App\LeccionPregunta;
+use App\Respuesta;
+use App\TipoPregunta;
 
 class PreguntaController extends Controller
 {
@@ -13,7 +17,11 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        //
+        return Pregunta::with([
+
+
+            'tipo_pregunta'
+        ])->get();
     }
 
     /**
@@ -23,7 +31,11 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        //
+
+        $tipopreguntas = TipoPregunta::all();
+
+        return view('preguntas.crearpreguntas', compact('tipopreguntas'));
+
     }
 
     /**
@@ -34,7 +46,15 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $pregunta = new Pregunta();
+        $pregunta->pregunta =$request['pregunta'];
+        $pregunta->imagen =$request['imagen'];
+        $pregunta->tipo_pregunta_id =$request['tipo_pregunta_id'];
+        $pregunta->save();
+        return redirect('preguntas/lista');
+
+
     }
 
     /**
@@ -43,9 +63,9 @@ class PreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pregunta $pregunta)
     {
-        //
+        return $pregunta;
     }
 
     /**
@@ -54,9 +74,12 @@ class PreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pregunta $pregunta)
     {
-        //
+        $tipopreguntas = TipoPregunta::all();
+
+        return view('preguntas.editarpreguntas', ['pregunta' => $pregunta], compact('tipopreguntas'));
+
     }
 
     /**
@@ -66,9 +89,15 @@ class PreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pregunta $pregunta)
     {
-        //
+
+
+        $pregunta->pregunta =$request['pregunta'];
+        $pregunta->imagen =$request['imagen'];
+        $pregunta->tipo_pregunta_id =$request['tipo_pregunta_id'];
+        $pregunta->save();
+        return redirect('preguntas/lista');
     }
 
     /**
@@ -77,8 +106,17 @@ class PreguntaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pregunta $pregunta)
     {
-        //
+        $pregunta->delete();
+        return redirect('preguntas/lista');
+
+    }
+
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('preguntas.listapreguntas', ['rs' => $rs]);
     }
 }

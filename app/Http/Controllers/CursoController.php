@@ -14,7 +14,7 @@ class CursoController extends Controller
     public function index()
     {
         return Curso::with([
-            'perfil',
+
             'lengua',
             'desarrollador',
         ])->get();
@@ -22,10 +22,9 @@ class CursoController extends Controller
 
     public function create()
     {
-        $perfiles = Perfil::all();
         $lenguas = Lengua::all();
         $desarrolladores = Desarrollador::all();
-        return view('cursos.crearcursos', compact('perfiles','lenguas','desarrolladores'));
+        return view('cursos.crearcursos', compact('lenguas','desarrolladores'));
     }
 
 
@@ -33,7 +32,6 @@ class CursoController extends Controller
     {
         $curso = new Curso();
         $curso->curso = $request['curso'];
-        $curso->perfil_id = $request['perfil_id'];
         $curso->lengua_id = $request['lengua_id'];
         $curso->desarrollador_id = $request['desarrollador_id'];
         $curso->save();
@@ -47,16 +45,14 @@ class CursoController extends Controller
 
     public function edit(Curso $curso)
     {
-        $perfiles = Perfil::all();
         $lenguas = Lengua::all();
         $desarrolladores = Desarrollador::all();
-        return view('cursos/editarcursos',['curso' => $curso], compact('perfiles','lenguas','desarrolladores'));
+        return view('cursos/editarcursos',['curso' => $curso], compact('lenguas','desarrolladores'));
     }
 
     public function update(Request $request, Curso $curso)
     {
         $curso->curso = $request['curso'];
-        $curso->perfil_id = $request['perfil_id'];
         $curso->lengua_id = $request['lengua_id'];
         $curso->desarrollador_id = $request['desarrollador_id'];
         $curso->save();
