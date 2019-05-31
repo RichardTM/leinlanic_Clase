@@ -347,3 +347,14 @@ Route::get('respuestas/{respuesta}','RespuestaController@show');
 Route::post('respuestas', 'RespuestaController@store');
 Route::patch('respuestas/{respuesta}','RespuestaController@update');
 Route::delete('respuestas/{respuesta}','RespuestaController@destroy');
+
+//PREGUNTA RESPUESTA
+Route::get('preguntaresp/editar/{preguntarespuesta}','PreguntaRespuestaController@edit');
+Route::get('preguntaresp/lista','PreguntaRespuestaController@list');
+Route::get('preguntaresp/crear','PreguntaRespuestaController@create');
+
+Route::get('preguntaresp','PreguntaRespuestaController@index');
+Route::get('preguntaresp/{preguntarespuesta}','PreguntaRespuestaController@show');
+Route::post('preguntaresp', 'PreguntaRespuestaController@store');
+Route::patch('preguntaresp/{preguntarespuesta}','PreguntaRespuestaController@update');
+Route::delete('preguntaresp/{preguntarespuesta}','PreguntaRespuestaController@destroy');

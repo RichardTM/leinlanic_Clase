@@ -17,7 +17,7 @@ class CreatePreguntasTable extends Migration
             $table->increments('id');
 
             $table->string('pregunta',150);
-            $table->boolean('imagen');
+            $table->string('imagen',150);
             $table->unsignedInteger('tipo_pregunta_id');
 
 

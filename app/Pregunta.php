@@ -8,8 +8,6 @@ class Pregunta extends Model
 {
     protected $table = 'preguntas';
 
-
-
     public function leccion_pregunta()
     {
         return $this->belongsTo(LeccionPregunta::class);
@@ -25,16 +23,19 @@ class Pregunta extends Model
         return $this->belongsTo(TipoPregunta::class);
     }
 
-    public function leccionpreguntas ()
+    public function leccionpreguntas()
     {
         return $this->hasMany(LeccionPregunta::class);
     }
-
-
 
     public function respuestas()
     {
         return $this->hasMany(Respuesta::class);
     }
+
+    // public function preguntarespuestas()
+    // {
+    //     return $this->hasMany(PreguntaRespuesta::class);
+    // }
 
 }

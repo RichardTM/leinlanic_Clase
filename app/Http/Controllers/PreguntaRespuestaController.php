@@ -4,82 +4,64 @@ namespace App\Http\Controllers;
 
 use App\PreguntaRespuesta;
 use Illuminate\Http\Request;
+use App\Pregunta;
+use App\Respuesta;
 
 class PreguntaRespuestaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return PreguntaRespuesta::with([
+            // 'preguntaS',
+            // 'respuesta'
+        ])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $preguntas = Pregunta::all();
+        $respuestas = Respuesta::all();
+        return view('preguntasresp.crearpr', compact('preguntas','respuestas'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $preguntarespuesta = new PreguntaRespuesta();
+        $preguntarespuesta->pregunta_id = $request['pregunta_id'];
+        $preguntarespuesta->respuesta_id = $request['respuesta_id'];
+        $preguntarespuesta->save();
+        return redirect('preguntaresp/lista');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\PreguntaRespuesta  $preguntaRespuesta
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PreguntaRespuesta $preguntaRespuesta)
+    public function show(PreguntaRespuesta $preguntarespuesta)
     {
-        //
+        return $preguntarespuesta;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\PreguntaRespuesta  $preguntaRespuesta
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PreguntaRespuesta $preguntaRespuesta)
+    public function edit(PreguntaRespuesta $preguntarespuesta)
     {
-        //
+        $preguntas = Pregunta::all();
+        $respuestas = Respuesta::all();
+        return view('preguntasresp.editarpr', ['preguntarespuesta' => $preguntarespuesta], compact('preguntas','respuestas'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PreguntaRespuesta  $preguntaRespuesta
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PreguntaRespuesta $preguntaRespuesta)
+    public function update(Request $request, PreguntaRespuesta $preguntarespuesta)
     {
-        //
+        $preguntarespuesta->pregunta_id = $request['pregunta_id'];
+        $preguntarespuesta->respuesta_id = $request['respuesta_id'];
+        $preguntarespuesta->save();
+        return redirect('preguntaresp/lista');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\PreguntaRespuesta  $preguntaRespuesta
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PreguntaRespuesta $preguntaRespuesta)
+    public function destroy(PreguntaRespuesta $preguntarespuesta)
     {
-        //
+        $preguntarespuesta->delete();
+        return redirect('preguntaresp/lista');
+    }
+
+    public function list()
+    {
+        $rs = $this->index();
+        return view('preguntasresp.listapr', ['rs' => $rs]);
     }
 }
