@@ -11,10 +11,13 @@ class PreguntaRespuestaController extends Controller
 {
     public function index()
     {
-        return PreguntaRespuesta::with([
-            // 'preguntaS',
-            // 'respuesta'
-        ])->get();
+
+        $qs = PreguntaRespuesta::all();
+        return $qs;
+        // return PreguntaRespuesta::with([
+        //     // 'preguntaS',
+        //     // 'respuesta'
+        // ])->get();
     }
 
     public function create()
