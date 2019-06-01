@@ -9,7 +9,7 @@
                     <tr class="text-center">
                         <th>Pregunta</th>
                         <th>Respuesta</th>
-                        <!-- <th>Solucion</th> -->
+                        <th>Solucion</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -17,7 +17,13 @@
                     @foreach ($rs as $item)
                     <tr>
                         <td>{{$item->pregunta->pregunta}}</td>
-                        <td>{{$item->respuesta->pregunta}}</td>
+                        <td>{{$item->respuesta->pregunta->pregunta}}</td>
+                        <td class="text-center"> @if($item->respuesta->is_correct=='1')
+                            <i class="fas fa-thumbs-up"></i>
+                            @else
+                            <i class="fas fa-thumbs-down"></i>
+                        </td>@endif
+
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <a href="/preguntaresp/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>

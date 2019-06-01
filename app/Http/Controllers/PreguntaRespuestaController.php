@@ -12,12 +12,11 @@ class PreguntaRespuestaController extends Controller
     public function index()
     {
 
-        $qs = PreguntaRespuesta::all();
-        return $qs;
-        // return PreguntaRespuesta::with([
-        //     // 'preguntaS',
-        //     // 'respuesta'
-        // ])->get();
+
+        return PreguntaRespuesta::with([
+            'pregunta',
+            'respuesta'
+        ])->get();
     }
 
     public function create()

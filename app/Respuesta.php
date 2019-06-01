@@ -18,8 +18,10 @@ class Respuesta extends Model
     {
         return $this->hasMany(Pregunta::class);
     }
-    // public function preguntarespuestas()
-    // {
-    //     return $this->hasMany(PreguntaRespuesta::class);
-    // }
+
+
+    public function preguntarespuestas()
+    {
+        return $this->hasMany(PreguntaRespuesta::class);
+    }
 }

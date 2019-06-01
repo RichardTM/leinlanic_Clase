@@ -33,9 +33,9 @@ class Pregunta extends Model
         return $this->hasMany(Respuesta::class);
     }
 
-    // public function preguntarespuestas()
-    // {
-    //     return $this->hasMany(PreguntaRespuesta::class);
-    // }
+    public function preguntarespuestas()
+    {
+        return $this->hasMany(PreguntaRespuesta::class);
+    }
 
 }

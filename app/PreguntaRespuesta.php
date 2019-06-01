@@ -8,12 +8,12 @@ class PreguntaRespuesta extends Model
 {
     protected $table='pregunta_respuestas';
 
-    // public function pregunta()
-    // {
-    //     return $this->hasMany(Pregunta::class);
-    // }
-    // public function respuesta()
-    // {
-    //     return $this->hasMany(Respuesta::class);
-    // }
+    public function pregunta()
+    {
+        return $this->belongsTo(Pregunta::class);
+    }
+    public function respuesta()
+    {
+        return $this->belongsTo(Respuesta::class);
+    }
 }
