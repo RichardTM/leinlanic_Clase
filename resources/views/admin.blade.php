@@ -35,6 +35,7 @@
                 <li class="list-group-item"><a href="/traduccionesp/lista" role="button">TRADUCCION PALABRAS</a></a></li>
                 <li class="list-group-item"><a href="/traducciones/lista" role="button">TRADUCCION</a></a></li>
                 <li class="list-group-item"><a href="/respuestas/lista" role="button">RESPUESTA</a></a></li>
+                <li class="list-group-item"><a href="/estudiantes/lista" role="button">ESTUDIANTE</a></a></li>
 
             </ul>
         </div>

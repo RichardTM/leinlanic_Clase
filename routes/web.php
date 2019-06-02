@@ -252,10 +252,6 @@ Route::post('cursos','CursoController@store');
 Route::patch('cursos/{curso}','CursoController@update');
 Route::delete('cursos/{curso}','CursoController@destroy');
 
-
-
-
-
 //TIPO PALABRA
 Route::get('tipopalabras/editar/{tipopalabra}','TipopalabraController@edit');
 Route::get('tipopalabras/lista', 'TipopalabraController@list');
@@ -358,3 +354,14 @@ Route::get('preguntaresp/{preguntarespuesta}','PreguntaRespuestaController@show'
 Route::post('preguntaresp', 'PreguntaRespuestaController@store');
 Route::patch('preguntaresp/{preguntarespuesta}','PreguntaRespuestaController@update');
 Route::delete('preguntaresp/{preguntarespuesta}','PreguntaRespuestaController@destroy');
+
+//ESTUDIANTES
+Route::get('estudiantes/editar/{estudiante}','EstudianteController@edit');
+Route::get('estudiantes/lista','EstudianteController@list');
+Route::get('estudiantes/crear','EstudianteController@create');
+
+Route::get('estudiantes','EstudianteController@index');
+Route::get('estudiantes/{preguntarespuesta}','EstudianteController@show');
+Route::post('estudiantes', 'EstudianteController@store');
+Route::patch('estudiantes/{estudiante}','EstudianteController@update');
+Route::delete('estudiantes/{estudiante}','EstudianteController@destroy');
