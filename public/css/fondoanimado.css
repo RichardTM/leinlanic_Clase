@@ -1,0 +1,127 @@
+body {
+    margin:0;
+    background:#000;
+    overflow:hidden;
+    }
+    div {
+    position:absolute;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    }
+    #page {
+    height:100%;
+    width:100%;
+    -webkit-perspective:700;
+    -moz-perspective:700px;
+    perspective:700px;
+    }
+    #container {
+    height:100%; width:100%;
+    -webkit-animation:spin 30s ease-in-out infinite;
+    -moz-animation:spin 30s ease-in-out infinite;
+    animation:spin 30s ease-in-out infinite;
+    }
+    @-webkit-keyframes spin {
+    from {-webkit-transform:rotateX(0) rotateY(0) rotateZ(0deg);}
+    33%  {-webkit-transform:rotateX(50deg) rotateY(-20deg) rotateZ(30deg);}
+    66%  {-webkit-transform:rotateX(-50deg) rotateY(20deg) rotateZ(-30deg);}
+    to   {-webkit-transform:rotateX(0) rotateY(0) rotateZ(0deg);}
+    }
+    @-moz-keyframes spin {
+    from {-moz-transform:rotateX(0) rotateY(0) rotateZ(0deg);}
+    33%  {-moz-transform:rotateX(50deg) rotateY(-20deg) rotateZ(30deg);}
+    66%  {-moz-transform:rotateX(-50deg) rotateY(20deg) rotateZ(-30deg);}
+    to   {-moz-transform:rotateX(0) rotateY(0) rotateZ(0deg);}
+    }
+    @keyframes spin {
+    from {transform:rotateX(0) rotateY(0) rotateZ(0deg);}
+    33%  {transform:rotateX(50deg) rotateY(-20deg) rotateZ(30deg);}
+    66%  {transform:rotateX(-50deg) rotateY(20deg) rotateZ(-30deg);}
+    to   {transform:rotateX(0) rotateY(0) rotateZ(0deg);}
+    }
+    b {
+    position:absolute;
+    height:2px; width:2px;
+    background:#FFF;
+    box-shadow:0 0 5px #FFF;
+    }
+    @-webkit-keyframes s {
+    from {-webkit-transform:translateZ(-300px); opacity:0;}
+    50%  {-webkit-transform:translateZ(00px); opacity:1;}
+    to   {-webkit-transform:translateZ(300px); opacity:0;}
+    }
+    @-moz-keyframes s {
+    from {-moz-transform:translateZ(-300px); opacity:0;}
+    50%  {-moz-transform:translateZ(00px); opacity:1;}
+    to   {-moz-transform:translateZ(300px); opacity:0;}
+    }
+    @keyframes s {
+    from {transform:translateZ(-300px); opacity:0;}
+    50%  {transform:translateZ(00px); opacity:1;}
+    to   {transform:translateZ(300px); opacity:0;}
+    }
+    .s001 {
+    top:05%; left:92%; -webkit-animation:s 6.0s 0.0s linear infinite; -moz-animation:s 6.0s 0.0s linear infinite; animation:s 6.0s 0.0s linear infinite;}
+    .s002 {top:26%; left:07%; -webkit-animation:s 7.0s 0.0s linear infinite; -moz-animation:s 7.0s 0.0s linear infinite; animation:s 7.0s 0.0s linear infinite;}
+    .s003 {top:89%; left:24%; -webkit-animation:s 6.2s 0.0s linear infinite; -moz-animation:s 6.2s 0.0s linear infinite; animation:s 6.2s 0.0s linear infinite;}
+    .s004 {top:85%; left:87%; -webkit-animation:s 5.8s 0.0s linear infinite; -moz-animation:s 5.8s 0.0s linear infinite; animation:s 5.8s 0.0s linear infinite;}
+    .s005 {top:26%; left:56%; -webkit-animation:s 4.4s 0.0s linear infinite; -moz-animation:s 4.4s 0.0s linear infinite; animation:s 4.4s 0.0s linear infinite;}
+    .s006 {top:74%; left:32%; -webkit-animation:s 7.1s 0.0s linear infinite; -moz-animation:s 7.1s 0.0s linear infinite; animation:s 7.1s 0.0s linear infinite;}
+    .s007 {top:15%; left:74%; -webkit-animation:s 5.3s 0.0s linear infinite; -moz-animation:s 5.3s 0.0s linear infinite; animation:s 5.3s 0.0s linear infinite;}
+    .s008 {top:68%; left:51%; -webkit-animation:s 5.8s 0.0s linear infinite; -moz-animation:s 5.8s 0.0s linear infinite; animation:s 5.8s 0.0s linear infinite;}
+    .s009 {top:21%; left:37%; -webkit-animation:s 6.2s 0.0s linear infinite; -moz-animation:s 6.2s 0.0s linear infinite; animation:s 6.2s 0.0s linear infinite;}
+    .s010 {top:53%; left:41%; -webkit-animation:s 6.0s 0.0s linear infinite; -moz-animation:s 6.0s 0.0s linear infinite; animation:s 6.0s 0.0s linear infinite;}
+    .s011 {top:33%; left:81%; -webkit-animation:s 7.3s 0.0s linear infinite; -moz-animation:s 7.3s 0.0s linear infinite; animation:s 7.3s 0.0s linear infinite;}
+    .s012 {top:49%; left:64%; -webkit-animation:s 3.2s 0.0s linear infinite; -moz-animation:s 3.2s 0.0s linear infinite; animation:s 3.2s 0.0s linear infinite;}
+    .s013 {top:24%; left:51%; -webkit-animation:s 5.5s 0.0s linear infinite; -moz-animation:s 5.5s 0.0s linear infinite; animation:s 5.5s 0.0s linear infinite;}
+    .s014 {top:57%; left:22%; -webkit-animation:s 6.8s 0.0s linear infinite; -moz-animation:s 6.8s 0.0s linear infinite; animation:s 6.8s 0.0s linear infinite;}
+    .s015 {top:19%; left:07%; -webkit-animation:s 6.0s 0.0s linear infinite; -moz-animation:s 6.0s 0.0s linear infinite; animation:s 6.0s 0.0s linear infinite;}
+    .s016 {top:62%; left:42%; -webkit-animation:s 4.7s 0.0s linear infinite; -moz-animation:s 4.7s 0.0s linear infinite; animation:s 4.7s 0.0s linear infinite;}
+    .s017 {top:52%; left:63%; -webkit-animation:s 3.9s 0.0s linear infinite; -moz-animation:s 3.9s 0.0s linear infinite; animation:s 3.9s 0.0s linear infinite;}
+    .s018 {top:43%; left:19%; -webkit-animation:s 5.1s 0.0s linear infinite; -moz-animation:s 5.1s 0.0s linear infinite; animation:s 5.1s 0.0s linear infinite;}
+    .s019 {top:95%; left:28%; -webkit-animation:s 7.3s 0.0s linear infinite; -moz-animation:s 7.3s 0.0s linear infinite; animation:s 7.3s 0.0s linear infinite;}
+    .s020 {top:05%; left:71%; -webkit-animation:s 6.8s 0.0s linear infinite; -moz-animation:s 6.8s 0.0s linear infinite; animation:s 6.8s 0.0s linear infinite;}
+    .s021 {top:67%; left:53%; -webkit-animation:s 7.9s 0.0s linear infinite; -moz-animation:s 7.9s 0.0s linear infinite; animation:s 7.9s 0.0s linear infinite;}
+    .s022 {top:32%; left:25%; -webkit-animation:s 5.1s 0.0s linear infinite; -moz-animation:s 5.1s 0.0s linear infinite; animation:s 5.1s 0.0s linear infinite;}
+    .s023 {top:47%; left:38%; -webkit-animation:s 5.8s 0.0s linear infinite; -moz-animation:s 5.8s 0.0s linear infinite; animation:s 5.8s 0.0s linear infinite;}
+    .s024 {top:19%; left:42%; -webkit-animation:s 6.7s 0.0s linear infinite; -moz-animation:s 6.7s 0.0s linear infinite; animation:s 6.7s 0.0s linear infinite;}
+    .s025 {top:11%; left:18%; -webkit-animation:s 6.3s 0.0s linear infinite; -moz-animation:s 6.3s 0.0s linear infinite; animation:s 6.3s 0.0s linear infinite;}
+    .s026 {top:37%; left:29%; -webkit-animation:s 8.1s 0.0s linear infinite; -moz-animation:s 8.1s 0.0s linear infinite; animation:s 8.1s 0.0s linear infinite;}
+    .s027 {top:64%; left:94%; -webkit-animation:s 7.5s 0.0s linear infinite; -moz-animation:s 7.5s 0.0s linear infinite; animation:s 7.5s 0.0s linear infinite;}
+    .s028 {top:28%; left:82%; -webkit-animation:s 7.7s 0.0s linear infinite; -moz-animation:s 7.7s 0.0s linear infinite; animation:s 7.7s 0.0s linear infinite;}
+    .s029 {top:71%; left:99%; -webkit-animation:s 6.1s 0.0s linear infinite; -moz-animation:s 6.1s 0.0s linear infinite; animation:s 6.1s 0.0s linear infinite;}
+    .s030 {top:94%; left:37%; -webkit-animation:s 7.0s 0.0s linear infinite; -moz-animation:s 7.0s 0.0s linear infinite; animation:s 7.0s 0.0s linear infinite;}
+
+    #p01 {top:00%; left:00%; height:25%; width:25%; -webkit-transform:rotate(182deg); -moz-transform:rotate(182deg); transform:rotate(182deg); -webkit-animation:p 7.1s 0.0s linear infinite; -moz-animation:p 7.1s 0.0s linear infinite; animation:p 7.1s 0.0s linear infinite;}
+    #p02 {top:00%; left:25%; height:25%; width:25%; -webkit-transform:rotate(179deg); -moz-transform:rotate(179deg); transform:rotate(179deg); -webkit-animation:p 5.3s 0.0s linear infinite; -moz-animation:p 5.3s 0.0s linear infinite; animation:p 5.3s 0.0s linear infinite;}
+    #p03 {top:00%; left:50%; height:25%; width:25%; -webkit-transform:rotate(185deg); -moz-transform:rotate(185deg); transform:rotate(185deg); -webkit-animation:p 7.5s 0.0s linear infinite; -moz-animation:p 7.5s 0.0s linear infinite; animation:p 7.5s 0.0s linear infinite;}
+    #p04 {top:00%; left:75%; height:25%; width:25%; -webkit-transform:rotate(183deg); -moz-transform:rotate(183deg); transform:rotate(183deg); -webkit-animation:p 6.6s 0.0s linear infinite; -moz-animation:p 6.6s 0.0s linear infinite; animation:p 6.6s 0.0s linear infinite;}
+    #p05 {top:25%; left:00%; height:25%; width:25%; -webkit-transform:rotate(174deg); -moz-transform:rotate(174deg); transform:rotate(174deg); -webkit-animation:p 8.7s 0.0s linear infinite; -moz-animation:p 8.7s 0.0s linear infinite; animation:p 8.7s 0.0s linear infinite;}
+    #p06 {top:25%; left:25%; height:25%; width:25%; -webkit-transform:rotate(178deg); -moz-transform:rotate(178deg); transform:rotate(178deg); -webkit-animation:p 8.9s 0.0s linear infinite; -moz-animation:p 8.9s 0.0s linear infinite; animation:p 8.9s 0.0s linear infinite;}
+    #p07 {top:25%; left:50%; height:25%; width:25%; -webkit-transform:rotate(181deg); -moz-transform:rotate(181deg); transform:rotate(181deg); -webkit-animation:p 7.2s 0.0s linear infinite; -moz-animation:p 7.2s 0.0s linear infinite; animation:p 7.2s 0.0s linear infinite;}
+    #p08 {top:25%; left:75%; height:25%; width:25%; -webkit-transform:rotate(177deg); -moz-transform:rotate(177deg); transform:rotate(177deg); -webkit-animation:p 9.5s 0.0s linear infinite; -moz-animation:p 9.5s 0.0s linear infinite; animation:p 9.5s 0.0s linear infinite;}
+    #p09 {top:50%; left:00%; height:25%; width:25%; -webkit-transform:rotate(186deg); -moz-transform:rotate(186deg); transform:rotate(186deg); -webkit-animation:p 5.6s 0.0s linear infinite; -moz-animation:p 5.6s 0.0s linear infinite; animation:p 5.6s 0.0s linear infinite;}
+    #p10 {top:50%; left:25%; height:25%; width:25%; -webkit-transform:rotate(184deg); -moz-transform:rotate(184deg); transform:rotate(184deg); -webkit-animation:p 6.1s 0.0s linear infinite; -moz-animation:p 6.1s 0.0s linear infinite; animation:p 6.1s 0.0s linear infinite;}
+    #p11 {top:50%; left:50%; height:25%; width:25%; -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg); -webkit-animation:p 6.5s 0.0s linear infinite; -moz-animation:p 6.5s 0.0s linear infinite; animation:p 6.5s 0.0s linear infinite;}
+    #p12 {top:50%; left:75%; height:25%; width:25%; -webkit-transform:rotate(176deg); -moz-transform:rotate(176deg); transform:rotate(176deg); -webkit-animation:p 5.9s 0.0s linear infinite; -moz-animation:p 5.9s 0.0s linear infinite; animation:p 5.9s 0.0s linear infinite;}
+    #p13 {top:75%; left:00%; height:25%; width:25%; -webkit-transform:rotate(183deg); -moz-transform:rotate(183deg); transform:rotate(183deg); -webkit-animation:p 7.6s 0.0s linear infinite; -moz-animation:p 7.6s 0.0s linear infinite; animation:p 7.6s 0.0s linear infinite;}
+    #p14 {top:75%; left:25%; height:25%; width:25%; -webkit-transform:rotate(177deg); -moz-transform:rotate(177deg); transform:rotate(177deg); -webkit-animation:p 8.7s 0.0s linear infinite; -moz-animation:p 8.7s 0.0s linear infinite; animation:p 8.7s 0.0s linear infinite;}
+    #p15 {top:75%; left:50%; height:25%; width:25%; -webkit-transform:rotate(181deg); -moz-transform:rotate(181deg); transform:rotate(181deg); -webkit-animation:p 7.0s 0.0s linear infinite; -moz-animation:p 7.0s 0.0s linear infinite; animation:p 7.0s 0.0s linear infinite;}
+    #p16 {top:75%; left:75%; height:25%; width:25%; -webkit-transform:rotate(179deg); -moz-transform:rotate(179deg); transform:rotate(179deg); -webkit-animation:p 5.4s 0.0s linear infinite; -moz-animation:p 5.4s 0.0s linear infinite; animation:p 5.4s 0.0s linear infinite;}
+
+    @-webkit-keyframes p {
+    from {-webkit-transform:translateZ(-300px); opacity:0;}
+    50%  {-webkit-transform:translateZ(00px); opacity:1;}
+    to   {-webkit-transform:translateZ(300px); opacity:0;}
+    }
+    @-moz-keyframes p {
+    from {-moz-transform:translateZ(-300px); opacity:0;}
+    50%  {-moz-transform:translateZ(00px); opacity:1;}
+    to   {-moz-transform:translateZ(300px); opacity:0;}
+    }
+    @keyframes p {
+    from {transform:translateZ(-300px); opacity:0;}
+    50%  {transform:translateZ(00px); opacity:1;}
+    to   {transform:translateZ(300px); opacity:0;}
+    }

@@ -33,7 +33,9 @@ Route::get('/', function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+
     Route::get('admin', function () {return view('admin');});
+    Route::get('miskito/cursomiskito', function () {return view('miskito/cursomiskito');});
 
 
 
