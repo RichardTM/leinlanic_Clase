@@ -361,7 +361,7 @@ Route::get('estudiantes/lista','EstudianteController@list');
 Route::get('estudiantes/crear','EstudianteController@create');
 
 Route::get('estudiantes','EstudianteController@index');
-Route::get('estudiantes/{preguntarespuesta}','EstudianteController@show');
+Route::get('estudiantes/{estudiante}','EstudianteController@show');
 Route::post('estudiantes', 'EstudianteController@store');
 Route::patch('estudiantes/{estudiante}','EstudianteController@update');
 Route::delete('estudiantes/{estudiante}','EstudianteController@destroy');

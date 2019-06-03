@@ -15,14 +15,13 @@
                 <tbody class="table-light">
                     @foreach ($rs as $item)
                     <tr>
-                        <td>{{$item->perfil}}</td>
-                        <td>{{$item->curso}}</td>
-
+                        <td>{{$item->perfil->nombres}}</td>
+                        <td>{{$item->curso->curso}}</td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <a href="/estudiantes/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
                                 <a href="/estudiantes/crear" class="btn btn-success btn-sm"><i class="fas fa-user-plus"></i></a>
-                                <form action="{{url('estudiantes', $item->id)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
+                                <form action="{{url('traducciones', $item->id)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
                                     @csrf()
                                     @method('DELETE')
                                     <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
@@ -39,3 +38,4 @@
     </div>
 </div>
 @endsection
+
