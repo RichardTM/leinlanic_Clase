@@ -38,7 +38,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('miskito/mkleccion1', function () {
         return view('miskito/mkleccion1');
     });
-
+    Route::get('miskito/leccion2', function () {
+        return view('miskito/leccion2');
+    });
+    Route::get('miskito/leccion3', function () {
+        return view('miskito/leccion3');
+    });
+    Route::get('miskito/leccion4',function () {
+        return view('miskito/leccion4');
+    });
 
 
     // A R E A

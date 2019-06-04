@@ -16,6 +16,8 @@
             </i>
             <div class="card-body text-center">
                 <p class="card-text text-center">Mis primeras palabras en Miskito</p>
+                <a href="/miskito/mkleccion1"><i class="far fa-2x fa-hand-spock"></i>
+                <a href="/miskito/mkleccion1"><i class="fas fa-2x fa-atlas"></i>
             </div>
         </i>
     </i>
@@ -25,10 +27,13 @@
     <div class="card-deck col-md">
         <div class="card" style="border-radius: 10px;">
             <div class="card-header text-center">
+            <a href="/miskito/leccion2"><i class="far fa-3x fa-handshake"></i></a>
                 <h2>Lección 2 - Oraciones con Saludos</h2>
             </div>
             <div class="card-body text-center">
                 <p class="card-text text-center">Mi primera oraciones en Miskito</p>
+                <a href="/miskito/leccion2"><i class="fas fa-2x fa-atlas"></i>
+                <a href="/miskito/leccion2"><i class="fab fa-2x fa-audible"></i>
             </div>
         </div>
     </div>
@@ -38,10 +43,13 @@
     <div class="card-deck col-md">
         <div class="card" style="border-radius: 10px;">
             <div class="card-header text-center">
+            <a href="/miskito/leccion3"><i class="far fa-3x fa-handshake"></i></a>
                 <h2>Lección 3 - Conversaciones</h2>
             </div>
             <div class="card-body text-center">
                 <p class="card-text text-center">Consejos de gramatica</p>
+                <a href="/miskito/leccion3"><i class="fas fa-2x fa-bullhorn"></i>
+                <a href="/miskito/leccion3"><i class="fas fa-2x fa-check"></i>
             </div>
         </div>
     </div>
@@ -51,10 +59,13 @@
     <div class="card-deck col-md">
         <div class="card" style="border-radius: 10px;">
             <div class="card-header text-center">
-                <h2>Lección 4 - Evaluación</h2>
+            <a href="/miskito/leccion4"><i class="far fa-3x fa-handshake"></i></a>
+            <h2>Lección 4 - Evaluación</h2>
             </div>
             <div class="card-body text-center">
                 <p class="card-text text-center">Consejos de gramatica</p>
+                <a href="/miskito/leccion4"><i class="far fa-2x fa-ballot"></i>
+
             </div>
         </div>
     </div>
