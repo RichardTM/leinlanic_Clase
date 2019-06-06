@@ -54,7 +54,7 @@
             </li>
             @endguest
             <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">Acerca de</a></li>
         </ul>
     </nav>
     <style>

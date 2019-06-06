@@ -12,19 +12,28 @@
 </head>
 
 <style>
-    body {
-        background-image: url(http://k42.kn3.net/D8A69F383.jpg);
+    h1 {
+        color: black;
+    }
+    p{
+        color: black;
     }
 </style>
 
-<body>
+<body background="../img/presence-ii.png">
     <div class="row">
         <div class="container">
-            <div class="jumbotron text-center" style="background-color:#c5fef5; margin-top: 50px;">
-                <img src="../img/logo1.png" alt="logo">
-                <h1 class="display-4"> Bienvenidos a LEINLANIC</h1>
-                <p> ...Donde aprenderas la lengua nativa del pueblo misquito de Nicaragua... </p>
-                <a class="btn btn-success btn-lg" href='home' role="button">Comencemos !</a>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="text-center" style="margin-top: 80px;">
+                        <img src="../img/logo1.png" alt="logo">
+                        <h1><strong>Bienvenidos a LEINLANIC</strong></h1>
+                        <p> ...Donde aprenderas la lengua nativa del pueblo misquito de Nicaragua... </p>
+                        <a class="btn btn-success btn-lg" href='home' role="button">Comencemos !</a>
+                    </div>
+                </div>
+                <div class="col-md-8"></div>
             </div>
         </div>
     </div>

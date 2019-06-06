@@ -48,7 +48,7 @@ class EstudianteController extends Controller
     {
         $perfiles = Perfil::all();
         $cursos = Curso::all();
-        return view('estudiantes/editarestudiante', ['estudinate' => $estudiante], compact('perfiles','cursos'));
+        return view('estudiantes/editarestudiante', ['estudiante' => $estudiante], compact('perfiles','cursos'));
     }
 
 

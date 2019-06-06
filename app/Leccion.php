@@ -13,7 +13,7 @@ class Leccion extends Model
         return $this->belongsTo(Nivel::class);
     }
 
-    public function leccionpreguntas ()
+    public function leccionpreguntas()
     {
         return $this->hasMany(LeccionPregunta::class);
     }
