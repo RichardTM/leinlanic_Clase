@@ -16,7 +16,7 @@
                             <select name="perfil_id" class="form-control" required="required">
                                 <option value="">seleccione</option>
                                 @foreach($perfiles as $item)
-                                <option value="{{$item->id}}">{{$item->perfil}}</option>
+                                <option value="{{$item->id}}">{{$item->nombres}}</option>
                                 @endforeach
                             </select>
                         </div>

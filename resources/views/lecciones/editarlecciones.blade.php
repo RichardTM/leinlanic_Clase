@@ -14,11 +14,11 @@
                         <legend>Editar la Leccion</legend>
                         <div class="form-group">
                             <label for="">Titulo</label>
-                            <input value="{{$leccion->titulo}}" name="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese el Titulo">
+                            <input value="{{$leccion->leccion}}" name="leccion" type="text" class="form-control" id="leccion" placeholder="Ingrese la Leccion">
                         </div>
                         <div class="form-group">
                             <label for="">Descripcion</label>
-                            <input value="{{$leccion->teoria}}" name="teoria" type="text" class="form-control" id="teoria" placeholder="Ingrese la Teoria">
+                            <textarea value="{{$leccion->descripcion}}" name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Ingrese la Teoria" rows="4"></textarea>
                         </div>
                         <div class="form-group">
                         <label for="">Nivel</label>

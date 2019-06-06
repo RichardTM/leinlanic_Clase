@@ -9,16 +9,6 @@ use App\Desarrollador;
 
 $factory->define(Curso::class, function (Faker $faker) {
     return [
-        
-        'curso' => $faker->curso,
-
-        'lengua_id' => function () {
-            return factory(Lengua::class)->create()->id;
-        },
-        'desarrollador_id' => function () {
-            return factory(Desarrollador::class)->create()->id;
-        },
-
-
-    ];
+//
+   ];
 });
