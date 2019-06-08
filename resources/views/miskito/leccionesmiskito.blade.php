@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Bienvenido al curso de Miskito </h1>
+                <h1 class="text-center"> Lecciones de  </h1>
 
             </div>
         </div>
@@ -89,7 +89,7 @@
                         data.map(item => {
                             let fila = `
                     <tr>
-                        <td  onclick="cargarLecciones()" >Nivel ${item.nivel}</tr>
+                        <td   >Nivel ${item.nivel}</tr>
 
                     </tr>
                     <tr>
@@ -132,9 +132,9 @@
 
                         cuerpoTablaLeccion.innerHTML = filasLeccion
                     })
-                .catch(error=>{
-                    alert('error');
-                } );
+                // .catch(error=>{
+                //     alert('error');
+                // } );
             }
 
 

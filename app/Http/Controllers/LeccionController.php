@@ -9,15 +9,26 @@ use App\Nivel;
 class LeccionController extends Controller
 {
 
-    public function index()
-    {
-        // $qs =Leccion::all();
-        // return $qs;
-        return Leccion::with([
-            'nivel',
-        ])->get();
-    }
+    // public function index1()
+    // {
+    //     // $qs =Leccion::all();
+    //     // return $qs;
+    //     return Leccion::with([
+    //         'nivel',
+    //     ])->get();
+    // }
 
+    public function index(Nivel $nivele)
+    {
+    //   $nivele->load(['lecciones']);
+    //   return response()->json([
+    //       'data'=>$nivele->lecciones
+    //   ], 200);
+        $nivele->load(['lecciones']);
+        $lecciones= $nivele->lecciones;
+        return $lecciones;
+
+    }
 
     public function create()
     {
@@ -68,8 +79,8 @@ class LeccionController extends Controller
 
     public function list()
     {
-        $rs = $this->index();
-        return view('lecciones/listalecciones', ['rs' => $rs]);
+        // $rs = $this->index();
+        // return view('lecciones/listalecciones', ['rs' => $rs]);
     }
 
 }

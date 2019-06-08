@@ -29,6 +29,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('miskito/cursomiskito', function () {
         return view('miskito/cursomiskito');
     });
+    Route::get('miskito/leccionesmiskito', function () {
+        return view('miskito/leccionesmiskito');
+    });
     Route::get('about', function () {
         return view('about');
     });
@@ -156,7 +159,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('lecciones/lista', 'LeccionController@list');
     Route::get('lecciones/crear', 'LeccionController@create');
 
-    Route::get('lecciones', 'LeccionController@index');
+    Route::get('lecciones', 'LeccionController@index1');
     Route::get('lecciones/{leccion}', 'LeccionController@show');
     Route::post('lecciones', 'LeccionController@store');
     Route::patch('lecciones/{leccion}', 'LeccionController@update');
@@ -201,30 +204,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('perfiles/{perfil}', 'PerfilController@update');
     Route::delete('perfiles/{<}', 'PerfilController@destroy');
 
-    // RUTAS PALABRAS
-
-    Route::get('palabras/editar/{palabra}', 'PalabraController@edit');
-    Route::get('palabras/lista', 'PalabraController@list');
-    Route::get('palabras/crear', 'PalabraController@create');
-
-    Route::get('palabras', 'PalabraController@index');
-    Route::get('palabras/{palabra}', 'PalabraController@show');
-    Route::post('palabras', 'PalabraController@store');
-    Route::patch('palabras/{palabra}', 'PalabraController@update');
-    Route::delete('palabras/{palabra}', 'PalabraController@destroy');
-
-
-    // RUTAS EXAMENES
-
-    Route::get('examenes/editar/{examen}', 'ExamenController@edit');
-    Route::get('examenes/lista', 'ExamenController@list');
-    Route::get('examenes/crear', 'ExamenController@create');
-
-    Route::get('examenes', 'ExamenController@index');
-    Route::get('examenes/{examen}', 'ExamenController@show');
-    Route::post('examenes', 'ExamenController@store');
-    Route::patch('examenes/{examen}', 'ExamenController@update');
-    Route::delete('examenes/{examen}', 'ExamenController@destroy');
 
 
     // RUTAS LENGUAS

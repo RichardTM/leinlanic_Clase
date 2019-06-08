@@ -16,7 +16,8 @@
                     @foreach ($rs as $item)
                     <tr>
                         <td>{{$item->pregunta->pregunta}}</td>
-                        <td class="text-center"> @if($item->is_correct=='1')
+                        <td class="text-center">
+                            @if($item->is_correct=='1')
                             <i class="fas fa-thumbs-up"></i>
                             @else
                             <i class="fas fa-thumbs-down"></i>
