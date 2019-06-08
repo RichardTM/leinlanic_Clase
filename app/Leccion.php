@@ -8,6 +8,9 @@ class Leccion extends Model
 {
     protected $table='lecciones';
 
+    protected $fillable = ['leccion', 'descripcion', 'nivel_id'];
+
+
     public function nivel()
     {
         return $this->belongsTo(Nivel::class);

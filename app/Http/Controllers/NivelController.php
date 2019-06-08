@@ -9,11 +9,19 @@ use App\Curso;
 class NivelController extends Controller
 {
 
-    public function index()
+    // public function index()
+    // {
+    //     return Nivel::with([
+    //         'curso',
+    //     ])->get();
+
+    // }
+    public function index(Curso $curso)
     {
-        return Nivel::with([
-            'curso',
-        ])->get();
+
+        $curso->load(['niveles']);
+        $niveles= $curso->niveles;
+        return $niveles;
     }
 
     public function create()
@@ -33,9 +41,10 @@ class NivelController extends Controller
 
     }
 
-    public function show($nivel)
+    public function show(Nivel $nivel)
     {
         return $nivel;
+
     }
 
 
@@ -63,8 +72,8 @@ class NivelController extends Controller
 
     public function list()
     {
-        $rs = $this->index();
-        return view('niveles/listaniveles', ['rs' => $rs]);
+        // $rs = $this->index();
+        // return view('niveles/listaniveles', ['rs' => $rs]);
     }
 
 }
