@@ -113,9 +113,6 @@
 
 
 
-
-
-
                 let url1 = `http://leinla.test/api/niveles/1/leccion`
 
 

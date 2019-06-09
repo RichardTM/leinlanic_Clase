@@ -18,7 +18,7 @@ class LeccionController extends Controller
         ])->get();
     }
 
-    public function index(Nivel $nivele, Leccion $id)
+    public function index(Nivel $nivele)
     {
     //   $nivele->load(['lecciones']);
     //   return response()->json([
@@ -27,7 +27,7 @@ class LeccionController extends Controller
 
         $nivele->load(['lecciones']);
         $lecciones= $nivele->lecciones;
-        return $lecciones->with('id', $id);
+        return $lecciones;
 
     }
 
