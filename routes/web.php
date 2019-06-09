@@ -172,7 +172,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('niveles/lista', 'NivelController@list');
     Route::get('niveles/crear', 'NivelController@create');
 
-    Route::get('niveles', 'NivelController@index');
+    Route::get('niveles', 'NivelController@index1');
     Route::get('niveles/{leccion}', 'NivelController@show');
     Route::post('niveles', 'NivelController@store');
     Route::patch('niveles/{nivel}', 'NivelController@update');
