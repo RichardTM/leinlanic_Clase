@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('niveles','NivelController')->only(['index', 'show','destroy']);
-Route::resource('niveles.leccion','LeccionController')->only(['index', 'show','destroy']);
+Route::resource('niveles.leccion','LeccionController' )->only(['index', 'show','destroy']);
 
 // Route::resource('cursos','CursoController')->only(['index', 'show','destroy']);
  Route::resource('cursos.nivel','NivelController')->only(['index', 'show','destroy']);

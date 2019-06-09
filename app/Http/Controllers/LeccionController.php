@@ -18,15 +18,16 @@ class LeccionController extends Controller
         ])->get();
     }
 
-    public function index(Nivel $nivele)
+    public function index(Nivel $nivele, Leccion $id)
     {
     //   $nivele->load(['lecciones']);
     //   return response()->json([
     //       'data'=>$nivele->lecciones
     //   ], 200);
+
         $nivele->load(['lecciones']);
         $lecciones= $nivele->lecciones;
-        return $lecciones;
+        return $lecciones->with('id', $id);
 
     }
 
@@ -82,5 +83,6 @@ class LeccionController extends Controller
         $rs = $this->index1();
         return view('lecciones/listalecciones', ['rs' => $rs]);
     }
+
 
 }
