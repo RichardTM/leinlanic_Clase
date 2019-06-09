@@ -77,4 +77,5 @@ class NivelController extends Controller
         return view('niveles/listaniveles', ['rs' => $rs]);
     }
 
+
 }

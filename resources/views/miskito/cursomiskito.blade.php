@@ -42,9 +42,9 @@
             </thead>
             <tbody id="cuerpo-tabla">
                 <tr>
-                    <td>  </td>
+                    <td> </td>
 
-            </tr>
+                </tr>
 
             </tbody>
         </table>
@@ -76,6 +76,7 @@
             let filasLeccion = ``
             let data = [];
             let lecciones = [];
+            //  var id = ``
 
             const cargarNiveles = () => {
                 let url = `http://leinla.test/api/cursos/1/nivel`
@@ -114,7 +115,15 @@
 
 
             const cargarLecciones = () => {
+
+
+
+
+
+
                 let url1 = `http://leinla.test/api/niveles/1/leccion`
+
+
 
                 fetch(url1)
                     .then(res => res.json())
@@ -132,9 +141,8 @@
 
                         cuerpoTablaLeccion.innerHTML = filasLeccion
                     })
-                .catch(error=>{
-                    alert('error');
-                } );
+
+
             }
 
 
