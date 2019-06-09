@@ -9,13 +9,13 @@ use App\Curso;
 class NivelController extends Controller
 {
 
-    // public function index()
-    // {
-    //     return Nivel::with([
-    //         'curso',
-    //     ])->get();
+     public function index1()
+     {
+     return Nivel::with([
+             'curso',
+         ])->get();
 
-    // }
+     }
     public function index(Curso $curso)
     {
 
@@ -72,8 +72,8 @@ class NivelController extends Controller
 
     public function list()
     {
-        // $rs = $this->index();
-        // return view('niveles/listaniveles', ['rs' => $rs]);
+        $rs = $this->index1();
+         return view('niveles/listaniveles', ['rs' => $rs]);
     }
 
 }

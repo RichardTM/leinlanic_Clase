@@ -29,11 +29,6 @@
         <!-- <button onclick="cargarNiveles()">Cargar Niveles</button> -->
         <!-- <button onclick="cargarLecciones()">Cargar Lecciones</button> -->
 
-
-
-
-
-
         <table class="table table-hover" style="border: 1px">
             <thead>
                 <tr>
