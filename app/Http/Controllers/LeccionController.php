@@ -9,14 +9,14 @@ use App\Nivel;
 class LeccionController extends Controller
 {
 
-    // public function index1()
-    // {
-    //     // $qs =Leccion::all();
-    //     // return $qs;
-    //     return Leccion::with([
-    //         'nivel',
-    //     ])->get();
-    // }
+    public function index1()
+    {
+        // $qs =Leccion::all();
+        // return $qs;
+        return Leccion::with([
+            'nivel',
+        ])->get();
+    }
 
     public function index(Nivel $nivele)
     {
@@ -79,8 +79,8 @@ class LeccionController extends Controller
 
     public function list()
     {
-        // $rs = $this->index();
-        // return view('lecciones/listalecciones', ['rs' => $rs]);
+        $rs = $this->index1();
+        return view('lecciones/listalecciones', ['rs' => $rs]);
     }
 
 }
