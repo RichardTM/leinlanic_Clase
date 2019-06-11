@@ -157,6 +157,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('lecciones/editar/{leccion}', 'LeccionController@edit');
     Route::get('lecciones/lista', 'LeccionController@list');
+    Route::get('miskito/cursomiskito', 'LeccionController@listmiskito');
     Route::get('lecciones/crear', 'LeccionController@create');
 
     Route::get('lecciones', 'LeccionController@index1');
