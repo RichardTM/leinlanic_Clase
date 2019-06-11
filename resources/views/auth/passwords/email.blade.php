@@ -1,11 +1,10 @@
-@extends('layouts.app')
-
+@extends('layouts.estilos')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div class="card" style="background:linear-gradient(to right, #0000ff 0%, #ffff00 60%, #004000 100%); filter:drop-shadow(12px 12px 4px #242424); border-radius: 20px">
+                <div class="card-header text-center"><h1>Restablecer Contraseña</h1></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +17,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right text-white">Dirección de Correo</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -33,9 +32,10 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+                            <a href="/login" class="btn btn-primary"><i class="fas fa-chevron-circle-left"></i></a>
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
+                                    Enviar
+                                </button><p> Se enviara un link a tu correo para restablecer su contraseña</p>
                             </div>
                         </div>
                     </form>

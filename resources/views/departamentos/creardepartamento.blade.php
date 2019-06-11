@@ -14,7 +14,7 @@
                         <legend>Departamento nuevo</legend>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ingrese el nombre del registro">
+                            <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ingrese el nombre del registro" required>
                         </div>
                         <a href="/departamentos/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>

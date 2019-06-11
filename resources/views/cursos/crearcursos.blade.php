@@ -13,7 +13,7 @@
 
                         <div class="form-group">
                             <label for="">Curso</label>
-                            <input type="text" class="form-control" id="curso" name="curso" placeholder="Escriba el Nombre del Curso">
+                            <input type="text" class="form-control" id="curso" name="curso" placeholder="Escriba el Nombre del Curso" required>
                         </div>
 
 

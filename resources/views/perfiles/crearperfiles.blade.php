@@ -108,6 +108,15 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="">Usuario</label>
+                    <select name="user_id" class="form-control" required="required">
+                        <option value="">seleccione</option>
+                        @foreach($users as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="">Carnet</label>
                     <input type="text" class="form-control" id="carnet" name="carnet" placeholder="Escriba el Carnet">
                 </div>
