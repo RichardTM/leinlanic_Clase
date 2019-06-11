@@ -18,11 +18,11 @@
                     <tr>
                         <td>{{$item->leccion}}</td>
                         <td>{{$item->descripcion}}</td>
-                        <td>{{$item->nivel_id}}</td>
+                        <td>{{$item->nivel->nivel}}</td>
 
                         <td class="text-center">
                             <div class="btn-group" role="group">
-                                <a href="/lecciones/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                                <!-- <a href="/lecciones/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a> -->
                                 <a href="/lecciones/crear" class="btn btn-success btn-sm"><i class="fas fa-user-plus"></i></a>
                                 <form action="{{url('lecciones', $item->id)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
                                     @csrf()
