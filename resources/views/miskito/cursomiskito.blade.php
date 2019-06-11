@@ -27,21 +27,7 @@
         <h1></h1>
 
 
-        <!-- <button onclick="cargarLecciones()">Cargar Lecciones</button> -->
-
-
-
-
-
-        <div>
-            <table class="table table-hover" style="border: 1px">
-                <thead>
-                    <tr>
-
-                    </tr>
-                </thead>
-                <tbody id="cuerpo-tabla">
-                </tbody>
+      
 
             </table>
         </div>
