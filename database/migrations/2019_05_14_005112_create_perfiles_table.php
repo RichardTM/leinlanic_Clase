@@ -29,6 +29,8 @@ class CreatePerfilesTable extends Migration
             $table->unsignedInteger('departamento_id');
             $table->unsignedInteger('nacionalidad_id');
             $table->string('carnet', 150);
+            $table->unsignedInteger('user_id');
+
 
 
             // llaves foraneas
@@ -41,6 +43,7 @@ class CreatePerfilesTable extends Migration
             $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
             $table->foreign('nacionalidad_id')->references('id')->on('nacionalidades')->onDelete('cascade');
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // agregar fechas
             $table->timestamps();
         });

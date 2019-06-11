@@ -13,6 +13,7 @@ use App\Etnia;
 use App\Municipio;
 use App\Departamento;
 use App\Nacionalidad;
+use App\User;
 
 
 
@@ -39,6 +40,24 @@ class PerfilController extends Controller
             'departamento',
             'nacionalidad'
         ])->get();
+    }
+
+    public function index2()
+    {
+        $perfil = auth()->user()->perfil;
+        $perfil->load([
+            'sexo',
+            'recinto',
+            'carrera',
+            'area',
+            'modalidad',
+            'etnia',
+            'municipio',
+            'departamento',
+            'nacionalidad',
+            'user',
+        ]);
+        return view('perfil', compact('perfil'));
     }
 
     /**
@@ -75,8 +94,10 @@ class PerfilController extends Controller
         //RELACION PARA NACIONALIDAD
         $nacionalidades = Nacionalidad::all();
 
+        $users = User::all();
 
-        return view('perfiles.crearperfiles', compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades'));
+
+        return view('perfiles.crearperfiles', compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades', 'users'));
     }
 
     /**
@@ -100,10 +121,11 @@ class PerfilController extends Controller
         $perfil->departamento_id  = $request['departamento_id'];
         $perfil->nacionalidad_id = $request['nacionalidad_id'];
         $perfil->carnet = $request['carnet'];
+        $perfil->user_id = $request['user_id'];
         $perfil->save();
 
 
-        return redirect('perfiles/lista');
+        return redirect('perfil');
     }
 
     /**
@@ -152,7 +174,9 @@ class PerfilController extends Controller
          //RELACION PARA NACIONALIDAD
          $nacionalidades = Nacionalidad::all();
 
-        return view('perfiles/editarperfiles', ['perfil' => $perfil], compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades'));
+         $users = User::all();
+
+        return view('perfiles/editarperfiles', ['perfil' => $perfil], compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades', 'users'));
     }
 
     /**
@@ -176,10 +200,11 @@ class PerfilController extends Controller
         $perfil->departamento_id  = $request['departamento_id'];
         $perfil->nacionalidad_id = $request['nacionalidad_id'];
         $perfil->carnet = $request['carnet'];
+        $perfil->user_id = $request['user_id'];
         $perfil->save();
 
 
-        return redirect('perfiles/lista');
+        return redirect('home');
     }
 
     /**
@@ -198,6 +223,6 @@ class PerfilController extends Controller
     public function list()
     {
         $rs = $this->index();
-        return view('perfiles/listaperfiles', ['rs' => $rs]);
+        return view('perfiles/listaperfiles',['rs' => $rs]);
     }
 }

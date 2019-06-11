@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+
         <!-- <div class="col-md-4">
             <figure class="figure">
                 <img src="../img/usuario.png" class="figure-img img-fluid rounded" style="width: 300px; height: 300px; display: block; margin-left: 90px;" alt="..."> -->

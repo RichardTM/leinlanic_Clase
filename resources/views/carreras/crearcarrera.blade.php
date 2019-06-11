@@ -13,7 +13,7 @@
                         @csrf()
                         <div class="form-group">
                             <label for="">Nueva Carrera</label>
-                            <input type="text" class="form-control" id="carrera" name="carrera" placeholder="Ingrese el nombre de la carrera">
+                            <input type="text" class="form-control" id="carrera" name="carrera" placeholder="Ingrese el nombre de la carrera" required>
                         </div>
                         <a href="/carreras/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>

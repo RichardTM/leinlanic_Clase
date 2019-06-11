@@ -12,19 +12,19 @@
                         @csrf()
                         <div class="form-group">
                             <label for=""> Nombres</label>
-                            <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese el Nuevo Nombre">
+                            <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese el Nuevo Nombre" required>
                         </div>
                         <div class="form-group">
                             <label for=""> Apellidos</label>
-                            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese el Nuevo Apellido">
+                            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese el Nuevo Apellido" required>
                         </div>
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese el Nuevo Email">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese el Nuevo Email" required>
                         </div>
                         <div class="form-group">
                             <label for="">Telefono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el Nuevo Telefono">
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el Nuevo Telefono" required>
                         </div>
                         <a href="/desarrolladores/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>
