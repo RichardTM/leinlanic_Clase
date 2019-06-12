@@ -22,3 +22,29 @@
         </div>
     </div>
 
+    <br>
+    <br>
+
+    <!-- <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0" aria-expanded="false" aria-controls="faq-1-contents">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Nombre de la Leccion
+                    </button>
+                    <i class="fas fa-chevron-down float-right"></i>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Aqui puede ir bien la descripcion o los items de las actividades</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <br>
+    <br>
+
+
+    @endsection

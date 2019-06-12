@@ -18,6 +18,7 @@
                     <th>Departamento</th>
                     <th>Nacionalidad</th>
                     <th>Carnet</th>
+                    <th>Usuario</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -36,6 +37,7 @@
                 <td>{{$item->departamento->departamento}}</td>
                 <td>{{$item->nacionalidad->nacionalidad}}</td>
                 <td>{{$item->carnet}}</td>
+                <td>{{$item->user->name}}</td>
 
                 <td class="text-center">
                     <div class="btn-group" role="group">

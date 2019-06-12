@@ -13,7 +13,7 @@
                         <div class="form-group">
 
                             <label for="">Nueva Area</label>
-                            <input type="text" class="form-control" id="area" name="area" placeholder="Ingrese el nombre del area">
+                            <input type="text" class="form-control" id="area" name="area" placeholder="Ingrese el nombre del area" required>
                         </div>
                         <a href="/areas/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>

@@ -13,7 +13,7 @@
                         @csrf()
                         <div class="form-group">
                             <label for="">Nueva Etnia</label>
-                            <input type="text" class="form-control" id="etnia" name="etnia" placeholder="Ingrese el nombre del registro">
+                            <input type="text" class="form-control" id="etnia" name="etnia" placeholder="Ingrese el nombre del registro" required>
                         </div>
                         <a href="/etnias/lista" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                         <button type="submit" class="btn btn-success">Guardar</button>

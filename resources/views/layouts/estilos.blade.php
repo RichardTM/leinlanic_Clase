@@ -12,51 +12,60 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-success">
-        <a href="{{ url('home') }}" class="navbar-brand">
-            LEINLA NIC
-        </a>
+    <div class="">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark " style="text-align:center; background:black;">
+                <div class="container-fluid">
+                    <div class="nav-header ml-auto">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-1">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a href="{{ url('home') }}" class="navbar-brand">
+                            <img src="../img/logo1.png" width="30" height="30" class="d-inline-block align-top" alt=""><strong> LEINLA NIC</strong></a>
+                    </div>
 
-        <!-- <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item"><a class="nav-link" href="#">Mision</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Vision</a></li>
-
-        </ul> -->
-        <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href='/home'>Inicio</a></li>
-            <!-- Links de autentificacion -->
-            @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
-            </li>
-            @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-            </li>
-            @endif
-            @else
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Cerrar Sesión') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                    <div class="collapse navbar-collapse" id="navbar-1">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <nav class="navbar navbar-light">
+                                    <form class="form-inline">
+                                        <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                        <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </nav>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href='/home'>Inicio</a></li>
+                            <!-- Links de autentificacion -->
+                            @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                            </li>
+                            @endif
+                            @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span></a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/perfil">Perfil</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+                            <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/about">Acerca de</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </li>
-            @endguest
-            <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about">Acerca de</a></li>
-        </ul>
-    </nav>
+            </nav>
+        </header>
+    </div>
     <style>
         body {
             background-color: #d2e3d5;
@@ -66,6 +75,9 @@
     <main class="py-4">
         @yield('content')
     </main>
+    <script>
+    import swal from 'sweetalert';
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

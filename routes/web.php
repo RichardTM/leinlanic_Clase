@@ -21,7 +21,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
-
+    Route::get('/perfil', 'PerfilController@index2')->name('perfil');
 
     Route::get('admin', function () {
         return view('admin');
@@ -216,7 +216,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('perfiles/{perfil}', 'PerfilController@show');
     Route::post('perfiles', 'PerfilController@store');
     Route::patch('perfiles/{perfil}', 'PerfilController@update');
-    Route::delete('perfiles/{<}', 'PerfilController@destroy');
+    Route::delete('perfiles/{perfil}', 'PerfilController@destroy');
 
 
 
