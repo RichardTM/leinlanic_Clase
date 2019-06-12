@@ -13,6 +13,7 @@
 
 <div style="height: 90vh" class="d-flex justify-content-center align-items-center bd-highlight mb-3">
 
+
     <body background="../img/presence-ii.png">
         <div class="row">
             <div class="container">
@@ -23,6 +24,7 @@
                             <p> ...Donde aprenderas la lengua nativa del pueblo misquito de Nicaragua... </p>
                             <a class="btn btn-success btn-lg" href='home' role="button">Comencemos !</a>
                         </div>
+
                 </div>
             </div>
         </div>

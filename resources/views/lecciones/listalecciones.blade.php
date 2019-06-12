@@ -32,6 +32,7 @@
                                         <td>{{$item->descripcion}}</td>
                                         <td>{{$item->nivel->nivel}}</td>
 
+
                                         <td class="text-center">
                                             <div class="btn-group" role="group">
                                                 <!-- <a href="/lecciones/editar/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a> -->
@@ -55,6 +56,7 @@
 
                 </div>
             </div>
+
         </div>
     </div>
 </div>

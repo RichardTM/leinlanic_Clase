@@ -29,8 +29,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('miskito/cursomiskito', function () {
         return view('miskito/cursomiskito');
     });
+    Route::get('miskito/cursomiskitoajax', function () {
+        return view('miskito/cursomiskitoajax');
+    });
     Route::get('miskito/leccionesmiskito', function () {
         return view('miskito/leccionesmiskito');
+    });
+    Route::get('miskito/actividadlec1miskito', function () {
+        return view('miskito/actividadlec1miskito');
+    });
+
+    Route::get('miskito/vocalesmiskito', function () {
+        return view('miskito/vocalesmiskito');
+    });
+    Route::get('miskito/preguntasmiskito', function () {
+        return view('miskito/preguntasmiskito');
     });
     Route::get('about', function () {
         return view('about');

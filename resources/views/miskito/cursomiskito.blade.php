@@ -14,8 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Bienvenido al curso de Miskito </h1>
-
+                <h1 class="text-center">Bienvenido al curso de Miskito</h1>
             </div>
         </div>
     </div>
@@ -23,112 +22,53 @@
 <!-- NIVELES -->
 
 <body>
+    <br>
+    <br>
+    <br>
+
+
+
+
     <div class="content">
         <h1></h1>
 
 
-      
 
-            </table>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center">
+                <a href="/miskito/mknivel1" class="text-center"><i class="far fa-8x fa-eye"></i></a>
+                <br>
+                <h1>Principiante - Niv. 1</h1>
+            </div>
         </div>
-        <div>
-            <table class="table table-hover" style="border: 1px">
-                <thead>
-                    <tr>
 
-                    </tr>
-                </thead>
-                <tbody id="cuerpo-tabla-lecciones">
-
-                </tbody>
-
-            </table>
-
+        <div class="col-md-6">
+            <div class="text-center">
+                <a href="/miskito/mknivel2" class="text-center"><i class="fas fa-8x fa-tshirt"></i></i></a>
+                <br>
+                <h1>Elemental - Niv. 2</h1>
+            </div>
         </div>
-        <a id="boton" href="/miskito/cursomiskito" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i> </a>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center">
+                <a href="/miskito/mknivel3"><i class="fas fa-8x fa-feather"></i></a>
+                <br>
+                <h1>Intermedio - Niv. 3</h1>
+            </div>
+        </div>
 
+        <div class="col-md-6">
+            <div class="text-center">
+                <a href="/miskito/mknivel4" class="text-center"><i class="fas fa-8x fa-paw"></i></a>
+                <br>
+                <h1>Intermedio alto - Niv. 4</h1>
+            </div>
+        </div>
     </div>
 
 
-
-
-
-
-
-
-
-    <script>
-        const cuerpoTabla = document.getElementById('cuerpo-tabla')
-        const cuerpoTablaLeccion = document.getElementById('cuerpo-tabla-lecciones')
-        const boton = document.getElementById('boton')
-        let data = [];
-        let lecciones = [];
-        const cargarNiveles = () => {
-            let url = `http://leinla.test/api/cursos/1/nivel`
-            cuerpoTabla.innerHTML = ''
-            filas = ``
-            fetch(url)
-                .then(resp => resp.json())
-                .then(datos => {
-                    data = datos
-                    data.map(item => {
-                        let fila = `
-
-                    <tr>
-                        <td  id=${item.id} onclick="cargarLecciones(id)" >Nivel ${item.nivel}</tr>
-                    </tr>
-                    `
-                        filas += fila
-                    });
-                    cuerpoTabla.innerHTML = filas
-                    botonhome.innerHTML = ""
-                })
-            // .catch(error=>{
-            //     alert('error');
-            // } );
-        }
-
-        const cargarLecciones = (id) => {
-            let filasLeccion = ``
-            let boton = ``
-            cuerpoTablaLeccion.innerHTML = ''
-            cuerpoTabla.innerHTML = ''
-
-
-            let url1 = "http://leinla.test/api/niveles/" + id + "/leccion"
-            fetch(url1)
-                .then(res => res.json())
-                .then(dat => {
-                    lecciones = dat
-                    lecciones.map(item => {
-                        let filaLeccion = `
-
-                    <tr>
-                        <td>Leccion ${item.leccion}</td>
-                    </tr>
-
-                    `
-
-
-
-                        filasLeccion += filaLeccion
-
-                    });
-
-                    cuerpoTablaLeccion.innerHTML = filasLeccion
-
-
-                })
-        }
-
-
-        cargarNiveles();
-
-        // cargarCursos();
-        // cargarLecciones();
-    </script>
-
-</body>
-@endsection
-
-</html>
+    < </body> @endsection </html>
