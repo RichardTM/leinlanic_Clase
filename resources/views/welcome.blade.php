@@ -29,7 +29,7 @@
                     <div class="text-center" style="margin-top: 80px;">
                         <img src="../img/logo1.png" alt="logo">
                         <h1><strong>Bienvenidos a LEINLANIC</strong></h1>
-                        <p> ...Donde aprenderas la lengua nativa del pueblo misquito de Nicaragua... </p>
+                        <p> ...Donde aprenderas  lenguas nativas de los Pueblos Indigenas de Nicaragua... </p>
                         <a class="btn btn-success btn-lg" href='home' role="button">Comencemos !</a>
                     </div>
                 </div>
