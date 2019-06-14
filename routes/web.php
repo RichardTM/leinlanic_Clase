@@ -77,6 +77,18 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 
+    // A C T I V I D A D
+    Route::get('actividades/editar/{actividad}', 'ActividadController@edit');
+    Route::get('actividades/lista', 'ActividadController@list');
+    Route::get('actividades', 'ActividadController@index1');
+    Route::get('actividades/crear', 'ActividadController@create');
+    Route::get('actividades/{actividad}', 'ActividadController@show');
+    Route::post('actividades', 'ActividadController@store');
+    Route::patch('actividades/{actividad}', 'ActividadController@update');
+    Route::delete('actividades/{actividad}', 'ActividadController@destroy');
+
+
+
     //Modalidades
     Route::get('modalidades/editar/{modalidad}', 'ModalidadController@edit');
     Route::get('modalidades/lista', 'ModalidadController@list');
@@ -319,7 +331,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('preguntas/lista', 'PreguntaController@list');
     Route::get('preguntas/crear', 'PreguntaController@create');
 
-    Route::get('preguntas', 'PreguntaController@index');
+    Route::get('preguntas', 'PreguntaController@index1');
     Route::get('preguntas/{pregunta}', 'PreguntaController@show');
     Route::post('preguntas', 'PreguntaController@store');
     Route::patch('preguntas/{pregunta}', 'PreguntaController@update');
@@ -343,7 +355,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('respuestas/lista', 'RespuestaController@list');
     Route::get('respuestas/crear', 'RespuestaController@create');
 
-    Route::get('respuestas', 'RespuestaController@index');
+    Route::get('respuestas', 'RespuestaController@index1');
     Route::get('respuestas/{respuesta}', 'RespuestaController@show');
     Route::post('respuestas', 'RespuestaController@store');
     Route::patch('respuestas/{respuesta}', 'RespuestaController@update');

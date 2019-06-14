@@ -13,10 +13,10 @@ class Pregunta extends Model
         return $this->belongsTo(LeccionPregunta::class);
     }
 
-    public function respuesta()
-    {
-        return $this->belongsTo(Respuesta::class);
-    }
+    // public function respuesta()
+    // {
+    //     return $this->belongsTo(Respuesta::class);
+    // }
 
     public function tipo_pregunta()
     {
@@ -36,6 +36,12 @@ class Pregunta extends Model
     public function preguntarespuestas()
     {
         return $this->hasMany(PreguntaRespuesta::class);
+    }
+
+     // RELACION PARA MOSTRAR RELACION EN ADMIN
+    public function actividad()
+    {
+        return $this->belongsTo(Actividad::class);
     }
 
 }

@@ -14,10 +14,12 @@ class Respuesta extends Model
         return $this->belongsTo(Pregunta::class);
     }
 
-    public function preguntas()
-    {
-        return $this->hasMany(Pregunta::class);
-    }
+
+// RELACION PARA JSON
+    // public function preguntas()
+    // {
+    //     return $this->hasMany(Pregunta::class);
+    // }
 
 
     public function preguntarespuestas()

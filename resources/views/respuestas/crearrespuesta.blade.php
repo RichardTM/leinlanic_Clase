@@ -13,11 +13,27 @@
 
 
                         <div class="form-group">
+                            <label for="">Titulo</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Escriba el Titulo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Respuesta</label>
+                            <input type="text" class="form-control" id="respuesta" name="respuesta" placeholder="Escriba la Respuesta">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="">Imagen</label>
+                            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Escriba la Imagen">
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Pregunta</label>
                             <select name="pregunta_id" class="form-control" required="required">
                                 <option value="">seleccione</option>
                                 @foreach($preguntas as $item)
-                                <option value="{{$item->id}}">{{$item->pregunta}}</option>
+                                <option value="{{$item->id}}">{{$item->titulo}}</option>
                                 @endforeach
                             </select>
                         </div>

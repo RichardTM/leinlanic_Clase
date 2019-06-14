@@ -78,6 +78,7 @@
                     <div id="collapseTree" class="collapse hide" aria-labelledby="headingTwo" data-parent="#rel">
                         <div class="card-body">
                             <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/lecciones/lista" role="button">LECCIONES</a></li>
+                            <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/actividades/lista" role="button">ACTIVIDADES</a></li>
                             <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/lpreguntas/lista" role="button">LECCION PREGUNTAS</a></li>
                             <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopreguntas/lista" role="button">TIPO PREGUNTAS</a></li>
                             <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/preguntas/lista" role="button">PREGUNTA</a></li>

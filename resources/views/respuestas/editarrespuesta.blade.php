@@ -13,7 +13,20 @@
                         @method('PATCH')
                         <legend>Editar la Respuesta</legend>
 
+                        <div class="form-group">
+                            <label for=""> Titulo</label>
+                            <input value="{{$respuesta->titulo}}" name="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese el Titulo">
+                        </div>
 
+                        <div class="form-group">
+                            <label for=""> Respuesta</label>
+                            <input value="{{$respuesta->respuesta}}" name="respuesta" type="text" class="form-control" id="respuesta" placeholder="Ingrese la Respuesta">
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""> Imagen</label>
+                            <input value="{{$respuesta->imagen}}" name="imagen" type="text" class="form-control" id="imagen" placeholder="Ingrese la Imagen (URL)">
+                        </div>
 
 
                         <div class="form-group">

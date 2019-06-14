@@ -15,15 +15,17 @@ class CreatePreguntasTable extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->string('pregunta',150);
-            $table->string('imagen',150);
+            $table->string('titulo',150)->nullable();
+            $table->string('pregunta',150)->nullable();
+            $table->string('imagen',150)->nullable();
             $table->unsignedInteger('tipo_pregunta_id');
+            $table->unsignedInteger('atividad_id');
 
 
 
             // llaves foraneas
             $table->foreign('tipo_pregunta_id')->references('id')->on('tipo_preguntas')->onDelete('cascade');
+            $table->foreign('atividad_id')->references('id')->on('actividades')->onDelete('cascade');
 
 
             $table->timestamps();
