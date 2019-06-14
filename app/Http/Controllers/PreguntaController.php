@@ -7,6 +7,7 @@ use App\Pregunta;
 use App\LeccionPregunta;
 use App\Respuesta;
 use App\TipoPregunta;
+use App\Actividad;
 
 class PreguntaController extends Controller
 {
@@ -15,13 +16,21 @@ class PreguntaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index1()
     {
         return Pregunta::with([
-
-
-            'tipo_pregunta'
+            'tipo_pregunta',
+            'actividad'
         ])->get();
+    }
+
+
+    public function index(Actividad $actividade)
+    {
+        $actividade->load(['preguntas']);
+        $preguntas= $actividade->preguntas;
+        return $preguntas;
+
     }
 
     /**
@@ -33,8 +42,9 @@ class PreguntaController extends Controller
     {
 
         $tipopreguntas = TipoPregunta::all();
+        $actividades = Actividad::all();
 
-        return view('preguntas.crearpreguntas', compact('tipopreguntas'));
+        return view('preguntas.crearpreguntas', compact('tipopreguntas', 'actividades'));
 
     }
 
@@ -48,9 +58,11 @@ class PreguntaController extends Controller
     {
 
         $pregunta = new Pregunta();
+        $pregunta->titulo =$request['titulo'];
         $pregunta->pregunta =$request['pregunta'];
         $pregunta->imagen =$request['imagen'];
         $pregunta->tipo_pregunta_id =$request['tipo_pregunta_id'];
+        $pregunta->actividad_id =$request['actividad_id'];
         $pregunta->save();
         return redirect('preguntas/lista');
 
@@ -77,8 +89,9 @@ class PreguntaController extends Controller
     public function edit(Pregunta $pregunta)
     {
         $tipopreguntas = TipoPregunta::all();
+        $actividades = Actividad::all();
 
-        return view('preguntas.editarpreguntas', ['pregunta' => $pregunta], compact('tipopreguntas'));
+        return view('preguntas.editarpreguntas', ['pregunta' => $pregunta], compact('tipopreguntas', 'actividades'));
 
     }
 
@@ -93,11 +106,14 @@ class PreguntaController extends Controller
     {
 
 
+        $pregunta->titulo =$request['titulo'];
         $pregunta->pregunta =$request['pregunta'];
         $pregunta->imagen =$request['imagen'];
         $pregunta->tipo_pregunta_id =$request['tipo_pregunta_id'];
+        $pregunta->actividad_id =$request['actividad_id'];
         $pregunta->save();
         return redirect('preguntas/lista');
+
     }
 
     /**
@@ -116,7 +132,7 @@ class PreguntaController extends Controller
 
     public function list()
     {
-        $rs = $this->index();
+        $rs = $this->index1();
         return view('preguntas.listapreguntas', ['rs' => $rs]);
     }
 }

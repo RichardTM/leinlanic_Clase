@@ -20,4 +20,14 @@ class Leccion extends Model
     {
         return $this->hasMany(LeccionPregunta::class);
     }
+
+
+// RELACION PARA JSON
+    public function actividades ()
+    {
+        return $this->hasMany(Actividad::class);
+    }
+
+
+
 }

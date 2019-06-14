@@ -21,6 +21,8 @@ class Curso extends Model
         return $this->belongsTo(Lengua::class);
     }
 
+
+    // RELACION PARA JSON DE NIVELES
     public function niveles()
     {
         return $this->hasMany(Nivel::class);

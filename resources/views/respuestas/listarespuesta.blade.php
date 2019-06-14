@@ -4,9 +4,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
+            <h1 class="text-center">LISTA DE RESPUESTAS</h1>
             <table class="table table-sm table-hover table-bordered">
                 <thead class="thead-dark">
                     <tr class="text-center">
+                        <th>Titulo</th>
+                        <th>Respuesta</th>
+                        <th>Imagen</th>
                         <th>Pregunta</th>
                         <th>Respuesta Correcta</th>
                         <th>Opciones</th>
@@ -15,7 +19,10 @@
                 <tbody class="table-light">
                     @foreach ($rs as $item)
                     <tr>
-                        <td>{{$item->pregunta->pregunta}}</td>
+                        <td>{{$item->titulo}}</td>
+                        <td>{{$item->respuesta}}</td>
+                        <td>{{$item->imagen}}</td>
+                        <td>{{$item->pregunta->titulo}}</td>
                         <td class="text-center">
                             @if($item->is_correct=='1')
                             <i class="fas fa-thumbs-up"></i>

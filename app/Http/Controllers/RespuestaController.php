@@ -9,12 +9,21 @@ use App\Pregunta;
 class RespuestaController extends Controller
 {
 
-    public function index()
+    public function index1()
     {
         return Respuesta::with([
             'pregunta'
 
         ])->get();
+    }
+
+
+    public function index(Pregunta $pregunta)
+    {
+        $pregunta->load(['respuestas']);
+        $respuestas= $pregunta->respuestas;
+        return $respuestas;
+
     }
 
     /**
@@ -44,6 +53,9 @@ class RespuestaController extends Controller
     {
 
         $respuesta = new Respuesta();
+        $respuesta->titulo =$request['titulo'];
+        $respuesta->respuesta =$request['respuesta'];
+        $respuesta->imagen =$request['imagen'];
         $respuesta->pregunta_id = $request['pregunta_id'];
         $respuesta->is_correct = $request['is_correct'];
         $respuesta->save();
@@ -85,8 +97,11 @@ class RespuestaController extends Controller
     public function update(Request $request, Respuesta $respuesta)
     {
 
-        $respuesta->pregunta_id =$request['pregunta_id'];
-        $respuesta->is_correct =$request['is_correct'];
+        $respuesta->titulo =$request['titulo'];
+        $respuesta->respuesta =$request['respuesta'];
+        $respuesta->imagen =$request['imagen'];
+        $respuesta->pregunta_id = $request['pregunta_id'];
+        $respuesta->is_correct = $request['is_correct'];
         $respuesta->save();
         return redirect('respuestas/lista');
     }
@@ -106,7 +121,7 @@ class RespuestaController extends Controller
 
     public function list()
     {
-        $rs = $this->index();
+        $rs = $this->index1();
         return view('respuestas.listarespuesta', ['rs' => $rs]);
     }
 }

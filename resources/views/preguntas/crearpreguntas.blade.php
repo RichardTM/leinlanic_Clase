@@ -13,6 +13,11 @@
 
 
                         <div class="form-group">
+                            <label for="">tiutlo</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Escriba el Titulo">
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Pregunta</label>
                             <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Escriba la Pregunta">
                         </div>
@@ -29,6 +34,17 @@
                                 <option value="">seleccione</option>
                                 @foreach($tipopreguntas as $item)
                                 <option value="{{$item->id}}">{{$item->tipo_pregunta}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="">Actividad</label>
+                            <select name="actividad_id" class="form-control" required="required">
+                                <option value="">seleccione la Actividad</option>
+                                @foreach($actividades as $item)
+                                <option value="{{$item->id}}">{{$item->actividad}}</option>
                                 @endforeach
                             </select>
                         </div>

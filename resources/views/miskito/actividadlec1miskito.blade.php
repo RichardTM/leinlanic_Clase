@@ -83,7 +83,7 @@
             var resultado; // para guardar el mensaje con el resultado
             switch (acertadas) {
                 case 0:
-                    resultado = 'No has acertado una sola pregunta, Repite la Leccion :-/';
+                    resultado = 'No has acertado un sola pregunta, Repite la Leccion :-/';
                     break;
                 case 1:
                     resultado = 'Bueno, al menos has acertado una pregunta, intenta la leccion nuevamente';
