@@ -112,6 +112,10 @@
             })
 
     }
+    const cargarNiveles = (id) => {
+        // const cuerpoTablaNivel = document.getElementById('cuerpo-tabla-niveles')
+        // const TituloNivel = document.getElementById('titulo-nivel')
+        const TituloLista = document.getElementById('titulo-lista')
 
     const cargarNiveles = (id) => {
         const cuerpoTabla = document.getElementById('cuerpo-tabla')
@@ -122,7 +126,6 @@
         let url = "http://leinla.test/api/cursos/" + id + "/nivel"
         cuerpoTabla.innerHTML = ''
         filas = ``
-
         var subt = document.getElementById("titulo");
         subt.innerHTML = ""
         var subt = document.getElementById("subtitulo");
