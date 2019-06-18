@@ -82,22 +82,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    // swal("Esta seguro que quiere elimar este curso?", {
-    //     buttons: ["Oh noez!", true],
-    // });
-
-    //     console.log
-    //     function eliminar(cont) {
-    //         var del;
-    //         var formulario = document.getElementById('delete_form_{{$item->id}}' + cont);
-    //         del = confirm('¿Esta seguro, que lo desea eliminar?');
-    //         if (del) {
-    //             formulario.submit();
-    //         } else
-    //             return false;
-    //     }
-    //
-</script>
 @endsection

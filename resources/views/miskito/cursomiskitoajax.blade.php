@@ -122,7 +122,10 @@
         let url = "http://leinla.test/api/cursos/" + id + "/nivel"
         cuerpoTabla.innerHTML = ''
         filas = ``
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of bd35630... Merge pull request #32 from richymori/FrontEnd_js
         var subt = document.getElementById("titulo");
         subt.innerHTML = ""
         var subt = document.getElementById("subtitulo");
