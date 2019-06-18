@@ -35,6 +35,8 @@
     <p id="resolucion"></p>
 
     <script>
+
+
         // Array bidimensional donde se guardarán las preguntas junto a sus respuestas correctas correspondientes...
         var preguntas = [ // Pregunta Respuesta
                 ['¿Cómo se escribe buenos dias?', 'Titan yamni'], //  [0][0]   [0][1]

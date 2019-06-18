@@ -16,6 +16,10 @@
                         </h1>
                     </div>
 
+
+
+
+
                     <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body text-center">
                             <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Green;"><a href="/areas/lista" role="button">AREAS</a></li>
@@ -94,6 +98,7 @@
         </div>
     </div>
 </div>
+
 <br>
 <br>
 <br>
@@ -171,4 +176,5 @@
         </div>
     </div>
 </div>
+
 @endsection

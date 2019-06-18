@@ -35,7 +35,7 @@
                                     </form>
                                 </nav>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href='/home'>Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href='/cursos/listacurso'>Inicio</a></li>
                             <!-- Links de autentificacion -->
                             @guest
                             <li class="nav-item">

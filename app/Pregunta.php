@@ -8,6 +8,7 @@ class Pregunta extends Model
 {
     protected $table = 'preguntas';
 
+
     public function leccion_pregunta()
     {
         return $this->belongsTo(LeccionPregunta::class);
