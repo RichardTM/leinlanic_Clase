@@ -8,7 +8,6 @@ use App\LeccionPregunta;
 use App\Respuesta;
 use App\TipoPregunta;
 use App\Actividad;
-use DB;
 
 class PreguntaController extends Controller
 {
@@ -28,12 +27,6 @@ class PreguntaController extends Controller
 
     public function index(Actividad $actividade)
     {
-        // $preguntas = Pregunta::all();
-        // $preguuntas = DB::table('preguntas');
-        // $pregunta = DB::table('preguntas')
-        // ->select('titulo')
-        // ->get();
-        // return $pregunta;
         $actividade->load(['preguntas']);
         $preguntas= $actividade->preguntas;
         return $preguntas;
@@ -87,8 +80,6 @@ class PreguntaController extends Controller
         return $pregunta;
     }
 
-
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -133,7 +124,6 @@ class PreguntaController extends Controller
      */
     public function destroy(Pregunta $pregunta)
     {
-
         $pregunta->delete();
         return redirect('preguntas/lista');
 
