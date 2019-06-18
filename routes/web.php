@@ -20,20 +20,23 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('cursos/listacursoinicio', function () {
+        return view('cursos/listacursoinicio');
+    });
+
     Route::get('/perfil', 'PerfilController@index2')->name('perfil');
 
     Route::get('admin', function () {
         return view('admin');
     });
-    Route::get('miskito/cursomiskito', function () {
-        return view('miskito/cursomiskito');
-    });
-    Route::get('miskito/cursomiskitoajax', function () {
-        return view('miskito/cursomiskitoajax');
-    });
+
     Route::get('miskito/leccionesmiskito', function () {
         return view('miskito/leccionesmiskito');
+    });
+
+    Route::get('miskito/cursomiskitoajax', function () {
+        return view('miskito/cursomiskitoajax');
     });
     Route::get('miskito/actividadlec1miskito', function () {
         return view('miskito/actividadlec1miskito');
@@ -259,9 +262,18 @@ Route::group(['middleware' => ['auth']], function () {
 
     // C U R S O S
 
-    Route::get('cursos/editar/{curso}', 'CursoController@edit');
+
+    // Route::get('miskito/cursomiskito/{curso}', 'CursoController@edit');
+    Route::get('cursos/ajax/{curso}', 'CursoController@edit');
+    // Route::get('cursos/listaajax', 'CursoController@listarcursosajax');
+    Route::get('cursos/editar/{curso}', 'CursoController@edit1'); //para editar en crud
+
     Route::get('cursos/lista', 'CursoController@list');
-    Route::get('cursos/crear', 'CursoController@create');
+    Route::get('cursos/listacurso', 'CursoController@listajax');
+    // Route::get('miskito/lista', 'CursoController@list');
+    Route::get('cursos/crear/{curso}', 'CursoController@create1');
+    Route::get('cursos/ajax', 'CursoController@edit');
+    Route::get('admin', 'CursoController@listadmin');
 
     Route::get('cursos', 'CursoController@index');
     Route::get('cursos/{curso}', 'CursoController@show');

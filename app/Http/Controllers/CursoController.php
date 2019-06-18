@@ -18,13 +18,28 @@ class CursoController extends Controller
             'lengua',
             'desarrollador',
         ])->get();
+
+
     }
 
-    public function create()
+
+
+    //para json
+    public function create(Curso $curso)
+    {
+
+        return view('miskito.cursomiskitoajax', ['curso' => $curso]); //aqui estas definiendo la variable   asi es
+    //  return view('cursos.crearcursos', );
+    }
+
+//para crud
+    public function create1()
     {
         $lenguas = Lengua::all();
         $desarrolladores = Desarrollador::all();
-        return view('cursos.crearcursos', compact('lenguas','desarrolladores'));
+        $curso = Curso::all();
+        return view('cursos.crearcursos', ['curso' => $curso], compact('lenguas','desarrolladores')); //aqui estas definiendo la variable   asi es
+    //  return view('cursos.crearcursos', );
     }
 
 
@@ -43,11 +58,21 @@ class CursoController extends Controller
         return $curso;
     }
 
+
+    //para json
     public function edit(Curso $curso)
     {
         $lenguas = Lengua::all();
         $desarrolladores = Desarrollador::all();
-        return view('cursos/editarcursos',['curso' => $curso], compact('lenguas','desarrolladores'));
+        return view('cursos.dashboard',['curso' => $curso], compact('lenguas','desarrolladores'));
+    }
+
+    //para crud
+    public function edit1(Curso $curso)
+    {
+        $lenguas = Lengua::all();
+        $desarrolladores = Desarrollador::all();
+        return view('cursos.editarcursos',['curso' => $curso], compact('lenguas','desarrolladores'));
     }
 
     public function update(Request $request, Curso $curso)
@@ -70,5 +95,16 @@ class CursoController extends Controller
     {
         $rs = $this->index();
         return view('cursos.listacursos', ['rs' => $rs]);
+    }
+
+    public function listajax()
+    {
+        $rs = $this->index();
+        return view('cursos.listacursoinicio', ['rs' => $rs]);
+    }
+    public function listadmin()
+    {
+        $rs = $this->index();
+        return view('admin', ['rs' => $rs]);
     }
 }
