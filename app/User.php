@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasRoles;
 
     protected $table='users';
 
@@ -43,4 +46,12 @@ class User extends Authenticatable
     {
         return $this->hasOne(Perfil::class);
     }
+
+    public function setPasswordAttribute($value)
+    {
+        if ( !empty($value)) {
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
+
 }

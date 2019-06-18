@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
 
@@ -20,6 +20,19 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 Route::group(['middleware' => ['auth']], function () {
 
+
+    Route::group(['middleware' => ['role:super-admin|editor|moderador']], function() {
+
+        Route::resource('usuarios', 'UsersController');
+    });
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/perfil', 'PerfilController@index2')->name('perfil');
+
+
+    Route::get('miskito/cursomiskito', function () {
+        return view('miskito/cursomiskito');
+
     // Route::get('/home', 'HomeController@index')->name('home');
     Route::get('cursos/listacursoinicio', function () {
         return view('cursos/listacursoinicio');
@@ -33,39 +46,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('miskito/leccionesmiskito', function () {
         return view('miskito/leccionesmiskito');
+
     });
 
-    Route::get('miskito/cursomiskitoajax', function () {
-        return view('miskito/cursomiskitoajax');
-    });
-    Route::get('miskito/actividadlec1miskito', function () {
-        return view('miskito/actividadlec1miskito');
-    });
 
-    Route::get('miskito/vocalesmiskito', function () {
-        return view('miskito/vocalesmiskito');
-    });
-    Route::get('miskito/preguntasmiskito', function () {
-        return view('miskito/preguntasmiskito');
-    });
-    Route::get('about', function () {
-        return view('about');
-    });
-    Route::get('miskito/mknivel1', function () {
-        return view('miskito/mknivel1');
-    });
-    Route::get('miskito/mkleccion1', function () {
-        return view('miskito/mkleccion1');
-    });
-    Route::get('miskito/leccion2', function () {
-        return view('miskito/leccion2');
-    });
-    Route::get('miskito/leccion3', function () {
-        return view('miskito/leccion3');
-    });
-    Route::get('miskito/leccion4',function () {
-        return view('miskito/leccion4');
-    });
 
 
     // A R E A
@@ -260,8 +244,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('desarrolladores/{desarrollador}', 'DesarrolladorController@update');
     Route::delete('desarrolladores/{desarrollador}', 'DesarrolladorController@destroy');
 
-    // C U R S O S
 
+  //cursos jhosell
+  Route::get('admin','CursoController@list2');
+    Route::get('cursos/editar/{curso}', 'CursoController@edit');
+   
+    Route::get('cursos/crear', 'CursoController@create');
 
     // Route::get('miskito/cursomiskito/{curso}', 'CursoController@edit');
     Route::get('cursos/ajax/{curso}', 'CursoController@edit');
@@ -275,8 +263,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('cursos/ajax', 'CursoController@edit');
     Route::get('admin', 'CursoController@listadmin');
 
+
     Route::get('cursos', 'CursoController@index');
-    Route::get('cursos/{curso}', 'CursoController@show');
+    Route::get('cursos/show/{curso}', 'CursoController@show');
     Route::post('cursos', 'CursoController@store');
     Route::patch('cursos/{curso}', 'CursoController@update');
     Route::delete('cursos/{curso}', 'CursoController@destroy');
@@ -394,4 +383,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('estudiantes', 'EstudianteController@store');
     Route::patch('estudiantes/{estudiante}', 'EstudianteController@update');
     Route::delete('estudiantes/{estudiante}', 'EstudianteController@destroy');
+
+
 });

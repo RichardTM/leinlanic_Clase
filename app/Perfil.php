@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class Perfil extends Model
 {
     protected $table = 'perfiles';
+    protected $fillable = [
+        'sexo',
+        'recinto',
+        'carrera',
+        'area',
+        'modalidad',
+        'etnia',
+        'municipio',
+        'departamento',
+        'nacionalidad',
+        'user_id',
+    ];
 
     // RELACION UN PERFIL PERTENECE A UN SEXO
 
