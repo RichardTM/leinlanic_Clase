@@ -1,7 +1,7 @@
 @extends('layouts.estilos')
 @section('content')
-<div class="container">
-    <h1 class="text-center" style="font-family:Courier New; font-size:80px;">ADMINISTRAR</h1>
+<!--<div class="container">
+     <h1 class="text-center" style="font-family:Courier New; font-size:80px;">ADMINISTRAR</h1>
     <div class="row">
 
         <div class="col-md-4">
@@ -89,6 +89,81 @@
                             <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traducciones/lista" role="button">TRADUCCION</a></a></li>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br> -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card borde2">
+                <div class="card-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><strong>CURSOS</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><strong>USUARIOS</strong></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <!-- PESTAÑA 1 -->
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h1 class="txverdana text-center page-header">DISEÑO DE CURSOS</h1>
+                            <br>
+                            <br>
+                            <div class="text-center">
+                                <td><a href="/cursos/crear" class="btn bt-lg btn-success"><i class="fas fa-folder-plus"></i> CURSOS</a></td>
+                                <td><a href="#" class="btn bt-lg btn-success">MANUAL USUARIO</a></td>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+
+                        </div>
+                        <!-- PESTAÑA 2 -->
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h1 class="txverdana text-center page-header">DATOS USUARIO</h1>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="../img/usuariosadmin.png" alt="user" style="width: 400px; height: 400px;">
+                                </div>
+                                <div class="col-md-4">
+                                    <br><br><br><br>
+                                    <a href="/perfiles/lista" class="btn btn-lg btn-secondary">PERFILES</a>
+                                    <br><br>
+                                    <div class="btn-group dropright">
+                                        <button type="button" class="btn btn-lg btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Datos Administrativos
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/recintos/lista" role="button">RECINTO UNIVERSITARIO</a>
+                                            <a class="dropdown-item" href="/areas/lista" role="button">AREA ACADEMICA</a>
+                                            <a class="dropdown-item" href="/carreras/lista" role="button">CARRERAS</a>
+                                            <a class="dropdown-item" href="/modalidades/lista" role="button">MODALIDADES</a>
+                                            <a class="dropdown-item" href="/departamentos/lista" role="button">DEPARTAMENTOS</a>
+                                            <a class="dropdown-item" href="/municipios/lista" role="button">MUNICIPIOS</a>
+                                            <a class="dropdown-item" href="/nacionalidades/lista" role="button">NACIONALIDA</a>
+                                            <a class="dropdown-item" href="/etnias/lista" role="button">ETNIAS</a>
+                                            <a class="dropdown-item" href="/sexos/lista" role="button">SEXOS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                <img src="../img/learn1.png" alt="user" style="width: 400px; height: 400px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/home" class="btn btn-success"><i class="fas fa-home"></i></a>
                 </div>
             </div>
         </div>

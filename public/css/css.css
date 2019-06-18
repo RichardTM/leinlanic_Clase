@@ -1,0 +1,16 @@
+body {
+    background-color: #d2e3d5;
+}
+.borde1 {
+    border: 25px
+    outset #50A010;
+    border-radius: 20px 20px 20px 20px;
+    border-radius: 25px;
+}
+.borde2 {
+    border-radius: 20px; 
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px 
+    rgba(0,0,0,0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px 
+    rgba(0,0,0,0);
+}

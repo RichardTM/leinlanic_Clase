@@ -170,7 +170,7 @@
         var subt = document.getElementById("subtitulo");
         subt.innerHTML = "Lecciones"
 
-        let url1 = "http://leinla.test/api/niveles/" + id + "/leccion"
+        let url1 = "http://leinlanic.test/api/niveles/" + id + "/leccion"
         fetch(url1)
             .then(res => res.json())
             .then(dat => {

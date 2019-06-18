@@ -77,19 +77,19 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 pr-1">
                             <div class="form-group">
                                 <label>Recinto</label>
                                 <input type="text" class="form-control" disabled="" value="{{$perfil->recinto->recinto}}">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 px-1">
                             <div class="form-group">
                                 <label>Carrera</label>
                                 <input type="text" class="form-control" disabled="" value="{{$perfil->carrera->carrera}}">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 pl-1">
                             <div class="form-group">
                                 <label>Area</label>
                                 <input type="text" class="form-control" disabled="" value="{{$perfil->area->area}}">

@@ -14,12 +14,12 @@
 <div style="height: 90vh" class="d-flex justify-content-center align-items-center bd-highlight mb-3">
 
 
-    <body background="../img/presence-ii.png">
+    <body background="../img/leilanic-fondo-1.png">
         <div class="row">
             <div class="container">
                 <div class="row">
                         <div class="text-center" style="margin-top: 80px; color: black;">
-                            <img src="../img/logo1.png" alt="logo">
+                            <img src="../img/logo2.png" alt="logo">
                             <h1><strong>Bienvenidos a LEINLANIC</strong></h1>
                             <p> ...Donde aprenderas la lengua nativa del pueblo misquito de Nicaragua... </p>
                             <a class="btn btn-success btn-lg" href='home' role="button">Comencemos !</a>

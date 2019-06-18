@@ -37,7 +37,7 @@ class NivelController extends Controller
         $nivel->descripcion = $request['descripcion'];
         $nivel->curso_id = $request['curso_id'];
         $nivel->save();
-        return redirect('niveles/lista');
+        return redirect('cursos/editar');
 
     }
 
@@ -61,7 +61,7 @@ class NivelController extends Controller
         $nivel->descripcion = $request['descripcion'];
         $nivel->curso_id = $request['curso_id'];
         $nivel->save();
-        return redirect('niveles/lista');
+        return redirect('cursos/editar');
     }
 
     public function destroy(Nivel $nivel)
@@ -72,8 +72,8 @@ class NivelController extends Controller
 
     public function list()
     {
-        $rs = $this->index1();
-         return view('niveles/listaniveles', ['rs' => $rs]);
+        $ll = $this->index1();
+         return view('niveles/listaniveles', ['ll' => $ll]);
     }
 
 

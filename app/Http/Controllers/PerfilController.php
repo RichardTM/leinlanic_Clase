@@ -38,7 +38,8 @@ class PerfilController extends Controller
             'etnia',
             'municipio',
             'departamento',
-            'nacionalidad'
+            'nacionalidad',
+            'user'
         ])->get();
     }
 
@@ -94,10 +95,7 @@ class PerfilController extends Controller
         //RELACION PARA NACIONALIDAD
         $nacionalidades = Nacionalidad::all();
 
-        $users = User::all();
-
-
-        return view('perfiles.crearperfiles', compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades', 'users'));
+        return view('perfiles.crearperfiles', compact('sexos', 'recintos', 'carreras', 'areas', 'modalidades', 'etnias', 'municipios', 'departamentos', 'nacionalidades'));
     }
 
     /**
@@ -121,7 +119,7 @@ class PerfilController extends Controller
         $perfil->departamento_id  = $request['departamento_id'];
         $perfil->nacionalidad_id = $request['nacionalidad_id'];
         $perfil->carnet = $request['carnet'];
-        $perfil->user_id = $request['user_id'];
+        $perfil->user_id = auth()->id();// asigna el id de usuario al perfil
         $perfil->save();
 
 

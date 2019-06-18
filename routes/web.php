@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
 
@@ -23,9 +23,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/perfil', 'PerfilController@index2')->name('perfil');
 
-    Route::get('admin', function () {
-        return view('admin');
-    });
+    // Route::get('admin', 'AdminController@show');
+    // Route::resource('admin', 'AdminController');
+
+    // Route::get('admin', function () {
+    //     return view('admin');
+    // });
     Route::get('miskito/cursomiskito', function () {
         return view('miskito/cursomiskito');
     });
@@ -258,13 +261,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('desarrolladores/{desarrollador}', 'DesarrolladorController@destroy');
 
     // C U R S O S
-
+    Route::get('admin','CursoController@list2');
     Route::get('cursos/editar/{curso}', 'CursoController@edit');
     Route::get('cursos/lista', 'CursoController@list');
     Route::get('cursos/crear', 'CursoController@create');
-
     Route::get('cursos', 'CursoController@index');
-    Route::get('cursos/{curso}', 'CursoController@show');
+    Route::get('cursos/show/{curso}', 'CursoController@show');
     Route::post('cursos', 'CursoController@store');
     Route::patch('cursos/{curso}', 'CursoController@update');
     Route::delete('cursos/{curso}', 'CursoController@destroy');
@@ -382,4 +384,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('estudiantes', 'EstudianteController@store');
     Route::patch('estudiantes/{estudiante}', 'EstudianteController@update');
     Route::delete('estudiantes/{estudiante}', 'EstudianteController@destroy');
+
+
 });
