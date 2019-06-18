@@ -20,14 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // RUTAS JSON NIVELES
- Route::resource('cursos','CursoController')->only(['index', 'show','edit']);
+ Route::resource('cursos','CursoController')->only(['index', 'show','destroy']);
  Route::resource('cursos.nivel','NivelController')->only(['index', 'show','destroy']);
 
- Route::get('cursos/{curso}', 'CursoController@show');
 
  // RUTAS JSON LECCIONES
  Route::resource('niveles','NivelController')->only(['index', 'show','destroy']);
- Route::resource('niveles.leccion', 'LeccionController')->only(['index', 'show','destroy']);
+ Route::resource('niveles.leccion', 'LeccionController')->only(['index']);
 
 
 // RUTAS JSON ACTIVIDADES
@@ -43,4 +42,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  // RUTAS JSON RESPUESTAS
  Route::resource('preguntas','PreguntaController')->only(['index', 'show','destroy']);
  Route::resource('preguntas.respuesta','RespuestaController')->only(['index', 'show','destroy']);
-

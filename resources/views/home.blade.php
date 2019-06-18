@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="text-center">
-                    <a href='cursos/listacurso' class="btn btn"><i class="fab fa-8x fa-leanpub" style="color:#007100"></i></a>
-                    <a href='cursos/listacurso' class="btn btn">
+                    <a href='miskito/cursomiskitoajax' class="btn btn"><i class="fab fa-8x fa-leanpub" style="color:#007100"></i></a>
+                    <a href='miskito/cursomiskitoajax' class="btn btn">
                         <h1 class="text-center">MISKITO</h1>
                     </a>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique consectetur dignissimos rerum ipsam maiores porro, nemo eius dolore, sed ea placeat quasi mollitia inventore! Ex nulla nihil laboriosam dignissimos quidem!</p>
