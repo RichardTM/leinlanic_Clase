@@ -46,4 +46,12 @@ class User extends Authenticatable
     {
         return $this->hasOne(Perfil::class);
     }
+
+    public function setPasswordAttribute($value)
+    {
+        if ( !empty($value)) {
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
+
 }

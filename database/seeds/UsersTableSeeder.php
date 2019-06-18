@@ -30,13 +30,13 @@ class UsersTableSeeder extends Seeder
 
         $moderador->assignRole('moderador');
 
-        //Usuario con el rol editor
+        //Usuario con el rol super admin
         $admin = User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('123456')
             ]);
 
-        $editor->assignRole('super-admin');
+        $admin->assignRole('super-admin');
     }
 }

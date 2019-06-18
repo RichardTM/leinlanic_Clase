@@ -137,8 +137,10 @@
                                     <img src="../img/usuariosadmin.png" alt="user" style="width: 400px; height: 400px;">
                                 </div>
                                 <div class="col-md-4">
-                                    <br><br><br><br>
-                                    <a href="/perfiles/lista" class="btn btn-lg btn-secondary">PERFILES</a>
+                                    <br><br>
+                                    <a href="{{ url('usuarios') }}" class="btn btn-lg btn-secondary">Usuarios</a>
+                                    <br><br>
+                                    <a href="/perfiles/lista" class="btn btn-lg btn-secondary">Perfiles</a>
                                     <br><br>
                                     <div class="btn-group dropright">
                                         <button type="button" class="btn btn-lg btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -158,7 +160,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                <img src="../img/learn1.png" alt="user" style="width: 400px; height: 400px;">
+                                    <img src="../img/learn1.png" alt="user" style="width: 400px; height: 400px;">
                                 </div>
                             </div>
                         </div>

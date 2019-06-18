@@ -20,15 +20,15 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 Route::group(['middleware' => ['auth']], function () {
 
+    Route::group(['middleware' => ['role:super-admin|editor|moderador']], function() {
+
+        Route::resource('usuarios', 'UsersController');
+    });
+
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/perfil', 'PerfilController@index2')->name('perfil');
 
-    // Route::get('admin', 'AdminController@show');
-    // Route::resource('admin', 'AdminController');
 
-    // Route::get('admin', function () {
-    //     return view('admin');
-    // });
     Route::get('miskito/cursomiskito', function () {
         return view('miskito/cursomiskito');
     });

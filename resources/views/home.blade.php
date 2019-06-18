@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid">
 
-    <h1 class="display-1 text-center">BIENVENIDOS A <strong>LEINLA NIC</strong></h1>
+    <h1 class="display-1 text-center">BIENVENIDOS {{ $saludo }} <strong>LEINLA NIC</strong></h1>
     <br>
     <br>
     <div class="container-fluid">
