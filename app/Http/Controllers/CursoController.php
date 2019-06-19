@@ -30,7 +30,7 @@ class CursoController extends Controller
         $desarrolladores = Desarrollador::all();
         $niveles = Nivel::all();
         $rs = $this->index();
-        return view('cursos.crearcursos', ['rs' => $rs], compact('lenguas','desarrolladores'));
+        return view('cursos.crearcursos', ['rs' => $rs], compact('lenguas', 'desarrolladores'));
 
         // return view('cursos.crearcursos', compact('lenguas','desarrolladores'));
     }
@@ -56,7 +56,7 @@ class CursoController extends Controller
         $lenguas = Lengua::all();
         $desarrolladores = Desarrollador::all();
         // $niveles = Nivel::find(Curso::all()->curso_id);
-        $nivel = Nivel::find('curso_id');
+        $nivel = Nivel::all();
         // $nv = Nivel::all();
         // $nv = DB::table('niveles')
         // ->join('cursos','cursos.id', '=' ,'niveles.curso_id')
@@ -64,7 +64,18 @@ class CursoController extends Controller
         // ->get();
         $leccion = Leccion::all();
         $rs = $this->index();
-        return view('cursos/editarcursos', ['curso' => $curso, 'rs' => $rs, 'nv' => $nivel, 'leccion' => $leccion], compact('lenguas','desarrolladores','niveles'));
+        return view('cursos/editarcursos', ['curso' => $curso, 'rs' => $rs, 'nv' => $nivel, 'leccion' => $leccion], compact('lenguas', 'desarrolladores', 'niveles'));
+    }
+
+    public function edit2(Curso $curso)
+    {
+        $lenguas = Lengua::all();
+        $desarrolladores = Desarrollador::all();
+        $nivel = Nivel::all();
+        $leccion = Leccion::all();
+        $rs = $this->index();
+
+        return view('cursos.editar', ['curso' => $curso, 'rs' => $rs, 'nv' => $nivel, 'leccion' => $leccion], compact('lenguas', 'desarrolladores', 'niveles'));
     }
 
     public function update(Request $request, Curso $curso)

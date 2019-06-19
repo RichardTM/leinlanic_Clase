@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="curso-tab" data-toggle="tab" href="#curso" role="tab" aria-controls="curso" aria-selected="true"><strong>{{$curso->curso}}</strong></a>
+                            <a class="nav-link active" id="curso-tab" data-toggle="tab" href="#curso" role="tab" aria-controls="curso" aria-selected="true"><strong>ACTIVIDADES</strong></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="niveles-tab" data-toggle="tab" href="#niveles" role="tab" aria-controls="niveles" aria-selected="false"><strong>NIVELES</strong></a>
@@ -16,53 +16,27 @@
                         <li class="nav-item">
                             <a class="nav-link" id="lecciones-tab" data-toggle="tab" href="#lecciones" role="tab" aria-controls="lecciones" aria-selected="false"><strong>LECCIONES</strong></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="actividades-tab" data-toggle="tab" href="#actividades" role="tab" aria-controls="actividades" aria-selected="false"><strong>ACTIVIDADES</strong></a>
-                        </li>
                     </ul>
                 </div>
                 <div class="card-body">
                     <div class="tab-content" id="myTabContent">
                         <!-- PESTAÑA 1 -->
                         <div class="tab-pane fade show active" id="curso" role="tabpanel" aria-labelledby="curso-tab">
-                            <h1 class="txverdana text-center page-header">EDITAR {{$curso->curso}}</h1>
-                            <br>
-                            <br>
-                            <div class="col-md-6 mx-auto borde1 px-5 py-3">
-                                <h3 class="text-center">Puede Cambiar los datos del Curso</h3>
-                                <form action="{{url('cursos', $curso->id)}}" method="POST" role="form">
-                                    @csrf()
-                                    @method('PATCH')
-                                    <div class="form-group">
-                                        <label for="">Nombre del curso</label>
-                                        <input value="{{$curso->curso}}" name="curso" type="text" class="form-control" id="curso" placeholder="Ingresar Nuevo Registro">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="">Lengua a aprender</label>
-                                        <select name="lengua_id" class="form-control" required="required">
-                                            <option value="">{{$curso->lengua->lengua}}</option>
-                                            @foreach($lenguas as $item)
-                                            <option value="{{$item->id}}">{{$item->lengua}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="">Desarrollador</label>
-                                        <select name="desarrollador_id" class="form-control" required="required">
-                                            <option value="">{{$curso->nombres_id}}</option>
-                                            @foreach($desarrolladores as $item)
-                                            <option value="{{$item->id}}">{{$item->nombres}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    <a href="/cursos/crear" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
-                                    <button type="submit" class="btn btn-success">Guardar</button>
-                                </form>
+                        <div class="col-md-4">
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/actividades/lista" role="button">ACTIVIDADES</a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/lpreguntas/lista" role="button">LECCION PREGUNTAS</a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopreguntas/lista" role="button">TIPO PREGUNTAS</a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/preguntas/lista" role="button">PREGUNTA</a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopalabras/lista" role="button">TIPO PALABRAS</a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/palabranuevas/lista" role="button">PALABRA NUEVA</a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/respuestas/lista" role="button">RESPUESTA</a></a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traduccionesp/lista" role="button">TRADUCCION PALABRAS</a></a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traducciones/lista" role="button">TRADUCCION</a></a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Red;"><a href="/estudiantes/lista" role="button">ESTUDIANTE</a></a></li>
+                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Red;"><a href="/preguntaresp/lista" role="button">PREGUNTA RESPUESTA</a></a></li>
                             </div>
-
+                            <br>
+                            <a href="/cursos/crear" class="btn btn-success"><i class="fas fa-home"></i></a>
                         </div>
                         <!-- PESTAÑA 2 -->
                         <div class="tab-pane fade" id="niveles" role="tabpanel" aria-labelledby="niveles-tab">
@@ -142,27 +116,6 @@
                             <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
                             <a href="/lecciones/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
                         </div>
-                        <!-- PESTAÑA 4 -->
-                        <div class="tab-pane fade" id="actividades" role="tabpanel" aria-labelledby="actividades-tab">
-                            <div class="col-md-4">
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/actividades/lista" role="button">ACTIVIDADES</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/lpreguntas/lista" role="button">LECCION PREGUNTAS</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopreguntas/lista" role="button">TIPO PREGUNTAS</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/preguntas/lista" role="button">PREGUNTA</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopalabras/lista" role="button">TIPO PALABRAS</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/palabranuevas/lista" role="button">PALABRA NUEVA</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/respuestas/lista" role="button">RESPUESTA</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traduccionesp/lista" role="button">TRADUCCION PALABRAS</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traducciones/lista" role="button">TRADUCCION</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Red;"><a href="/estudiantes/lista" role="button">ESTUDIANTE</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Red;"><a href="/preguntaresp/lista" role="button">PREGUNTA RESPUESTA</a></a></li>
-                            </div>
-                            <br>
-                            <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
-                            <a href="/niveles/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
-
-                        </div>
-
                     </div>
                 </div>
             </div>
