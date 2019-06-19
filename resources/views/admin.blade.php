@@ -142,8 +142,6 @@
                                     <br><br>
                                     <a href="/perfiles/lista" class="btn btn-lg btn-secondary">Perfiles</a>
                                     <br><br>
-                                    <a href="/desarrolladores/lista" class="btn btn-lg btn-secondary">Desarrolladores</a>
-                                    <br><br>
                                     <div class="btn-group dropright">
                                         <button type="button" class="btn btn-lg btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Datos Administrativos

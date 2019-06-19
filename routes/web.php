@@ -263,7 +263,6 @@ Route::group(['middleware' => ['auth']], function () {
     // C U R S O S
     Route::get('admin','CursoController@list2');
     Route::get('cursos/editar/{curso}', 'CursoController@edit');
-    Route::get('cursos/editar', 'CursoController@edit2');
     Route::get('cursos/lista', 'CursoController@list');
     Route::get('cursos/crear', 'CursoController@create');
     Route::get('cursos', 'CursoController@index');
