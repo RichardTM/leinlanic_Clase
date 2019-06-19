@@ -79,7 +79,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-light">
-                                    @foreach ($nv as $item)
+                                    @foreach ($nivel as $item)
                                     <tr>
                                         <td>{{$item->nivel}}</td>
                                         <td>{{$item->descripcion}}</td>
@@ -144,23 +144,6 @@
                         </div>
                         <!-- PESTAÑA 4 -->
                         <div class="tab-pane fade" id="actividades" role="tabpanel" aria-labelledby="actividades-tab">
-                            <div class="col-md-4">
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/actividades/lista" role="button">ACTIVIDADES</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/lpreguntas/lista" role="button">LECCION PREGUNTAS</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopreguntas/lista" role="button">TIPO PREGUNTAS</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/preguntas/lista" role="button">PREGUNTA</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/tipopalabras/lista" role="button">TIPO PALABRAS</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/palabranuevas/lista" role="button">PALABRA NUEVA</a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/respuestas/lista" role="button">RESPUESTA</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traduccionesp/lista" role="button">TRADUCCION PALABRAS</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Blue;"><a href="/traducciones/lista" role="button">TRADUCCION</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Red;"><a href="/estudiantes/lista" role="button">ESTUDIANTE</a></a></li>
-                                <li class="list-group-item" style="background: #ffffff; border-left: 10px solid Red;"><a href="/preguntaresp/lista" role="button">PREGUNTA RESPUESTA</a></a></li>
-                            </div>
-                            <br>
-                            <a href="/admin" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a>
-                            <a href="/niveles/crear" class="btn btn-success"><i class="fas fa-user-plus"></i></a>
-
                         </div>
 
                     </div>
