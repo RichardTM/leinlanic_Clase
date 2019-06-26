@@ -33,18 +33,22 @@
                     <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                             <table class="table table-sm table-hover table-bordered">
-                                <!-- <thead class="thead-dark">
 
-                                </thead> -->
                                 <tbody class="table-light">
+
                     @foreach ($rs as $item)
+
 
                         <th class="text-center "><a href="/cursos/ajax/{{$item->id}}" class="btn btn btn-sm"><strong class="display-5">{{$item->curso}}</strong></a></th>
 
 
 
 
+
+
+
                     @endforeach
+
                 </tbody>
                             </table>
                             <!-- <a href="/miskito/cursomiskitoajax" class="btn btn-success"><i class="fas fa-chevron-circle-left"></i></a> -->

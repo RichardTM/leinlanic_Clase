@@ -187,9 +187,7 @@
 
 
 <script>
-    function ocultar() {
-        document.getElementById('obj1').style.display = 'none';
-    }
+
 
 
     const cargarCursos = () => {
@@ -218,7 +216,7 @@
 
 
 
-    const cargarNiveles = (id, name) => {
+    const cargarNiveles = (id) => {
         const cuerpoTablaNivel = document.getElementById('cuerpo-tabla-nivel')
         const TituloNivel = document.getElementById('titulo-nivel')
         const ListaNivel = document.getElementById('lista-nivel')

@@ -271,7 +271,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('cursos/lista', 'CursoController@list');
     Route::get('cursos/listacurso', 'CursoController@listajax');
     // Route::get('miskito/lista', 'CursoController@list');
-    Route::get('cursos/crear/{curso}', 'CursoController@create1');
+    Route::get('cursos/crear', 'CursoController@create1');
     Route::get('cursos/ajax', 'CursoController@edit');
     Route::get('admin', 'CursoController@listadmin');
 
